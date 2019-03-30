@@ -1,18 +1,19 @@
 /* stylin' */
 
-/* google fonts:
+/* ======================================
+Google fonts for reference:
 font-family: 'Roboto', sans-serif;
 font-family: 'Open Sans', sans-serif;
-font-family: 'Bree Serif', serif; */
+font-family: 'Bree Serif', serif;
+====================================== */
 
+
+/* ======================================
+ Tag Data
+ ====================================== */
 h1 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 60px;
-    color: black;
-}
-.display-4 {
-    font-family: 'Open Sans', sans-serif;;
-    font-size: 60px;
+    font-size: 55px;
     color: black;
 }
 
@@ -21,21 +22,32 @@ h2 {
     font-size: 30px;
     text-align: center;
     font-weight: bold;
-    color:  rgb(235, 45, 31);
+    color: rgb(235, 45, 31);
 }
 
 h3 {
-    font-family: 'Open Sans', sans-serif !important;
-    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     text-align: center;
     color: rgb(34, 33, 33);
 }
 
 p {
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     color: rgb(34, 33, 33);
+    display: block;
+}
+
+/* ======================================
+ Class Data
+ ====================================== */
+
+.team-name {
+    font-family: 'Bree Serif', serif;
+    font-size: 24px;
+    color: rgb(235, 45, 31);
 }
 
 .heading-custom {
@@ -43,7 +55,10 @@ p {
     font-size: 18px !important;
     color: rgb(34, 33, 33);
     background-color:transparent !important; 
+}
 
+.navbar {
+    background-color:transparent !important; 
 }
 
 .jumbotron {
@@ -55,8 +70,10 @@ p {
     margin-bottom: 10px;
 }
 
+/* ======================================
+ ID Data
+ ====================================== */
 
-/* ID Data */
 #selDataset {
     font-family: 'Open Sans', sans-serif;
 }
