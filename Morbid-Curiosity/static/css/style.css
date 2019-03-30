@@ -1,0 +1,67 @@
+/* stylin' */
+
+/* google fonts:
+font-family: 'Roboto', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Bree Serif', serif; */
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    color: black;
+}
+.display-4 {
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 60px;
+    color: black;
+}
+
+h2 {
+    font-family: 'Bree Serif', serif;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color:  rgb(235, 45, 31);
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 16px;
+    text-align: center;
+    color: rgb(34, 33, 33);
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: rgb(34, 33, 33);
+}
+
+.heading-custom {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 18px !important;
+    color: rgb(34, 33, 33);
+    background-color:transparent !important; 
+
+}
+
+.jumbotron {
+    background-color:transparent !important; 
+}
+
+.bottom-border {
+    border-bottom: 1px solid rgb(223, 219, 219);
+    margin-bottom: 10px;
+}
+
+
+/* ID Data */
+#selDataset {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#sample-metadata
+{
+    font-family: 'Open Sans', sans-serif !important;
+}

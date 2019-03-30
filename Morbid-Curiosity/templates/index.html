@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Morbid Curiosity</title>
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans|Roboto" rel="stylesheet">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="icon" type="image/png" href="../static/images/health-cross.png">
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> -->
+      <a class="navbar-brand" href="index.html">Morbid Curiosity</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <!-- <li class="dropdown">
+          <a class="dropdown-toggle" type="button" data-toggle="dropdown">Projects
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="UFO-index.html">UFO Records</a></li>
+            <li><a href="trolls.html">Trolls Twitter Sentiment Analysis</a></li>
+            <li><a href="weather-index.html">Weather Analysis</a></li>
+            <li><a href="personal-art.html">Personal Art</a></li>
+          </ul>
+        </li> -->
+
+        <!-- link to github repo -->
+        <li class="menu">
+          <a target="#_blank" href="https://github.com/hlbarker2/MorbidCuriosity">Github</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1 class="display-4">The Social Determinants of Health</h1>
+        <p>Exploring patterns in the causes of disease and death in the United States</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Heatmap Goes Here</h2>
+        <div class="heatmap"> 
+          <!-- <h3>Select a sample to view:</h3>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select> -->
+        </div>      
+      </div>
+    </div>
+    <div class="row">
+      <!-- bar charts -->
+      <div class="col-md-5">
+        <h2>Bar Charts Go Here</h2>
+        <div id="bar">
+        </div> 
+      </div>
+      <!-- radar chart -->
+      <div class="col-md-5">
+        <h2>Radar Chart Goes Here</h2>
+        <div id="radar">
+        </div> 
+      </div>
+    </div>
+  </div>
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
