@@ -31,7 +31,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-12 jumbotron text-center">
+      <div class="jumbotron text-center">
         <h1>The Social Determinants of Health</h1>
         <h3>Exploring patterns in the causes of disease and death in the United States</h3>
       </div>
@@ -43,8 +43,6 @@
         <h2>Heatmap Goes Here</h2>
         <p>Explainer about the data and visualization will fit right here</p>
         <div class="heatmap"> 
-          <!-- <h3>Select a sample to view:</h3>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select> -->
         </div>      
       </div>
     </div>
@@ -58,18 +56,20 @@
       </div>
       <!-- radar chart -->
       <div class="col-md-5">
-        <h2>Radar Chart Goes Here</h2>
-        <p>Explainer about the data and visualization will fit right here</p>
-        <div id="radar">
-        </div> 
+        <h2>Comparing Health By Gender</h2>
+        <p>Explainer about the data and radar visualization will fit right here.</p>
+        <canvas id="radar">
+        </canvas> 
       </div>
     </div>
   </div>
 
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> <!-- chart.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+  <script src="../static/js/app.js"></script> <!-- change this when running through app.py -->
 </body>
 
 </html>

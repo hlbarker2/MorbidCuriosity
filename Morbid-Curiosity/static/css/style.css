@@ -13,7 +13,7 @@ font-family: 'Bree Serif', serif;
  ====================================== */
 h1 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 55px;
+    font-size: 50px;
     color: black;
 }
 
@@ -47,14 +47,7 @@ p {
 .team-name {
     font-family: 'Bree Serif', serif;
     font-size: 24px;
-    color: rgb(235, 45, 31);
-}
-
-.heading-custom {
-    font-family: 'Open Sans', sans-serif !important;
-    font-size: 18px !important;
-    color: rgb(34, 33, 33);
-    background-color:transparent !important; 
+    color: rgb(235, 45, 31) !important;
 }
 
 .navbar {
@@ -63,6 +56,9 @@ p {
 
 .jumbotron {
     background-color:transparent !important; 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    color: black;
 }
 
 .bottom-border {
@@ -73,10 +69,6 @@ p {
 /* ======================================
  ID Data
  ====================================== */
-
-#selDataset {
-    font-family: 'Open Sans', sans-serif;
-}
 
 #sample-metadata
 {
