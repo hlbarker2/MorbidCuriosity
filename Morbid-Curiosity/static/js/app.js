@@ -26,10 +26,16 @@ function buildRadar() {
       labels: ['Cancer','Heart Disease', 'Stroke', 'Accidents', 'Influenza'],
       datasets: [{
           label: 'Males',
-          backgroundColor: 'rgba(18,94,227,.7)',
-          borderColor: 'rgb(18,94,227)',
+          backgroundColor: 'rgba(18,94,227,.6)',
+          borderColor: 'rgba(18,94,227, .6)',
           data: [10, 5, 8, 20, 30, 45]
-      }]
+      }, {
+          label: 'Femles',
+          backgroundColor: 'rgba(235, 45, 31,.6)',
+          borderColor: 'rgba(235, 45, 31,.6)',
+          data: [22, 15, 2, 15, 40, 18]
+        }
+      ]
     },
 
     // Configuration options go here
@@ -49,8 +55,21 @@ function buildRadar() {
       },
       title: {
         display: false,
-      }
+      },
+      tooltips: {
+        callbacks: {
+            label: function(tooltipItem, data) {
+                var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                if (label) {
+                    label += ': ';
+                }
+                label += Math.round(tooltipItem.yLabel * 100) / 100;
+                return label;
+            }
+        }
     }
+  }
 });
 }
 
