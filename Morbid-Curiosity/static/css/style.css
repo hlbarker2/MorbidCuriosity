@@ -27,17 +27,18 @@ h2 {
 
 h3 {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     color: rgb(34, 33, 33);
 }
 
 p {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     color: rgb(34, 33, 33);
     display: block;
+    margin: 10px
 }
 
 /* ======================================
@@ -69,6 +70,7 @@ p {
 .footer {
     margin: 20px
 }
+
 /* ======================================
  ID Data
  ====================================== */

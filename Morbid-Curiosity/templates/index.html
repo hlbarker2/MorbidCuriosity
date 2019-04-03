@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans|Roboto" rel="stylesheet">  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-social.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/assets/font-awesome.css">
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
 </head>
 
@@ -24,6 +26,9 @@
           <a target="#_blank" href="https://github.com/hlbarker2/MorbidCuriosity">
             <img width=25px src="../static/images/Octicons-mark-github.svg">
           </a>
+          <!-- <a class="btn btn-social-icon btn-github" target="#_blank" href="https://github.com/hlbarker2/MorbidCuriosity">
+            <span class="fa fa-github"></span>
+          </a> -->
         </li>
       </ul>
     </div>
@@ -40,7 +45,7 @@
     <div class="row">
       <!-- USA heat map -->
       <div class="col-md-12">
-        <h2>Heatmap Goes Here</h2>
+        <h2>Heatmap of Mortality in the US</h2>
         <div class="heatmap"> 
         <br><hr>
         <p>Explainer about the data and visualization will fit right here</p>
@@ -49,20 +54,52 @@
     </div>
     <div class="row">
       <!-- bar charts -->
-      <div class="col-md-6">
-        <h2>Bar Charts Go Here</h2>
-        <div id="bar">
-        <br><hr>
-        <p>Explainer about the data and visualization will fit right here</p>
-        </div> 
+      <div class="col-md-12">
+        <h2>Social Vulnerability Index</h2>
       </div>
-      <!-- radar chart -->
-      <div class="col-md-6">
-        <h2>Comparing Health By Gender</h2>
-        <canvas id="radar">
+      <div class="col-md-8">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-4 text-left">
+        <p class="text-left">The Social vulnerability refers to the resilience of communities when confronted by external stresses 
+          on human health, stresses such as natural or human-caused disasters, or disease outbreaks. Reducing 
+          social vulnerability can decrease both human suffering and economic loss. The CDC's 
+          <a
+            target="#_blank" 
+            href="https://svi.cdc.gov/"
+            class="card-link">Social Vulnerability Index
+          </a> 
+          (SVI) uses 15 different U.S. census variables to compute the scoring.
+          <br><br>
+          What you see in these graphs is that when mortality data is compared to the SVI score, 
+          it is evident that the SVI is not a reliable indicator of health-related deaths in the United States.
+        </p>
+      </div> 
+    </div>
+    <div class="row">
+      <!-- radar charts -->
+      <div class="col-md-12">
+      </div>
+        <h2>Mortality Trends by Demographic Comparisons</h2>
+      <div class = "col-md-4">
+        <canvas id="radar1">
         </canvas>
         <br><hr>
-        <p>Explainer about the data and radar visualization will fit right here.</p>
+        <p>There is not a huge difference in deaths based on the gender of the individual. One of the largest 
+          disparities is that men have a higher percentage of deaths through an accidents (7.4%) as compared 
+          to women (4.3%).</p>
+      </div>
+      <div class="col-md-4">
+        <canvas id="radar2">
+        </canvas>
+        <br><hr>
+        <p>Explainer here</p>
+      </div>
+      <div class="col-md-4">
+        <canvas id="radar3">
+        </canvas>
+        <br><hr>
+        <p>Explainer here</p>
       </div>
     </div>
     <div class="row">

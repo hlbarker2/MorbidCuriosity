@@ -35,6 +35,11 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route("/about")
+def index():
+    """Return the about us page."""
+    return render_template("about.html")
+
 
 # @app.route("/mortality")
 # def mortality():
