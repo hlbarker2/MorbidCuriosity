@@ -11,23 +11,24 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
+import tweets
+
 app = Flask(__name__)
 
 
 #################################################
 # Database Setup
 #################################################
-
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/gendermortality.sqlite"
-db = SQLAlchemy(app)
+# app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/gendermortality.sqlite"
+# db = SQLAlchemy(app)
 
 # # reflect an existing database into a new model
-Base = automap_base()
+# Base = automap_base()
 # # reflect the tables
-Base.prepare(db.engine, reflect=True)
+# Base.prepare(db.engine, reflect=True)
 
 # # Save references to each table
-genderData = Base.classes.cleangenderdeaths
+# genderData = Base.classes.cleangenderdeaths
 
 
 @app.route("/")
@@ -36,23 +37,22 @@ def index():
     return render_template("index.html")
 
 @app.route("/about")
-def index():
+def about():
     """Return the about us page."""
+    # perhaps I could use index and replace body content
     return render_template("about.html")
 
+@app.route("/mortality")
+def mortality():
+    """Return mortality data"""
+    # code here
 
-# @app.route("/mortality")
-# def mortality():
-#     """Return mortality data"""
+@app.route("/tweets")
+def cdctweets():
+    """Return CDC twitter data"""
+    return jsonify(tweets)
 
-    # Use Pandas to perform the sql query
-    # stmt = db.session.query(Samples).statement
-    # df = pd.read_sql_query(stmt, db.session.bind)
-
-    # Return a list of the column names (sample names)
-    # return jsonify(list(df.columns)[2:])
-
-
+# do we need this
 @app.route("/deathsbygender")
 def gender():
     """Return summarized deaths by gender data"""

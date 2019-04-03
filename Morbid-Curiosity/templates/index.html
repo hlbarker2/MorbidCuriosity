@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans|Roboto" rel="stylesheet">  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-social.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/assets/font-awesome.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-social.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/assets/font-awesome.css"> -->
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
 </head>
 
@@ -41,17 +41,33 @@
         <h3>Exploring patterns in the causes of disease and death in the United States</h3>
       </div>
     </div>
-
+    <div class="container divider-background">
+      <!-- INTRO -->
+      <div class="col-sm-9">
+      <p class="text-left">We are Team Morbid Curiosity. Our goal is to analyze United States Mortality and Demographic Data to identify patterns 
+        in deaths in the United States. The hope with this project is that it sheds light on areas of concern in the United States 
+        that can be addressed by public health professionals to help Americans live longer and healthier lives.
+      </p>
+      </div>
+      <div class="col-sm-3">
+        <div class ="well">
+          <h3>Latest Tweet from @CDCgov:</h3>
+          <div  id="latestTweet"></div>
+        </div>
+      </div>
+    </div>
+    <hr>
     <div class="row">
       <!-- USA heat map -->
       <div class="col-md-12">
         <h2>Heatmap of Mortality in the US</h2>
-        <div class="heatmap"> 
-        <br><hr>
+        <div class="heatmap"></div>
+        <!-- temporary pic -->
+        <img class="img-responsive center-block" width= 800px src="../static/images/USA-states.PNG"><br>
         <p>Explainer about the data and visualization will fit right here</p>
-        </div>      
       </div>
     </div>
+    <hr>
     <div class="row">
       <!-- bar charts -->
       <div class="col-md-12">
@@ -59,11 +75,12 @@
       </div>
       <div class="col-md-8">
         <div id="bar"></div>
+        <!-- temporary pic -->
+        <img class="img-responsive center-block" src="../static/images/bar-graph.jpg">
       </div>
       <div class="col-md-4 text-left">
-        <p class="text-left">The Social vulnerability refers to the resilience of communities when confronted by external stresses 
-          on human health, stresses such as natural or human-caused disasters, or disease outbreaks. Reducing 
-          social vulnerability can decrease both human suffering and economic loss. The CDC's 
+        <p class="text-left">Social vulnerability is a term that refers to the resilience of individuals and communities when confronted by external stresses 
+          on human health, such as natural disasters, poverty, or disease outbreaks. The CDC's 
           <a
             target="#_blank" 
             href="https://svi.cdc.gov/"
@@ -76,6 +93,7 @@
         </p>
       </div> 
     </div>
+    <hr>
     <div class="row">
       <!-- radar charts -->
       <div class="col-md-12">
@@ -84,7 +102,6 @@
       <div class = "col-md-4">
         <canvas id="radar1">
         </canvas>
-        <br><hr>
         <p>There is not a huge difference in deaths based on the gender of the individual. One of the largest 
           disparities is that men have a higher percentage of deaths through an accidents (7.4%) as compared 
           to women (4.3%).</p>
@@ -92,13 +109,11 @@
       <div class="col-md-4">
         <canvas id="radar2">
         </canvas>
-        <br><hr>
         <p>Explainer here</p>
       </div>
       <div class="col-md-4">
         <canvas id="radar3">
         </canvas>
-        <br><hr>
         <p>Explainer here</p>
       </div>
     </div>

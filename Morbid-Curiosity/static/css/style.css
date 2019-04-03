@@ -61,11 +61,16 @@ p {
     font-size: 50px;
     color: black;
 }
+.divider-background {
+    background-color: rgba(228, 226, 226,.5);
+    margin: 0;
+    padding: 20px;
+}
 
-.bottom-border {
+/* .bottom-border {
     border-bottom: 1px solid rgb(223, 219, 219);
     margin-bottom: 10px;
-}
+} */
 
 .footer {
     margin: 20px

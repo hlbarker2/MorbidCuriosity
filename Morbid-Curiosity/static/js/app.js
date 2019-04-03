@@ -30,12 +30,14 @@ function buildRadar() {
           label: 'Males',
           backgroundColor: 'rgba(18,94,227,.5)',
           borderColor: 'rgba(18,94,227, .5)',
+          pointBackgroundColor:'rgba(18,94,227, .5)', 
           pointRadius: 1,
           data: [22.46561055745661, 24.229162974374354, 4.238978791472963, 5.2165841865368785, 7.417644840106701]
       }, {
           label: 'Femles',
           backgroundColor: 'rgba(72, 209, 204,.5)',
           borderColor: 'rgba(72, 209, 204,.5)',
+          pointBackgroundColor:'rgba(72, 209, 204,.5)',
           pointRadius: 1,
           data: [21.091105716123568, 22.02314474068052, 6.1596843077877015, 6.067652167332496, 4.2790062970001665]
         }
@@ -90,12 +92,14 @@ var radarChart1 = new Chart(ctx, {
         label: 'Urban',
         backgroundColor: 'rgba(235, 45, 31,.5)',
         borderColor: 'rgba(235, 45, 31,.5)',
+        pointBackgroundColor:'rgba(235, 45, 31,.5)',
         pointRadius: 1,
         data: [22, 7, 19, 6, 21]
     }, {
         label: 'Rural',
         backgroundColor: 'rgba(72, 209, 204,.5)',
         borderColor: 'rgba(72, 209, 204,.5)',
+        pointBackgroundColor: 'rgba(72, 209, 204,.5)',
         pointRadius: 1,
         data: [21, 11, 6, 9, 4]
       }
@@ -150,12 +154,14 @@ var radarChart1 = new Chart(ctx, {
         label: 'In Poverty',
         backgroundColor: 'rgba(105,105,105,.5)',
         borderColor: 'rgba(105,105,105, .5)',
+        pointBackgroundColor:'rgba(105,105,105, .5)',
         pointRadius: 1,
         data: [33, 24, 11, 22, 9]
     }, {
         label: 'Not in Poverty',
         backgroundColor: 'rgba(235, 45, 31,.5)',
         borderColor: 'rgba(235, 45, 31,.5)',
+        pointBackgroundColor: 'rgba(235, 45, 31,.5)',
         pointRadius: 1,
         data: [5, 6, 6, 4, 3]
       }
