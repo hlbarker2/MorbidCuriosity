@@ -7,10 +7,11 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+import pymysql
+pymysql.install_as_MySQLdb()
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
-
 from config import remote_db_endpoint, remote_db_port
 from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
 
@@ -22,9 +23,8 @@ app = Flask(__name__)
 #################################################
 # Database Setup
 #################################################
-pymysql.install_as_MySQLdb()
 
-engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}")
+engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}", pool_pre_ping=True)
 conn = engine.connect()
 
 @app.route("/")

@@ -29,7 +29,8 @@ h1 {
 }
 
 h2 {
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Roboto Mono', monospace;
     font-size: 30px;
     text-align: center;
     font-weight: bold;
@@ -44,10 +45,19 @@ h3 {
     line-height: 1.75em;
 }
 
+h4 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(235, 45, 31);
+}
+
+
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     color: rgb(34, 33, 33);
     display: block;
     margin: 10px;
@@ -169,6 +179,10 @@ p {
 
 .well {
     background-color: transparent !important;
+}
+
+.whiteB {
+    background-color: whitesmoke;
 }
 
 .footer {
