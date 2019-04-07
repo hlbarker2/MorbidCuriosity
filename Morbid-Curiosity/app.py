@@ -29,7 +29,7 @@ remote_morbid_dbpwd = "Morbid123"
 # Database Setup
 #################################################
 
-engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}", pool_pre_ping=True)
+engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}")
 conn = engine.connect()
 
 @app.route("/")

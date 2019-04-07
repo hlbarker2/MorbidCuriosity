@@ -268,7 +268,7 @@ function buildCharts() {
         Plotly.plot("bar", data, layout)
 })};
 
-buildCharts();
+//buildCharts();
 
 //function init() {
     // Grab a reference to the dropdown select element
