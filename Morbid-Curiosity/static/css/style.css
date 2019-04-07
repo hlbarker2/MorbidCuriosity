@@ -3,7 +3,6 @@
 /* ======================================
 Google fonts for reference:
 font-family: 'Roboto', sans-serif;
-font-family: 'Open Sans', sans-serif;
 font-family: 'Lato', sans-serif;
 font-family: 'Raleway', sans-serif;
 font-family: 'Roboto Slab', serif;
@@ -14,15 +13,19 @@ font-family: 'Roboto Mono', monospace;
 /* ======================================
  Tag Data
  ====================================== */
- body {
-    background-color: rgba(250, 250, 250, .9);
+ 
+body {
+   height: 100%;
+   padding: 0;
+   margin: 0;
+   background-color: rgba(235, 235, 240, .9);
 }
 
 h1 {
     font-family: 'Lato', sans-serif;
     font-weight: bold;
     font-size: 50px;
-    color: rgb(56, 56, 56);
+    color: whitesmoke;
 }
 
 h2 {
@@ -37,8 +40,8 @@ h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     text-align: center;
-    color: rgb(56, 56, 56);
-    line-height: 1.5em;
+    color: rgb(34, 33, 33);
+    line-height: 1.75em;
 }
 
 p {
@@ -51,24 +54,33 @@ p {
     line-height: 1.5em;
 }
 
+/* span {
+    position: absolute;
+    white-space: nowrap;
+    animation: floatText 5s infinite alternate ease-in-out;
+    vertical-align: middle;
+    /* animation: anim 1.5s infinite;
+    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+/* }
+@-webkit-keyframes floatText{
+  from {
+    left: 00%;
+  }
 
-    
+  to {
+    right: 10%;
+  }
+} */
 /* ======================================
  Class Data
  ====================================== */
 
-/* .team-name {
-    font-family: 'Raleway', sans-serif;
+.team-name {
+    font-family: 'Roboto Mono', monospace;
     font-size: 24px;
     font-weight: bold;
     color: rgb(235, 45, 31) !important;
-} */
-
-
-/* Page content */
-.content {
-    padding: 16px;
-  }
+}
   
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
@@ -82,29 +94,58 @@ p {
     padding-top: 60px;
 }
 
-/*jumbotron background image */
-.bg-img {
-    background-image: url("../images/ryoji-iwata-697773-unsplash.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    min-height: 500px;
-    z-index: -1;
-}
-
 /* overlay an opaque dark color so the text will still show up */
-.bg-overlay {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.637);
-    z-index: 100;
-}
-
 .jumbotron {
     font-family: 'Lato', sans-serif;
     font-size: 50px;
     color: whitesmoke;
-    padding: 100px;
+    background-image: url("../images/ryoji-iwata-697773-unsplash.jpg");
+    background-size: cover;
+    min-height: 350px;
+    margin: 0px;
+    position: relative;
+}
+
+.jumbotron > .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(8, 9, 58, 0.5);
+    z-index: 1;
+}
+
+.jumbotron > .inner {
+    position: relative;
+    z-index: 2;
+}
+
+/* overlay an opaque dark color so the text will still show up */
+.hero {
+    font-family: 'Lato', sans-serif;
+    background-image: url("../images/lindsay-henwood-47743-unsplash.jpg");
+    background-size: cover;
+    min-height: 300px;
+    font-size: 50px;
+    color: whitesmoke;
+    margin: 0px;
+    position: relative;
+}
+
+.hero > .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(8, 9, 58, 0.5);
+    z-index: 1;
+}
+
+.hero > .inner {
+    position: relative;
+    z-index: 2;
 }
 
 .h3-white {
@@ -112,9 +153,10 @@ p {
     font-size: 20px;
     text-align: center;
     color: whitesmoke;
+    padding:30px;
 }
 
-.row {
+.whitespace {
     padding: 30px;
 }
 
@@ -128,8 +170,15 @@ p {
 .well {
     background-color: transparent !important;
 }
+
 .footer {
-    margin: 20px
+    /* margin: 20px; */
+    background-color:rgb(8, 9, 58);
+    color:whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
 }
 
 /* ======================================
@@ -157,9 +206,10 @@ https://codepen.io/anon/pen/yrYOJg
 
 /* Style the navbar */
 #navbar {
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: white;
   border-bottom: 1px;
+  margin-bottom: 0px;
 }
 
 /* Navbar links */
