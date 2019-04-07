@@ -268,6 +268,8 @@ function buildCharts() {
         Plotly.plot("bar", data, layout)
 })};
 
+buildCharts();
+
 //buildCharts();
 
 //function init() {
