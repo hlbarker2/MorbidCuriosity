@@ -68,7 +68,7 @@ def sviData():
 
     data_df = pd.read_sql("SELECT * FROM sviLife ORDER BY RAND() LIMIT 500", conn)
     df = pd.DataFrame(data_df, columns=["FIPS","Location","Life_Expectancy","RPL_THEMES","RPL_THEME1","RPL_THEME2","RPL_THEME3","RPL_THEME4"])
-    return jsonify(df.to_dict(orient="records"))
+    return df.to_json()
 
 # ################
 # @app.route("/metadata/<sample>")

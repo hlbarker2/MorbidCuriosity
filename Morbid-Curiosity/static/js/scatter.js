@@ -1,14 +1,13 @@
 function buildCharts() {
     d3.json(`/sviData`).then((data) => {
 
-        var allCountyNames = data.Location;
-        var allLifeExpect = data.Life_Expectancy;
-        var allSVI = data.RPL_THEMES;
-        var allSES = data.RPL_THEME1;
-        var allHouseholdComp = data.RPL_THEME2;
-        var allMinority = data.RPL_THEME3;
-        var allTransport = data.RPL_THEME4;
-
+      var allCountyNames = Object.values(data.Location);
+      var allLifeExpect = Object.values(data.Life_Expectancy);
+      var allSVI = Object.values(data.RPL_THEMES);
+      var allSES = Object.values(data.RPL_THEME1);
+      var allHouseholdComp = Object.values(data.RPL_THEME2);
+      var allMinority = Object.values(data.RPL_THEME3);
+      var allTransport = Object.values(data.RPL_THEME4);
         // Build a Scatter Plot
         var data = [
             {
@@ -91,6 +90,8 @@ function buildCharts() {
                 visible: false
             }
         ];
+
+        console.log(data);
 
         var frames = [
             { name: 'SVI', data: [{ x: allLifeExpect, y: allSVI }] },
@@ -265,7 +266,8 @@ function buildCharts() {
             }
         };
 
-        Plotly.plot("bar", data, layout)
+        console.log(data);
+        Plotly.newPlot("bar", data, layout)
 })};
 
 buildCharts();
