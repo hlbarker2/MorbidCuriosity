@@ -64,16 +64,26 @@
       <div class="col-sm-3">
         <div class="well">
           <h4>Meet the Team</h4>
-          <a role="button" href="https://www.linkedin.com/in/sarah-fawson-b911b083/" class="btn btn-light btn-lg">Sarah</a>
-          <a role="button" href="https://www.linkedin.com/in/connorvergara/" class="btn btn-light btn-lg">Connor</a>
-          <a role="button" href="https://www.linkedin.com/in/hannah-barker-915a7129/" class="btn btn-light btn-lg">Hannah</a>
-          <a role="button" href="https://www.linkedin.com/in/paul-westfall-633a2611/" class="btn btn-light btn-lg">Paul</a>
-
+          <div class="row">
+            <div class="col-sm-6">
+              <a role="button" target="#_blank" href="https://www.linkedin.com/in/sarah-fawson-b911b083/" class="btn btn-light">
+              <img width=40px src="../static/images/sarah-emoji.png">
+              </a>
+              <a role="button" target="#_blank" href="https://www.linkedin.com/in/connorvergara/" class="btn btn-light">
+              <img width=40px src="../static/images/connor-emoji.png">
+              </a>
+            </div>
+            <div class="col-sm-6">
+              <a role="button" target="#_blank" href="https://www.linkedin.com/in/hannah-barker-915a7129/" class="btn btn-light btn-lg">
+              <img width=40px src="../static/images/hannah-emoji.png">
+              </a>
+              <a role="button" target="#_blank" href="https://www.linkedin.com/in/paul-westfall-633a2611/" class="btn btn-light btn-lg">
+              <img width=40px src="../static/images/paul-emoji.png">
+              </a>
+            </div>
+          </div>
         </div>
-        <!-- <div class="well">
-          <h3>Latest Tweet from @CDCgov:</h3>
-          <div  id="latestTweet"></div>
-        </div> -->
+      </div>
 
         <!-- <div class="pill-box-1">
         <svg width="200" height="250" xmlns="http://www.w3.org/2000/svg">
@@ -88,26 +98,23 @@
     <h2 class="whitespace">US Mortality</h2>
     <div class="row whitespace">
       <div class="col-md-6">
-        <div id="heatmapSelector"></div>
+        <div id="heatmapSelector">{Selector}</div>
       </div>
       <div class="col-md-6">
-        <div class="well" id="selectorInformation"></div>
+        <div class="well" id="selectorInformation">{Well with information}</div>
       </div>
       <div class="col-md-12">
-        <div id="heatmap"></div>
-        <!-- temporary pic -->
-        <img class="img-responsive center-block" width= 800px src="../static/images/USA-states.PNG"><br>
+        <div id="heatmap">{Heatmap}</div>
         <p>Explainer about the data and visualization will fit right here</p>
       </div>
     </div>
     <hr>
+
       <!-- bar charts -->
     <h2 class="whitespace">Social Vulnerability Index & Life Expectancy</h2>
     <div class="row">
       <div class="col-md-8">
         <div id="bar"></div>
-        <!-- temporary pic -->
-        <img class="img-responsive center-block" src="../static/images/bar-graph.jpg">
       </div>
       <div class="col-md-4 text-left">
         <p class="text-left">Social vulnerability is a term that refers to the resilience of individuals and communities when confronted by external stresses 
