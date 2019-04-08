@@ -1,7 +1,7 @@
 // ###############################
 // STICKY NAVBAR
 // ###############################
-// When the user scrolls the page, execute myFunction 
+// When the user scrolls the page, execute myFunction
 // window.onscroll = function stickyNavbar();
 
 // // Get the navbar
@@ -34,7 +34,7 @@ function buildRadar1() {
     var diseaseType = Object.values(data.Cause_of_Death);
     console.log(diseaseType);
     var deathRate = Object.values(data.Percent);
-    console.log(Percent);
+    console.log(deathRate);
     var gender = Object.values(data.Gender);
     console.log(gender);
 
@@ -49,7 +49,7 @@ function buildRadar1() {
           label: 'Males',
           backgroundColor: 'rgba(18,94,227,.5)',
           borderColor: 'rgba(18,94,227, .5)',
-          pointBackgroundColor:'rgba(18,94,227, .5)', 
+          pointBackgroundColor:'rgba(18,94,227, .5)',
           pointRadius: 1,
           data: deathRate,
         }, {
@@ -101,7 +101,7 @@ function buildRadar1() {
 };
 
 // ####################
-// radar numero 2 
+// radar numero 2
 // ####################
 // function buildRadar2() {
 //   var url = `/denseData`;

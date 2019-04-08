@@ -52,9 +52,9 @@ def gender():
     data_df = pd.read_sql("SELECT * FROM gender", conn)
     df = pd.DataFrame(data_df, columns=['Gender', 'Cause of Death', 'Deaths', 'Population', 'Rate per 1000', 'Percent'])
     df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 1000': 'Rate_per_1000'}, inplace = True)
-    
+
     conn.close()
-    return jsonify(df.to_dict(orient="records"))
+    return df.to_json()
 
 # @app.route("/sviData")
 # def sviData():
