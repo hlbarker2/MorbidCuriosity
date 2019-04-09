@@ -16,11 +16,17 @@ from flask_sqlalchemy import SQLAlchemy
 #from config import remote_db_endpoint, remote_db_port
 #from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
 
-remote_db_endpoint = os.environ['remote_db_endpoint']
-remote_db_port = os.environ['remote_db_port']
-remote_morbid_dbname = os.environ['remote_morbid_dbname']
-remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
-remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
+# remote_db_endpoint = os.environ['remote_db_endpoint'] || c
+# remote_db_port = os.environ['remote_db_port']
+# remote_morbid_dbname = os.environ['remote_morbid_dbname']
+# remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
+# remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
+
+remote_db_endpoint = "morbid.cu97gshsimlg.us-east-1.rds.amazonaws.com"
+remote_db_port = 3306
+remote_morbid_dbname = "morbid"
+remote_morbid_dbuser = "root"
+remote_morbid_dbpwd = "Morbid123"
 
 app = Flask(__name__)
 

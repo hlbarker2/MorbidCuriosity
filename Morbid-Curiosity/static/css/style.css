@@ -235,3 +235,13 @@ https://codepen.io/anon/pen/yrYOJg
   padding: 14px;
   text-decoration: none;
 }
+
+#bar {
+    outline-style: solid;
+    outline-color: rgba(148, 147, 147,0);
+    
+}
+
+#bar .plot-container { 
+    border: 1px solid black;
+}
