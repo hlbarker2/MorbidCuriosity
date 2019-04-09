@@ -1,0 +1,37 @@
+"Notes"	"2013 Urbanization"	"2013 Urbanization Code"	"ICD-10 113 Cause List"	"ICD-10 113 Cause List Code"	Deaths	Population	Crude Rate
+	"Large Central Metro"	"1"	"#Malignant neoplasms (C00-C97)"	"GR113-019"	156766	99544525	157.48330
+	"Large Central Metro"	"1"	"#Diseases of heart (I00-I09,I11,I13,I20-I51)"	"GR113-054"	169570	99544525	170.34588
+	"Large Central Metro"	"1"	"#Cerebrovascular diseases (I60-I69)"	"GR113-070"	37510	99544525	37.68163
+	"Large Central Metro"	"1"	"#Chronic lower respiratory diseases (J40-J47)"	"GR113-082"	33738	99544525	33.89237
+	"Large Central Metro"	"1"	"#Accidents (unintentional injuries) (V01-X59,Y85-Y86)"	"GR113-112"	42204	99544525	42.39711
+	"Large Central Metro"	"1"	"#Intentional self-harm (suicide) (*U03,X60-X84,Y87.0)"	"GR113-124"	10946	99544525	10.99608
+	"Large Fringe Metro"	"2"	"#Malignant neoplasms (C00-C97)"	"GR113-019"	142679	80496977	177.24765
+	"Large Fringe Metro"	"2"	"#Diseases of heart (I00-I09,I11,I13,I20-I51)"	"GR113-054"	144629	80496977	179.67010
+	"Large Fringe Metro"	"2"	"#Cerebrovascular diseases (I60-I69)"	"GR113-070"	33263	80496977	41.32205
+	"Large Fringe Metro"	"2"	"#Chronic lower respiratory diseases (J40-J47)"	"GR113-082"	33560	80496977	41.69101
+	"Large Fringe Metro"	"2"	"#Accidents (unintentional injuries) (V01-X59,Y85-Y86)"	"GR113-112"	37474	80496977	46.55330
+	"Large Fringe Metro"	"2"	"#Intentional self-harm (suicide) (*U03,X60-X84,Y87.0)"	"GR113-124"	10298	80496977	12.79303
+	"Medium Metro"	"3"	"#Malignant neoplasms (C00-C97)"	"GR113-019"	127900	67510722	189.45139
+	"Medium Metro"	"3"	"#Diseases of heart (I00-I09,I11,I13,I20-I51)"	"GR113-054"	133945	67510722	198.40552
+	"Medium Metro"	"3"	"#Cerebrovascular diseases (I60-I69)"	"GR113-070"	30863	67510722	45.71570
+	"Medium Metro"	"3"	"#Chronic lower respiratory diseases (J40-J47)"	"GR113-082"	34814	67510722	51.56810
+	"Medium Metro"	"3"	"#Accidents (unintentional injuries) (V01-X59,Y85-Y86)"	"GR113-112"	36274	67510722	53.73072
+	"Medium Metro"	"3"	"#Intentional self-harm (suicide) (*U03,X60-X84,Y87.0)"	"GR113-124"	10365	67510722	15.35312
+	"Small Metro"	"4"	"#Malignant neoplasms (C00-C97)"	"GR113-019"	60488	29464705	205.28968
+	"Small Metro"	"4"	"#Diseases of heart (I00-I09,I11,I13,I20-I51)"	"GR113-054"	64376	29464705	218.48513
+	"Small Metro"	"4"	"#Cerebrovascular diseases (I60-I69)"	"GR113-070"	14434	29464705	48.98742
+	"Small Metro"	"4"	"#Chronic lower respiratory diseases (J40-J47)"	"GR113-082"	17844	29464705	60.56059
+	"Small Metro"	"4"	"#Accidents (unintentional injuries) (V01-X59,Y85-Y86)"	"GR113-112"	15782	29464705	53.56239
+	"Small Metro"	"4"	"#Intentional self-harm (suicide) (*U03,X60-X84,Y87.0)"	"GR113-124"	4886	29464705	16.58255
+	"Micropolitan (Nonmetro)"	"5"	"#Malignant neoplasms (C00-C97)"	"GR113-019"	61646	27257909	226.15821
+	"Micropolitan (Nonmetro)"	"5"	"#Diseases of heart (I00-I09,I11,I13,I20-I51)"	"GR113-054"	67915	27257909	249.15704
+	"Micropolitan (Nonmetro)"	"5"	"#Cerebrovascular diseases (I60-I69)"	"GR113-070"	14575	27257909	53.47072
+	"Micropolitan (Nonmetro)"	"5"	"#Chronic lower respiratory diseases (J40-J47)"	"GR113-082"	19297	27257909	70.79413
+	"Micropolitan (Nonmetro)"	"5"	"#Accidents (unintentional injuries) (V01-X59,Y85-Y86)"	"GR113-112"	16532	27257909	60.65029
+	"Micropolitan (Nonmetro)"	"5"	"#Intentional self-harm (suicide) (*U03,X60-X84,Y87.0)"	"GR113-124"	4844	27257909	17.77099
+	"NonCore (Nonmetro)"	"6"	"#Malignant neoplasms (C00-C97)"	"GR113-019"	48559	18852675	257.57088
+	"NonCore (Nonmetro)"	"6"	"#Diseases of heart (I00-I09,I11,I13,I20-I51)"	"GR113-054"	54825	18852675	290.80754
+	"NonCore (Nonmetro)"	"6"	"#Cerebrovascular diseases (I60-I69)"	"GR113-070"	11497	18852675	60.98339
+	"NonCore (Nonmetro)"	"6"	"#Chronic lower respiratory diseases (J40-J47)"	"GR113-082"	15343	18852675	81.38368
+	"NonCore (Nonmetro)"	"6"	"#Accidents (unintentional injuries) (V01-X59,Y85-Y86)"	"GR113-112"	13108	18852675	69.52859
+	"NonCore (Nonmetro)"	"6"	"#Intentional self-harm (suicide) (*U03,X60-X84,Y87.0)"	"GR113-124"	3626	18852675	19.23334

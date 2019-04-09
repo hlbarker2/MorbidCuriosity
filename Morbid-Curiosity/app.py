@@ -8,14 +8,13 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 import pymysql
+
 pymysql.install_as_MySQLdb()
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from config import remote_db_endpoint, remote_db_port
 from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
-
-import tweets
 
 app = Flask(__name__)
 
@@ -24,7 +23,9 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}", pool_pre_ping=True)
+
+engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}")
+
 conn = engine.connect()
 
 @app.route("/")
@@ -60,25 +61,14 @@ def gender():
 def sviData():
     """Return svi and life expectancy data"""
 
-    data_df = pd.read_sql("SELECT * FROM sviLife", conn)
-    df = pd.DataFrame(data_df, columns=["FIPS","Location","Life Expectancy","RPL_THEMES","RPL_THEME1","RPL_THEME2","RPL_THEME3","RPL_THEME4"])
-    return jsonify(df.to_dict(orient="records"))
-
+    data_df = pd.read_sql("SELECT * FROM sviLife ORDER BY RAND() LIMIT 500", conn)
+    df = pd.DataFrame(data_df, columns=["FIPS","Location","Life_Expectancy","RPL_THEMES","RPL_THEME1","RPL_THEME2","RPL_THEME3","RPL_THEME4"])
+    return df.to_json
 
 @app.route("/tweets")
 def cdctweets():
     """Return CDC twitter data"""
     return jsonify(tweets)
 
-
 if __name__ == "__main__":
     app.run()
-
-
-
-
-
-## Screenshot of code
-
-
-
