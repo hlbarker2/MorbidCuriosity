@@ -13,8 +13,8 @@ pymysql.install_as_MySQLdb()
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
-from ../config import remote_db_endpoint, remote_db_port
-from ../config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
+from config import remote_db_endpoint, remote_db_port
+from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
 
 app = Flask(__name__)
 
