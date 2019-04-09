@@ -1,0 +1,8 @@
+"Notes"	"2013 Urbanization"	"2013 Urbanization Code"	Deaths	Population	Crude Rate
+	"Large Central Metro"	"1"	713257	99544525	716.52057
+	"Large Fringe Metro"	"2"	633171	80496977	786.57736
+	"Medium Metro"	"3"	597343	67510722	884.81205
+	"Small Metro"	"4"	283500	29464705	962.16813
+	"Micropolitan (Nonmetro)"	"5"	290565	27257909	1065.98419
+	"NonCore (Nonmetro)"	"6"	226412	18852675	1200.95424
+"Total"			2744248	323127513	849.27711

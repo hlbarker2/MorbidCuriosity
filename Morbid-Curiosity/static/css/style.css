@@ -3,22 +3,34 @@
 /* ======================================
 Google fonts for reference:
 font-family: 'Roboto', sans-serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Bree Serif', serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Slab', serif;
+font-family: 'Roboto Mono', monospace;
 ====================================== */
 
 
 /* ======================================
  Tag Data
  ====================================== */
+ 
+body {
+   height: 100%;
+   padding: 0;
+   margin: 0;
+   background-color: rgba(235, 235, 240, .9);
+}
+
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 55px;
-    color: black;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: whitesmoke;
 }
 
 h2 {
-    font-family: 'Bree Serif', serif;
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Roboto Mono', monospace;
     font-size: 30px;
     text-align: center;
     font-weight: bold;
@@ -27,58 +39,199 @@ h2 {
 
 h3 {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     color: rgb(34, 33, 33);
+    line-height: 1.75em;
+}
+
+h4 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(235, 45, 31);
 }
 
 p {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    text-align: center;
+    font-size: 16px;
+    text-align: left;
     color: rgb(34, 33, 33);
     display: block;
+    margin: 10px;
+    line-height: 1.5em;
 }
 
+
+/* span {
+    position: absolute;
+    white-space: nowrap;
+    animation: floatText 5s infinite alternate ease-in-out;
+    vertical-align: middle;
+    /* animation: anim 1.5s infinite;
+    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
+/* }
+@-webkit-keyframes floatText{
+  from {
+    left: 00%;
+  }
+
+  to {
+    right: 10%;
+  }
+} */
 /* ======================================
  Class Data
  ====================================== */
 
 .team-name {
-    font-family: 'Bree Serif', serif;
+    font-family: 'Roboto Mono', monospace;
     font-size: 24px;
-    color: rgb(235, 45, 31);
+    font-weight: bold;
+    color: rgb(235, 45, 31) !important;
+}
+  
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
-.heading-custom {
-    font-family: 'Open Sans', sans-serif !important;
-    font-size: 18px !important;
-    color: rgb(34, 33, 33);
-    background-color:transparent !important; 
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 60px;
 }
 
-.navbar {
-    background-color:transparent !important; 
-}
-
+/* overlay an opaque dark color so the text will still show up */
 .jumbotron {
-    background-color:transparent !important; 
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    color: whitesmoke;
+    background-image: url("../images/ryoji-iwata-697773-unsplash.jpg");
+    background-size: cover;
+    min-height: 350px;
+    margin: 0px;
+    position: relative;
 }
 
-.bottom-border {
-    border-bottom: 1px solid rgb(223, 219, 219);
-    margin-bottom: 10px;
+.jumbotron > .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(8, 9, 58, 0.5);
+    z-index: 1;
+}
+
+.jumbotron > .inner {
+    position: relative;
+    z-index: 2;
+}
+
+/* overlay an opaque dark color so the text will still show up */
+.hero {
+    font-family: 'Lato', sans-serif;
+    background-image: url("../images/lindsay-henwood-47743-unsplash.jpg");
+    background-size: cover;
+    min-height: 300px;
+    font-size: 50px;
+    color: whitesmoke;
+    margin: 0px;
+    position: relative;
+}
+
+.hero > .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(8, 9, 58, 0.5);
+    z-index: 1;
+}
+
+.hero > .inner {
+    position: relative;
+    z-index: 2;
+}
+
+.h3-white {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: whitesmoke;
+    padding:30px;
+}
+
+.whitespace {
+    padding: 30px;
+}
+
+.blockquote {
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    border-left: 7px solid rgb(235, 45, 31);
+}
+
+.well {
+    background-color: transparent !important;
+}
+
+.whiteB {
+    background-color: whitesmoke;
+}
+
+.footer {
+    /* margin: 20px; */
+    background-color:rgb(8, 9, 58);
+    color:whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ======================================
+https://codepen.io/anon/pen/yrYOJg
+====================================== */
+
+.pill-box-1 {
+	margin: 50px auto;
+	padding: 10px;
+	text-align: center;
+}
+.pill-box-1 svg {
+	fill: rgb(235, 45, 31);
+	transition: 2s;
+}
+.pill-box-1 svg:hover {
+	fill: rgb(72,209,204);
+    transform: rotate(2190deg);
+    transform-origin: 30 30;
 }
 
 /* ======================================
  ID Data
  ====================================== */
 
-#selDataset {
-    font-family: 'Open Sans', sans-serif;
+/* Style the navbar */
+#navbar {
+  /* overflow: hidden; */
+  background-color: white;
+  border-bottom: 1px;
+  margin-bottom: 0px;
 }
 
-#sample-metadata
-{
-    font-family: 'Open Sans', sans-serif !important;
+/* Navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
 }
