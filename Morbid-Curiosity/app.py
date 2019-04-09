@@ -46,6 +46,7 @@ def dense():
 
     data_df = pd.read_sql("SELECT * FROM density", conn)
     df = pd.DataFrame(data_df, columns=['Density', 'Percent', 'Cause of Death', 'Deaths', 'Population', 'Rate per 100k'])
+    df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 100k': 'Rate_per_100k'}, inplace = True)
     return jsonify(df.to_dict(orient="records"))
 
 @app.route("/genderData")
@@ -63,6 +64,14 @@ def sviData():
     data_df = pd.read_sql("SELECT * FROM sviLife", conn)
     df = pd.DataFrame(data_df, columns=["FIPS","Location","Life Expectancy","RPL_THEMES","RPL_THEME1","RPL_THEME2","RPL_THEME3","RPL_THEME4"])
     return jsonify(df.to_dict(orient="records"))
+
+@app.route("/denseData2")
+def dense2():
+    """Return density data"""
+    data_df = pd.read_sql("SELECT * FROM density", conn)
+    df = pd.DataFrame(data_df, columns=['Density', 'Percent', 'Cause of Death', 'Deaths', 'Population', 'Rate per 100k'])
+    return jsonify(df.to_dict(orient='index'))
+
 
 # ################
 # @app.route("/metadata/<sample>")
