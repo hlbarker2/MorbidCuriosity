@@ -34,16 +34,17 @@ def about():
     """Return the detail page to explain the project process."""
     return render_template("detail.html")
 
-# @app.route("/denseData")
-# def dense():
-#     """Return density data"""
-#     conn = engine.connect()
-#     data_df = pd.read_sql("SELECT * FROM density", conn)
-#     df = pd.DataFrame(data_df, columns=['Density', 'Percent', 'Cause of Death', 'Deaths', 'Population', 'Rate per 100k'])
-#     df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 100k': 'Rate_per_100k'}, inplace = True)
+@app.route("/denseData")
+def dense():
+    """Return density data"""
+    conn = engine.connect()
+    data_df = pd.read_sql("SELECT * FROM density", conn)
+    df = pd.DataFrame(data_df, columns=['Density', 'Percent', 'Cause of Death', 'Deaths', 'Population', 'Rate per 100k'])
+    df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 100k': 'Rate_per_100k'}, inplace = True)
 
-#     conn.close()
-#     return jsonify(df.to_dict(orient="records"))
+    conn.close()
+    return df.to_json()
+    # return jsonify(df.to_dict(orient="records"))
 
 @app.route("/genderData")
 def gender():
@@ -54,18 +55,20 @@ def gender():
     df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 1000': 'Rate_per_1000'}, inplace = True)
     
     conn.close()
+    return df.to_json()
+    # return jsonify(df.to_dict(orient="records"))
+
+
+@app.route("/sviData")
+def sviData():
+    """Return svi and life expectancy data"""
+    conn = engine.connect()
+    data_df = pd.read_sql("SELECT * FROM sviLife", conn)
+    df = pd.DataFrame(data_df, columns=['FIPS','Location','Life Expectancy','RPL_THEMES','RPL_THEME1','RPL_THEME2','RPL_THEME3','RPL_THEME4'])
+    df.rename(columns = {'Life Expectancy': 'Life_Expectancy'}, inplace = True)
+
+    conn.close()
     return jsonify(df.to_dict(orient="records"))
-
-# @app.route("/sviData")
-# def sviData():
-#     """Return svi and life expectancy data"""
-#     conn = engine.connect()
-#     data_df = pd.read_sql("SELECT * FROM sviLife", conn)
-#     df = pd.DataFrame(data_df, columns=['FIPS','Location','Life Expectancy','RPL_THEMES','RPL_THEME1','RPL_THEME2','RPL_THEME3','RPL_THEME4'])
-#     df.rename(columns = {'Life Expectancy': 'Life_Expectancy'}, inplace = True)
-
-#     conn.close()
-#     return jsonify(df.to_dict(orient="records"))
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,25 +1,4 @@
 // ###############################
-// STICKY NAVBAR
-// ###############################
-// When the user scrolls the page, execute myFunction 
-// window.onscroll = function stickyNavbar();
-
-// // Get the navbar
-// var navbar = document.getElementById('navbar');
-
-// // Get the offset position of the navbar
-// var sticky = navbar.offsetTop;
-
-// // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-// function stickyNavbar() {
-//   if (window.pageYOffset >= sticky) {
-//     navbar.classList.add("sticky")
-//   } else {
-//     navbar.classList.remove("sticky");
-//   }
-// };
-
-// ###############################
 // BUILD RADAR CHART WITH CHARTS.JS
 // ###############################
 
@@ -32,11 +11,10 @@ function buildRadar1() {
   d3.json(url).then((data) => {
 
     var diseaseType = Object.values(data.Cause_of_Death);
-    console.log(diseaseType);
+    // console.log(diseaseType);
+
     var deathRate = Object.values(data.Percent);
-    console.log(Percent);
-    var gender = Object.values(data.Gender);
-    console.log(gender);
+    // console.log(deathRate);
 
     // select id to place chart
     var ctx = document.getElementById('radar1').getContext('2d');
@@ -44,21 +22,23 @@ function buildRadar1() {
     var radarChart1 = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels: diseaseType,
+        labels: [diseaseType[0], diseaseType[1], diseaseType[2], diseaseType[3], diseaseType[4]],
         datasets: [{
           label: 'Males',
-          backgroundColor: 'rgba(18,94,227,.5)',
-          borderColor: 'rgba(18,94,227, .5)',
-          pointBackgroundColor:'rgba(18,94,227, .5)', 
+          backgroundColor: 'rgba(0,0,0,0)',
+          borderColor: 'rgb(18,94,227)',
+          borderWidth: 4,
+          pointBackgroundColor:'rgb(18,94,227)', 
           pointRadius: 1,
-          data: deathRate,
+          data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4]]
         }, {
           label: 'Females',
-          backgroundColor: 'rgba(72, 209, 204,.5)',
-          borderColor: 'rgba(72, 209, 204,.5)',
-          pointBackgroundColor:'rgba(72, 209, 204,.5)',
+          backgroundColor: 'rgba(0,0,0,0)',
+          borderColor: 'rgb(72, 209, 204)',
+          borderWidth: 4,
+          pointBackgroundColor:'rgb(72, 209, 204)',
           pointRadius: 1,
-          data: [21.091105716123568, 22.02314474068052, 6.1596843077877015, 6.067652167332496, 4.2790062970001665]
+          data: [deathRate[5], deathRate[6], deathRate[7], deathRate[8], deathRate[9]]
           }
         ]
       },
@@ -66,10 +46,6 @@ function buildRadar1() {
         responsive: true,
         maintainAspectRadio: true,
         scale: hide=false,
-        tooltips: {
-          enable: true,
-          mode: 'label'
-        },
         legend: {
           display: true,
           position: 'bottom',
@@ -86,7 +62,6 @@ function buildRadar1() {
           callbacks: {
             label: function(tooltipItem, data) {
                 var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
                 if (label) {
                     label += ': ';
                 }
@@ -103,144 +78,127 @@ function buildRadar1() {
 // ####################
 // radar numero 2 
 // ####################
-// function buildRadar2() {
-//   var url = `/denseData`;
-//   d3.json(url).then((data) => {
-//     console.log(data)
+function buildRadar2() {
+  var url = `/denseData`;
+  d3.json(url).then((data) => {
+    console.log(data)
 
-//     var diseaseType = Object.values(data.Cause_of_Death);
-//     var deathRate = Object.values(data.Percent);
-//     var densityType = Object.values(data.Percent);
+    var diseaseType = Object.values(data.Cause_of_Death);
+    // console.log(diseaseType)
 
-//     var ctx = document.getElementById('radar2').getContext('2d');
-//     var radarChart1 = new Chart(ctx, {
-//       type: 'radar',
-//       data: {
-//         labels: ['Cancer','Heart Disease', 'Stroke', 'Respiratory', 'Accidents'],
-//         datasets: [{
-//           label: 'Urban',
-//           backgroundColor: 'rgba(235, 45, 31,.5)',
-//           borderColor: 'rgba(235, 45, 31,.5)',
-//           pointBackgroundColor:'rgba(235, 45, 31,.5)',
-//           pointRadius: 1,
-//           data: [22, 7, 19, 6, 21]
-//         }, {
-//           label: 'Rural',
-//           backgroundColor: 'rgba(72, 209, 204,.5)',
-//           borderColor: 'rgba(72, 209, 204,.5)',
-//           pointBackgroundColor: 'rgba(72, 209, 204,.5)',
-//           pointRadius: 1,
-//           data: [21, 11, 6, 9, 4]
-//           }
-//         ]
-//       },
-//       options: {
-//         responsive: true,
-//         maintainAspectRadio: true,
-//         tooltips: {
-//           enable: true,
-//           mode: 'label'
-//         },
-//         legend: {
-//           display: true,
-//           position: 'bottom',
-//           labels: {
-//             fontColor: 'rgb(0, 0, 0)'
-//           }
-//         },
-//         title: {
-//           display: true,
-//           text: 'Urban vs Rural Living',
-//           fontSize: 16
-//         },
-//         tooltips: {
-//           callbacks: {
-//             label: function(tooltipItem, data) {
-//               var label = data.datasets[tooltipItem.datasetIndex].label || '';
-//               if (label) {
-//                   label += ': ';
-//               }
-//               label += Math.round(tooltipItem.yLabel * 100) / 100;
-//               return label;
-//             }
-//           }
-//         }
-//       }
-//     });
-//   });
-// };
+    var deathRate = Object.values(data.Rate_per_100k);
+    // console.log(deathRate)
 
-// ####################
-// radar numero 3
-// ####################
-// function buildRadar3() {
+    var densityType = Object.values(data.Density);
+    // console.log(densityType)
 
-//   var url = `/sviData`;
-//   d3.json(url).then((data) => {
-//     console.log(data)
+    // build chart
+    var ctx = document.getElementById('radar2').getContext('2d');
+    var radarChart1 = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: [densityType[0], densityType[6], densityType[12], densityType[18], densityType[24], densityType[30]],
+        datasets: [{
+          label: 'Mortality Rate per 100K',
+          backgroundColor: 'rgba(235, 45, 31,.5)',
+          borderColor: 'rgb(235, 45, 31)',
+          borderWidth: 4,
+          pointBackgroundColor:'rgb(235, 45, 31)',
+          pointRadius: 1,
+          data: [deathRate[36], deathRate[37], deathRate[38], deathRate[39], deathRate[40], deathRate[41]]
+        }
+        // ,
+        // {
+        //   label: diseaseType[0],
+        //   backgroundColor: 'rgba(235, 45, 31,.5)',
+        //   borderColor: 'rgba(235, 45, 31,.5)',
+        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
+        //   pointRadius: 2,
+        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
+        // },
+        // {
+        //   label: diseaseType[1],
+        //   backgroundColor: 'rgba(235, 45, 31,.5)',
+        //   borderColor: 'rgba(235, 45, 31,.5)',
+        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
+        //   pointRadius: 2,
+        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
+        // },
+        // {
+        //   label: diseaseType[2],
+        //   backgroundColor: 'rgba(235, 45, 31,.5)',
+        //   borderColor: 'rgba(235, 45, 31,.5)',
+        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
+        //   pointRadius: 2,
+        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
+        // },
+        // {
+        //   label: diseaseType[3],
+        //   backgroundColor: 'rgba(235, 45, 31,.5)',
+        //   borderColor: 'rgba(235, 45, 31,.5)',
+        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
+        //   pointRadius: 2,
+        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
+        // },
+        // {
+        //   label: diseaseType[4],
+        //   backgroundColor: 'rgba(235, 45, 31,.5)',
+        //   borderColor: 'rgba(235, 45, 31,.5)',
+        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
+        //   pointRadius: 2,
+        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
+        // },
+        // {
+        //   label: diseaseType[5],
+        //   backgroundColor: 'rgba(235, 45, 31,.5)',
+        //   borderColor: 'rgba(235, 45, 31,.5)',
+        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
+        //   pointRadius: 2,
+        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
+        // }
+      ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRadio: true,
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            fontColor: 'rgb(0, 0, 0)'
+          }
+        },
+        title: {
+          display: true,
+          text: 'Urban vs Rural Living',
+          fontSize: 16
+        },
+        scale: {
+          beginAtZero: false,
+          min: 500,
+          max: 1300,
+          stepSize: 200,
+          labels: {
+            fontColor: 'rgb(0, 0, 0)'
+          }
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              var label = data.datasets[tooltipItem.datasetIndex].label || '';
+              if (label) {
+                  label += ': ';
+              }
+              label += Math.round(tooltipItem.yLabel * 100) / 100;
+              return label;
+            }
+          }
+        }
+      }
+    });
+  });
+};
 
-//     var diseaseType = Object.values(data.Cause_of_Death);
-//     var deathRate = Object.values(data.Percent);
-
-//     var ctx = document.getElementById('radar3').getContext('2d');
-//     var radarChart1 = new Chart(ctx, {
-//       type: 'radar',
-//       data: {
-//         labels: ['Cancer','Heart Disease', 'Stroke', 'Respiratory', 'Accidents'],
-//         datasets: [{
-//           label: 'In Poverty',
-//           backgroundColor: 'rgba(105,105,105,.5)',
-//           borderColor: 'rgba(105,105,105, .5)',
-//           pointBackgroundColor:'rgba(105,105,105, .5)',
-//           pointRadius: 1,
-//           data: [33, 24, 11, 22, 9]
-//         }, {
-//           label: 'Not in Poverty',
-//           backgroundColor: 'rgba(235, 45, 31,.5)',
-//           borderColor: 'rgba(235, 45, 31,.5)',
-//           pointBackgroundColor: 'rgba(235, 45, 31,.5)',
-//           pointRadius: 1,
-//           data: [5, 6, 6, 4, 3]
-//           }
-//         ]
-//       },
-//       options: {
-//         responsive: true,
-//         maintainAspectRadio: true,
-//         tooltips: {
-//           enable: true,
-//           mode: 'label'
-//         },
-//         legend: {
-//           display: true,
-//           position: 'bottom',
-//           labels: {
-//             fontColor: 'rgb(0, 0, 0)'
-//           }
-//         },
-//         title: {
-//           display: true,
-//           text: 'Above vs. Below the Poverty Line',
-//           fontSize: 16
-//         },
-//         tooltips: {
-//           callbacks: {
-//             label: function(tooltipItem, data) {
-//               var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-//               if (label) {
-//                   label += ': ';
-//               }
-//               label += Math.round(tooltipItem.yLabel * 100) / 100;
-//               return label;
-//             }
-//           }
-//         }
-//       }
-//     });
-//   });
-// }
 
 buildRadar1();
-// buildRadar2();
-// buildRadar3();
+buildRadar2();
