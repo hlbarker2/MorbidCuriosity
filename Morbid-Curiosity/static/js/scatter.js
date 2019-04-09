@@ -91,7 +91,7 @@ function buildCharts() {
             }
         ];
 
-        console.log(data);
+        // console.log(data);
 
         var frames = [
             { name: 'SVI', data: [{ x: allLifeExpect, y: allSVI }] },
@@ -111,9 +111,10 @@ function buildCharts() {
                 text:
                     "Ranking for below poverty,<br>unemployed, income and<br>no high school diploma",
                 font: {
-                    color: "rgb(18,94,227)"
+                    color: "rgb(18,94,227)",
+                    size: 10
                 },
-                width: 180,
+                width: 130,
                 bordercolor: "black",
                 bgcolor: "rgb(242, 242, 242)",
                 showarrow: false,
@@ -126,11 +127,12 @@ function buildCharts() {
         var householdComp_annotations = [
             {
                 text:
-                    "Ranking for aged 65 or Older, aged 17<br>or younger, civilian with a disability,<br> single-parent households",
+                    "Ranking for aged 65 or<br>older, aged 17 or younger,<br>civilian with a disability,<br>single-parent households",
                 font: {
-                    color: "rgb(235, 45, 31)"
+                    color: "rgb(235, 45, 31)",
+                    size: 10
                 },
-                width: 240,
+                width: 130,
                 bordercolor: "black",
                 bgcolor: "rgb(242, 242, 242)",
                 showarrow: false,
@@ -144,14 +146,15 @@ function buildCharts() {
             {
                 text: 'Ranking for minority<br>and speak English<br>"less than well"',
                 font: {
-                    color: "rgb(72, 209, 204)"
+                    color: "rgb(72, 209, 204)",
+                    size: 10
                 },
-                width: 150,
+                width: 98,
                 bordercolor: "black",
                 bgcolor: "rgb(242, 242, 242)",
                 showarrow: false,
                 x: 1.0,
-                y: 0.9,
+                y: 0.95,
                 xref: "paper"
             }
         ];
@@ -159,16 +162,17 @@ function buildCharts() {
         var transport_annotations = [
             {
                 text:
-                    "Ranking for multi-unit structures<br>mobile homes, crowding, no<br>vehicle and group quarters",
+                    "Ranking for multi-unit<br>structures, mobile homes,<br>crowding, no vehicle<br>and group quarters",
                 font: {
-                    color: "rgb(255,140,0)"
+                    color: "rgb(255,140,0)",
+                    size: 10
                 },
-                width: 200,
+                width: 122,
                 bordercolor: "black",
                 bgcolor: "rgb(242, 242, 242)",
                 showarrow: false,
                 x: 1.0,
-                y: 0.9,
+                y: 0.95,
                 xref: "paper"
             }
         ];
@@ -236,8 +240,8 @@ function buildCharts() {
                 pad: { r: 6, t: 6 },
                 showactive: true,
                 type: "buttons",
-                x: -0.24,
-                y: 1,
+                x: -0.30,
+                y: 0.95,
                 xanchor: "center",
                 yanchor: "center",
                 bgcolor: "rgb(242, 242, 242)"
@@ -266,7 +270,6 @@ function buildCharts() {
             }
         };
 
-        console.log(data);
         Plotly.newPlot("bar", data, layout)
 })};
 
