@@ -1,0 +1,11 @@
+"Notes"	"Gender"	"Gender Code"	"ICD-10 113 Cause List"	"ICD-10 113 Cause List Code"	Deaths	Population	Crude Rate
+	"Female"	"F"	"#Malignant neoplasms (C00-C97)"	"GR113-019"	283467	164048590	1.72795
+	"Female"	"F"	"#Diseases of heart (I00-I09,I11,I13,I20-I51)"	"GR113-054"	295995	164048590	1.80431
+	"Female"	"F"	"#Cerebrovascular diseases (I60-I69)"	"GR113-070"	82787	164048590	0.50465
+	"Female"	"F"	"#Chronic lower respiratory diseases (J40-J47)"	"GR113-082"	81551	164048590	0.49711
+	"Female"	"F"	"#Accidents (unintentional injuries) (V01-X59,Y85-Y86)"	"GR113-112"	57510	164048590	0.35057
+	"Male"	"M"	"#Malignant neoplasms (C00-C97)"	"GR113-019"	314571	159078923	1.97745
+	"Male"	"M"	"#Diseases of heart (I00-I09,I11,I13,I20-I51)"	"GR113-054"	339265	159078923	2.13268
+	"Male"	"M"	"#Cerebrovascular diseases (I60-I69)"	"GR113-070"	59355	159078923	0.37312
+	"Male"	"M"	"#Chronic lower respiratory diseases (J40-J47)"	"GR113-082"	73045	159078923	0.45917
+	"Male"	"M"	"#Accidents (unintentional injuries) (V01-X59,Y85-Y86)"	"GR113-112"	103864	159078923	0.65291
