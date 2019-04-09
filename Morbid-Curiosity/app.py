@@ -36,38 +36,45 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
-
-# @app.route("/datatest")
-# def names():
-#     """Return mortality data"""
-
-#     data_df = pd.read_sql("SELECT * FROM density", conn)
-#     data_json = data_df.to_json(orient="records")
-#     return data_json
+@app.route("/process")
+def about():
+    """Return the detail page to explain the project process."""
+    return render_template("detail.html")
 
 @app.route("/denseData")
 def dense():
     """Return density data"""
+    conn = engine.connect()
 
     data_df = pd.read_sql("SELECT * FROM density", conn)
     df = pd.DataFrame(data_df, columns=['Density', 'Percent', 'Cause of Death', 'Deaths', 'Population', 'Rate per 100k'])
-    return jsonify(df.to_dict(orient="records"))
+    df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 100k': 'Rate_per_100k'}, inplace = True)
+
+    conn.close()
+    return df.to_json()
 
 @app.route("/genderData")
 def gender():
     """Return gender data"""
-
+    conn = engine.connect()
     data_df = pd.read_sql("SELECT * FROM gender", conn)
     df = pd.DataFrame(data_df, columns=['Gender', 'Cause of Death', 'Deaths', 'Population', 'Rate per 1000', 'Percent'])
-    return jsonify(df.to_dict(orient="records"))
+    df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 1000': 'Rate_per_1000'}, inplace = True)
+    
+    conn.close()
+    return df.to_json()
 
 @app.route("/sviData")
 def sviData():
     """Return svi and life expectancy data"""
-
+    conn = engine.connect()
     data_df = pd.read_sql("SELECT * FROM sviLife ORDER BY RAND() LIMIT 500", conn)
     df = pd.DataFrame(data_df, columns=["FIPS","Location","Life_Expectancy","RPL_THEMES","RPL_THEME1","RPL_THEME2","RPL_THEME3","RPL_THEME4"])
     return df.to_json()
 
+    conn.close()
+    return jsonify(df.to_dict(orient="records"))
+
 if __name__ == "__main__":
     app.run()
+
