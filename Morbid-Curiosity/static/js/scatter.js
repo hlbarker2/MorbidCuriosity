@@ -91,7 +91,7 @@ function buildCharts() {
             }
         ];
 
-        // console.log(data);
+        console.log(data);
 
         var frames = [
             { name: 'SVI', data: [{ x: allLifeExpect, y: allSVI }] },
@@ -270,6 +270,7 @@ function buildCharts() {
             }
         };
 
+        console.log(data);
         Plotly.newPlot("bar", data, layout)
 })};
 
