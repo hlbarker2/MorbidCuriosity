@@ -107,55 +107,6 @@ function buildRadar2() {
           pointRadius: 1,
           data: [deathRate[36], deathRate[37], deathRate[38], deathRate[39], deathRate[40], deathRate[41]]
         }
-        // ,
-        // {
-        //   label: diseaseType[0],
-        //   backgroundColor: 'rgba(235, 45, 31,.5)',
-        //   borderColor: 'rgba(235, 45, 31,.5)',
-        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
-        //   pointRadius: 2,
-        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
-        // },
-        // {
-        //   label: diseaseType[1],
-        //   backgroundColor: 'rgba(235, 45, 31,.5)',
-        //   borderColor: 'rgba(235, 45, 31,.5)',
-        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
-        //   pointRadius: 2,
-        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
-        // },
-        // {
-        //   label: diseaseType[2],
-        //   backgroundColor: 'rgba(235, 45, 31,.5)',
-        //   borderColor: 'rgba(235, 45, 31,.5)',
-        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
-        //   pointRadius: 2,
-        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
-        // },
-        // {
-        //   label: diseaseType[3],
-        //   backgroundColor: 'rgba(235, 45, 31,.5)',
-        //   borderColor: 'rgba(235, 45, 31,.5)',
-        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
-        //   pointRadius: 2,
-        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
-        // },
-        // {
-        //   label: diseaseType[4],
-        //   backgroundColor: 'rgba(235, 45, 31,.5)',
-        //   borderColor: 'rgba(235, 45, 31,.5)',
-        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
-        //   pointRadius: 2,
-        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
-        // },
-        // {
-        //   label: diseaseType[5],
-        //   backgroundColor: 'rgba(235, 45, 31,.5)',
-        //   borderColor: 'rgba(235, 45, 31,.5)',
-        //   pointBackgroundColor:'rgba(235, 45, 31,.5)',
-        //   pointRadius: 2,
-        //   data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4], deathRate[5]]
-        // }
       ]
       },
       options: {
@@ -198,7 +149,6 @@ function buildRadar2() {
     });
   });
 };
-
 
 buildRadar1();
 buildRadar2();
