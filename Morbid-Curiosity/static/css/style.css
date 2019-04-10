@@ -60,27 +60,10 @@ p {
     color: rgb(34, 33, 33);
     display: block;
     margin: 10px;
-    line-height: 1.5em;
+    line-height: 2em;
 }
 
 
-/* span {
-    position: absolute;
-    white-space: nowrap;
-    animation: floatText 5s infinite alternate ease-in-out;
-    vertical-align: middle;
-    /* animation: anim 1.5s infinite;
-    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
-/* }
-@-webkit-keyframes floatText{
-  from {
-    left: 00%;
-  }
-
-  to {
-    right: 10%;
-  }
-} */
 /* ======================================
  Class Data
  ====================================== */
@@ -220,7 +203,6 @@ https://codepen.io/anon/pen/yrYOJg
 
 /* Style the navbar */
 #navbar {
-  /* overflow: hidden; */
   background-color: white;
   border-bottom: 1px;
   margin-bottom: 0px;
@@ -230,8 +212,28 @@ https://codepen.io/anon/pen/yrYOJg
 #navbar a {
   float: left;
   display: block;
-  color: #f2f2f2;
   text-align: center;
   padding: 14px;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: rgb(34, 33, 33);
+}
+
+#radar {
+    background-color: rgba(255, 255, 255, .5);
+    padding: 30px;
+    margin:10px;
+    border: .5px solid black;
+    outline-style: solid;
+    outline-color: rgba(148, 147, 147,0);
+}
+
+#barGraph {
+    background-color: rgba(255, 255, 255, .5);
+    padding: 30px;
+    margin:10px;
+    border: .5px solid black;
+    outline-style: solid;
+    outline-color: rgba(148, 147, 147,0);
 }

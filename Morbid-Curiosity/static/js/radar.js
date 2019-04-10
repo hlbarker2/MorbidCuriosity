@@ -17,12 +17,13 @@ function buildRadar1() {
     // console.log(deathRate);
 
     // select id to place chart
-    var ctx = document.getElementById('radar1').getContext('2d');
+    var ctx = document.getElementById('radar').getContext('2d');
     // build chart
     var radarChart1 = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels: [diseaseType[0], diseaseType[1], diseaseType[2], diseaseType[3], diseaseType[4]],
+        labels:
+          [diseaseType[0], diseaseType[1], diseaseType[2], diseaseType[3], diseaseType[4]],
         datasets: [{
           label: 'Males',
           backgroundColor: 'rgba(0,0,0,0)',
@@ -45,10 +46,10 @@ function buildRadar1() {
       options: {
         responsive: true,
         maintainAspectRadio: true,
-        scale: hide=false,
         legend: {
           display: true,
           position: 'bottom',
+          fontSize: 16,
           labels: {
             fontColor: 'rgb(0, 0, 0)'
           }
@@ -56,7 +57,8 @@ function buildRadar1() {
         title: {
           display: true,
           text: 'Female vs. Male',
-          fontSize: 16
+          fontSize: 22,
+          fontColor : "#696969"
         },
         tooltips: {
           callbacks: {
@@ -90,48 +92,62 @@ function buildRadar2() {
     // console.log(deathRate)
 
     var densityType = Object.values(data.Density);
-    // console.log(densityType)
+    console.log(densityType)
 
     // build chart
-    var ctx = document.getElementById('radar2').getContext('2d');
+    var ctx = document.getElementById('barGraph').getContext('2d');
     var radarChart1 = new Chart(ctx, {
-      type: 'radar',
+      type: 'bar',
       data: {
         labels: [densityType[0], densityType[6], densityType[12], densityType[18], densityType[24], densityType[30]],
         datasets: [{
           label: 'Mortality Rate per 100K',
-          backgroundColor: 'rgba(235, 45, 31,.5)',
+          backgroundColor: 'rgba(235, 45, 31,.9)',
           borderColor: 'rgb(235, 45, 31)',
-          borderWidth: 4,
+          borderWidth: 0,
           pointBackgroundColor:'rgb(235, 45, 31)',
           pointRadius: 1,
-          data: [deathRate[36], deathRate[37], deathRate[38], deathRate[39], deathRate[40], deathRate[41]]
-        }
-      ]
+          data: [deathRate[36], deathRate[37], deathRate[38], deathRate[39], deathRate[40], deathRate[41]],
+        }]
       },
       options: {
         responsive: true,
         maintainAspectRadio: true,
         legend: {
-          display: true,
-          position: 'bottom',
-          labels: {
-            fontColor: 'rgb(0, 0, 0)'
-          }
+          display: false,
+        },
+        scales: {
+          yAxes: [{
+            ticks:{
+              min : 0,
+              stepSize : 300,
+              fontColor : "#696969",
+              fontSize : 16
+            },
+            gridLines:{
+              color: "#DCDCDC",
+              lineWidth : 1,
+              zeroLineColor :"#C0C0C0",
+              zeroLineWidth : 1
+            },
+            stacked: true,
+          }],
+          xAxes: [{
+            ticks:{
+              fontColor : "#696969",
+              fontSize : 16
+            },
+            gridLines:{
+              color: "#C0C0C0",
+              lineWidth: 0
+            }
+          }]
         },
         title: {
           display: true,
-          text: 'Urban vs Rural Living',
-          fontSize: 16
-        },
-        scale: {
-          beginAtZero: false,
-          min: 500,
-          max: 1300,
-          stepSize: 200,
-          labels: {
-            fontColor: 'rgb(0, 0, 0)'
-          }
+          text: 'Urban vs. Rural Living',
+          fontSize: 22,
+          fontColor : "#696969",
         },
         tooltips: {
           callbacks: {

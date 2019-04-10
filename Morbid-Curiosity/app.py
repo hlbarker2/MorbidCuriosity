@@ -44,7 +44,6 @@ def dense():
 
     conn.close()
     return df.to_json()
-    # return jsonify(df.to_dict(orient="records"))
 
 @app.route("/genderData")
 def gender():
@@ -56,8 +55,6 @@ def gender():
     
     conn.close()
     return df.to_json()
-    # return jsonify(df.to_dict(orient="records"))
-
 
 @app.route("/sviData")
 def sviData():
