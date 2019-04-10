@@ -1,6 +1,2 @@
-# api keys
+# ignore config file
 config.py
-
-__pycache__
-
-.ipynb_checkpoints

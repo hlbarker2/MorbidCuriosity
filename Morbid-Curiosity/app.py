@@ -8,12 +8,19 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 import pymysql
+
 pymysql.install_as_MySQLdb()
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
-from config import remote_db_endpoint, remote_db_port
-from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
+#from config import remote_db_endpoint, remote_db_port
+#from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
+
+remote_db_endpoint = os.environ['remote_db_endpoint']
+remote_db_port = os.environ['remote_db_port']
+remote_morbid_dbname = os.environ['remote_morbid_dbname']
+remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
+remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
 
 app = Flask(__name__)
 
@@ -21,7 +28,7 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}", pool_pre_ping=True)
+engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}")
 conn = engine.connect()
 
 @app.route("/")
@@ -38,6 +45,7 @@ def about():
 def dense():
     """Return density data"""
     conn = engine.connect()
+
     data_df = pd.read_sql("SELECT * FROM density", conn)
     df = pd.DataFrame(data_df, columns=['Density', 'Percent', 'Cause of Death', 'Deaths', 'Population', 'Rate per 100k'])
     df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 100k': 'Rate_per_100k'}, inplace = True)
@@ -60,12 +68,13 @@ def gender():
 def sviData():
     """Return svi and life expectancy data"""
     conn = engine.connect()
-    data_df = pd.read_sql("SELECT * FROM sviLife", conn)
-    df = pd.DataFrame(data_df, columns=['FIPS','Location','Life Expectancy','RPL_THEMES','RPL_THEME1','RPL_THEME2','RPL_THEME3','RPL_THEME4'])
-    df.rename(columns = {'Life Expectancy': 'Life_Expectancy'}, inplace = True)
+    data_df = pd.read_sql("SELECT * FROM sviLife ORDER BY RAND() LIMIT 500", conn)
+    df = pd.DataFrame(data_df, columns=["FIPS","Location","Life_Expectancy","RPL_THEMES","RPL_THEME1","RPL_THEME2","RPL_THEME3","RPL_THEME4"])
+    return df.to_json()
 
     conn.close()
     return jsonify(df.to_dict(orient="records"))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
+
