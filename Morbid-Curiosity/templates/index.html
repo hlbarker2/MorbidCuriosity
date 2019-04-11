@@ -8,6 +8,8 @@
   <title>Morbid Curiosity</title>
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
 </head>
@@ -81,11 +83,62 @@
     <!-- USA heat map -->
     <h2 class="whitespace">US Mortality</h2>
     <div class="row whitespace">
+
       <div class="col-md-6">
         <div id="heatmapSelector"></div>
       </div>
       <div class="col-md-6">
         <div class="well" id="selectorInformation"></div>
+
+      <div class="col-md-4">
+          <div class="form-group">
+              <ul class="list-group" id="filters">
+                <li class="filter list-group-item">
+                  <label>Select a Disease</label>
+                  <select id="disease_type" onchange="rebuildMap()">
+                    <option value="Total_Death_Rate" selected>Total Death Rate</option>
+                    <option value="Cancer_Death_Rate">Cancer Death Rate</option>
+                    <option value="Heart_Death_Rate">Heart Disease Death Rate</option>
+                    <option value="Stroke_Death_Rate">Stroke Death Rate</option>
+                    <option value="LowerResp_Death_Rate">Respiratory Disease Death Rate</option>
+                    <option value="Accident_Death_Rate">Accidents Death Rate</option>
+                  </select>
+                </li>
+              </ul>
+            </div>  
+      </div>
+      <div class="col-md-4">
+          <div class="form-group">
+              <ul class="list-group" id="filters">
+                <li class="filter list-group-item">
+                  <label>Select a Population Size</label>
+                  <select id="pop_size" onchange="rebuildMap()">
+                    <option value="0" selected>All</option>
+                    <option value="5000">5,000+</option>
+                    <option value="10000">10,000+</option>
+                    <option value="25000">25,000+</option>
+                    <option value="50000">50,000+</option>
+                  </select>
+                </li>
+              </ul>
+            </div>  
+      </div>
+      <div class="col-md-4">
+          <div class="form-group">
+              <ul class="list-group" id="filters">
+                <li class="filter list-group-item">
+                  <label>Select Medicare Spending per Enrollee</label>
+                  <select id="med_spend" onchange="rebuildMap()">
+                      <option value="0" selected>All</option>
+                      <option value="5000">$5,000+</option>
+                      <option value="7500">$7,500+</option>
+                      <option value="10000">$10,000+</option>
+                      <option value="12500">$12,500+</option>
+                      <option value="15000">$15,000+</option>
+                    </select>
+                </li>
+              </ul>
+            </div>
       </div>
       <div class="col-md-12">
         <div id="heatmap"></div>
@@ -165,6 +218,7 @@
   <script src="static/js/scatter.js"></script>
   <script src="static/js/radar.js"></script> 
   <script src="static/js/map.js"></script>
+  <script type="text/javascript" src="static/js/choropleth.js"></script>
 
 </body>
 

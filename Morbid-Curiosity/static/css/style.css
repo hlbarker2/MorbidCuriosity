@@ -222,6 +222,7 @@ https://codepen.io/anon/pen/yrYOJg
     border: .5px solid black;
     outline-style: solid;
     outline-color: rgba(148, 147, 147,0);
+
 }
 
 #bar .plot-container { 
@@ -229,6 +230,7 @@ https://codepen.io/anon/pen/yrYOJg
     width: 1145px;
     height: 455px
 }
+
 
 #heatmapSelector {
     background-color: rgba(255, 255, 255, .5);
@@ -238,4 +240,8 @@ https://codepen.io/anon/pen/yrYOJg
     outline-style: solid;
     outline-color: rgba(148, 147, 147,0);
 }
+
+#heatmap{
+    height: 650px;
+  }
 
