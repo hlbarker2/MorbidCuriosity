@@ -29,7 +29,6 @@ h1 {
 }
 
 h2 {
-    /* font-family: 'Raleway', sans-serif; */
     font-family: 'Roboto Mono', monospace;
     font-size: 30px;
     text-align: center;
@@ -69,22 +68,10 @@ p {
  ====================================== */
 
 .team-name {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace !important;
     font-size: 24px;
     font-weight: bold;
     color: rgb(235, 45, 31) !important;
-}
-  
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-    padding-top: 60px;
 }
 
 /* overlay an opaque dark color so the text will still show up */
@@ -169,7 +156,6 @@ p {
 }
 
 .footer {
-    /* margin: 20px; */
     background-color:rgb(8, 9, 58);
     color:whitesmoke;
     font-family: 'Roboto', sans-serif;
@@ -182,7 +168,7 @@ p {
 https://codepen.io/anon/pen/yrYOJg
 ====================================== */
 
-.pill-box-1 {
+/* .pill-box-1 {
 	margin: 50px auto;
 	padding: 10px;
 	text-align: center;
@@ -195,7 +181,7 @@ https://codepen.io/anon/pen/yrYOJg
 	fill: rgb(72,209,204);
     transform: rotate(2190deg);
     transform-origin: 30 30;
-}
+} */
 
 /* ======================================
  ID Data
