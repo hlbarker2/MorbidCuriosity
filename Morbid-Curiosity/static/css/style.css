@@ -223,3 +223,12 @@ https://codepen.io/anon/pen/yrYOJg
     outline-style: solid;
     outline-color: rgba(148, 147, 147,0);
 }
+
+}
+
+#bar .plot-container { 
+    border: 2px solid black;
+    width: 1145px;
+    height: 455px
+}
+
