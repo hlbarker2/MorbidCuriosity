@@ -11,9 +11,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-  <!-- <link rel="stylesheet" type="text/css" href="../static/css/style.scss"> -->
-  <!-- <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-social.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/assets/font-awesome.css"> -->
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
 </head>
 
@@ -86,6 +83,13 @@
     <!-- USA heat map -->
     <h2 class="whitespace">US Mortality</h2>
     <div class="row whitespace">
+
+      <div class="col-md-6">
+        <div id="heatmapSelector"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="well" id="selectorInformation"></div>
+
       <div class="col-md-4">
           <div class="form-group">
               <ul class="list-group" id="filters">
@@ -134,10 +138,10 @@
                     </select>
                 </li>
               </ul>
-            </div>  
+            </div>
       </div>
       <div class="col-md-12">
-        <div id="heatmap">{Heatmap}</div>
+        <div id="heatmap"></div>
         <p>Explainer about the data and visualization will fit right here</p>
       </div>
     </div>
