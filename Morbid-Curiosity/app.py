@@ -1,4 +1,5 @@
 import os
+import json
 
 import pandas as pd
 import numpy as np
@@ -11,7 +12,7 @@ import pymysql
 
 pymysql.install_as_MySQLdb()
 
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, url_for, json
 from flask_sqlalchemy import SQLAlchemy
 #from config import remote_db_endpoint, remote_db_port
 #from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
@@ -23,6 +24,7 @@ remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
 remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
 
 app = Flask(__name__)
+SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 #################################################
 # Database Setup
@@ -30,11 +32,18 @@ app = Flask(__name__)
 
 engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}")
 conn = engine.connect()
+json_url = os.path.join(SITE_ROOT, "data", "us.geo.json")
+data = json.load(open(json_url))
 
 @app.route("/")
 def index():
     """Return the homepage."""
     return render_template("index.html")
+
+@app.route('/data')
+def get_data():
+    global data    
+    return json.dumps(data)
 
 @app.route("/process")
 def about():
