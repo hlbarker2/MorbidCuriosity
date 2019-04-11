@@ -32,7 +32,7 @@ SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}")
 conn = engine.connect()
-json_url = os.path.join(SITE_ROOT, "data", "us.geo.json")
+json_url = os.path.join(SITE_ROOT, "static", "data", "us.geo.json")
 data = json.load(open(json_url))
 
 @app.route("/")
