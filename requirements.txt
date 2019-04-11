@@ -37,6 +37,8 @@ ptyprocess==0.5.2
 
 Pygments==2.2.0
 
+pymysql==0.9.3
+
 simplegeneric==0.8.1
 
 six==1.11.0

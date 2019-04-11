@@ -1,4 +1,5 @@
 import os
+import json
 
 import pandas as pd
 import numpy as np
@@ -7,95 +8,82 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+import pymysql
 
-from flask import Flask, jsonify, render_template
+pymysql.install_as_MySQLdb()
+
+from flask import Flask, jsonify, render_template, url_for, json
 from flask_sqlalchemy import SQLAlchemy
+from config import remote_db_endpoint, remote_db_port
+from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
+
+#remote_db_endpoint = os.environ['remote_db_endpoint']
+#remote_db_port = os.environ['remote_db_port']
+#remote_morbid_dbname = os.environ['remote_morbid_dbname']
+#remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
+#remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
 
 app = Flask(__name__)
-
+SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 #################################################
 # Database Setup
 #################################################
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db/bellybutton.sqlite"
-db = SQLAlchemy(app)
-
-# reflect an existing database into a new model
-Base = automap_base()
-# reflect the tables
-Base.prepare(db.engine, reflect=True)
-
-# Save references to each table
-Samples_Metadata = Base.classes.sample_metadata
-Samples = Base.classes.samples
-
+engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}")
+conn = engine.connect()
+json_url = os.path.join(SITE_ROOT, "data", "us.geo.json")
+data = json.load(open(json_url))
 
 @app.route("/")
 def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route('/data')
+def get_data():
+    global data    
+    return json.dumps(data)
 
-@app.route("/mortality")
-def names():
-    """Return mortality data"""
+@app.route("/process")
+def about():
+    """Return the detail page to explain the project process."""
+    return render_template("detail.html")
 
-    # Use Pandas to perform the sql query
-    stmt = db.session.query(Samples).statement
-    df = pd.read_sql_query(stmt, db.session.bind)
+@app.route("/denseData")
+def dense():
+    """Return density data"""
+    conn = engine.connect()
 
-    # Return a list of the column names (sample names)
-    return jsonify(list(df.columns)[2:])
+    data_df = pd.read_sql("SELECT * FROM density", conn)
+    df = pd.DataFrame(data_df, columns=['Density', 'Percent', 'Cause of Death', 'Deaths', 'Population', 'Rate per 100k'])
+    df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 100k': 'Rate_per_100k'}, inplace = True)
 
+    conn.close()
+    return df.to_json()
 
-@app.route("/metadata/<sample>")
-def sample_metadata(sample):
-    """Return the MetaData for a given sample."""
-    sel = [
-        Samples_Metadata.sample,
-        Samples_Metadata.ETHNICITY,
-        Samples_Metadata.GENDER,
-        Samples_Metadata.AGE,
-        Samples_Metadata.LOCATION,
-        Samples_Metadata.BBTYPE,
-        Samples_Metadata.WFREQ,
-    ]
+@app.route("/genderData")
+def gender():
+    """Return gender data"""
+    conn = engine.connect()
+    data_df = pd.read_sql("SELECT * FROM gender", conn)
+    df = pd.DataFrame(data_df, columns=['Gender', 'Cause of Death', 'Deaths', 'Population', 'Rate per 1000', 'Percent'])
+    df.rename(columns = {'Cause of Death': 'Cause_of_Death', 'Rate per 1000': 'Rate_per_1000'}, inplace = True)
+    
+    conn.close()
+    return df.to_json()
 
-    results = db.session.query(*sel).filter(Samples_Metadata.sample == sample).all()
+@app.route("/sviData")
+def sviData():
+    """Return svi and life expectancy data"""
+    conn = engine.connect()
+    data_df = pd.read_sql("SELECT * FROM sviLife ORDER BY RAND() LIMIT 500", conn)
+    df = pd.DataFrame(data_df, columns=["FIPS","Location","Life_Expectancy","RPL_THEMES","RPL_THEME1","RPL_THEME2","RPL_THEME3","RPL_THEME4"])
+    return df.to_json()
 
-    # Create a dictionary entry for each row of metadata information
-    sample_metadata = {}
-    for result in results:
-        sample_metadata["Sample"] = result[0]
-        sample_metadata["Ethnicity"] = result[1]
-        sample_metadata["Gender"] = result[2]
-        sample_metadata["Age"] = result[3]
-        sample_metadata["Location"] = result[4]
-        sample_metadata["BB Type"] = result[5]
-        sample_metadata["Wash Freq"] = result[6]
-
-    print(sample_metadata)
-    return jsonify(sample_metadata)
-
-
-@app.route("/samples/<sample>")
-def samples(sample):
-    """Return `otu_ids`, `otu_labels`,and `sample_values`."""
-    stmt = db.session.query(Samples).statement
-    df = pd.read_sql_query(stmt, db.session.bind)
-
-    # Filter the data based on the sample number and
-    # only keep rows with values above 1
-    sample_data = df.loc[df[sample] > 1, ["otu_id", "otu_label", sample]]
-    # Format the data to send as json
-    data = {
-        "otu_ids": sample_data.otu_id.values.tolist(),
-        "sample_values": sample_data[sample].values.tolist(),
-        "otu_labels": sample_data.otu_label.tolist(),
-    }
-    print(data)
-    return jsonify(data)
+    conn.close()
+    return jsonify(df.to_dict(orient="records"))
 
 if __name__ == "__main__":
     app.run()
+

@@ -6,70 +6,221 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Morbid Curiosity</title>
-  <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans|Roboto" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+  <!-- <link rel="stylesheet" type="text/css" href="../static/css/style.scss"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-social.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/assets/font-awesome.css"> -->
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
 </head>
 
 <body>
   <!-- navbar -->
-  <nav class="navbar navbar-default">
+  <nav id="navbar">
     <div class="navbar-header">
-      <a class="navbar-brand team-name" href="index.html">Morbid Curiosity</a>
+      <a class="navbar-brand team-name" href="index.html" style="padding-left:25px">Morbid Curiosity</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="menu">
-          <a target="#_blank" href="https://github.com/hlbarker2/MorbidCuriosity">
+          <a target="#_blank" href="https://github.com/hlbarker2/MorbidCuriosity" style="padding-right:20px">
             <img width=25px src="../static/images/Octicons-mark-github.svg">
           </a>
+        </li>
+        <li class="menu">
+          <a target="#" href="detail.html">Detail
+          </a>
+        </li>
+          <!-- <a class="btn btn-social-icon btn-github" target="#_blank" href="https://github.com/hlbarker2/MorbidCuriosity">
+            <span class="fa fa-github"></span>
+          </a> -->
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 jumbotron text-center">
-        <h1>The Social Determinants of Health</h1>
-        <h3>Exploring patterns in the causes of disease and death in the United States</h3>
-      </div>
-    </div>
-
-    <div class="row">
-      <!-- USA heat map -->
-      <div class="col-md-12">
-        <h2>Heatmap Goes Here</h2>
-        <p>Explainer about the data and visualization will fit right here</p>
-        <div class="heatmap"> 
-          <!-- <h3>Select a sample to view:</h3>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select> -->
-        </div>      
-      </div>
-    </div>
-    <div class="row">
-      <!-- bar charts -->
-      <div class="col-md-5">
-        <h2>Bar Charts Go Here</h2>
-        <p>Explainer about the data and visualization will fit right here</p>
-        <div id="bar">
-        </div> 
-      </div>
-      <!-- radar chart -->
-      <div class="col-md-5">
-        <h2>Radar Chart Goes Here</h2>
-        <p>Explainer about the data and visualization will fit right here</p>
-        <div id="radar">
-        </div> 
+  <div class="row">
+    <div class="jumbotron text-center">
+      <div class="overlay"></div>
+      <div class="inner">
+        <h1><span>The Social Determinants of Health</span></h1>
+        <h3 class="h3-white">Exploring patterns in the causes of disease and death in the United States</h3>
       </div>
     </div>
   </div>
 
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <div class="container">
+    <div class="row whitespace">
+      <!-- INTRO -->
+      <div class="col-sm-9">
+        <blockquote class="blockquote">
+          <h3 class="mb-0 text-left" style="padding-left: 10px">We are Team Morbid Curiosity. Our goal is to analyze United States Mortality and Demographic Data to identify patterns 
+              in deaths in the United States. The hope with this project is that it sheds light on areas of concern in the United States 
+              that can be addressed by public health professionals to help Americans live longer and healthier lives.
+          </h3>
+        </blockquote>
+      </div>
+      <div class="col-sm-3">
+        <div class="well">
+          <h4>Meet the Team</h4>
+          <div class="row">
+            <div class="col-sm-6">
+              <a role="button" target="#_blank" href="https://www.linkedin.com/in/sarah-fawson-b911b083/" class="btn btn-light">
+              <img width=40px src="../static/images/sarah-emoji.png">
+              </a>
+              <a role="button" target="#_blank" href="https://www.linkedin.com/in/connorvergara/" class="btn btn-light">
+              <img width=40px src="../static/images/connor-emoji.png">
+              </a>
+            </div>
+            <div class="col-sm-6">
+              <a role="button" target="#_blank" href="https://www.linkedin.com/in/hannah-barker-915a7129/" class="btn btn-light btn-lg">
+              <img width=40px src="../static/images/hannah-emoji.png">
+              </a>
+              <a role="button" target="#_blank" href="https://www.linkedin.com/in/paul-westfall-633a2611/" class="btn btn-light btn-lg">
+              <img width=40px src="../static/images/paul-emoji.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- <div class="pill-box-1">
+        <svg width="200" height="250" xmlns="http://www.w3.org/2000/svg">
+          <title>Pill</title>
+          <ellipse x="0" y="0" cx="65" cy="65" rx="0" ry="0" />
+        </svg>
+        </div> -->
+      </div>
+    <hr>
+    <!-- USA heat map -->
+    <h2 class="whitespace">US Mortality</h2>
+    <div class="row whitespace">
+      <div class="col-md-4">
+          <div class="form-group">
+              <ul class="list-group" id="filters">
+                <li class="filter list-group-item">
+                  <label>Select a Disease</label>
+                  <select id="disease_type" onchange="rebuildMap()">
+                    <option value="Total_Death_Rate" selected>Total Death Rate</option>
+                    <option value="Cancer_Death_Rate">Cancer Death Rate</option>
+                    <option value="Heart_Death_Rate">Heart Disease Death Rate</option>
+                    <option value="Stroke_Death_Rate">Stroke Death Rate</option>
+                    <option value="LowerResp_Death_Rate">Respiratory Disease Death Rate</option>
+                    <option value="Accident_Death_Rate">Accidents Death Rate</option>
+                  </select>
+                </li>
+              </ul>
+            </div>  
+      </div>
+      <div class="col-md-4">
+          <div class="form-group">
+              <ul class="list-group" id="filters">
+                <li class="filter list-group-item">
+                  <label>Select a Population Size</label>
+                  <select id="pop_size" onchange="rebuildMap()">
+                    <option value="0" selected>All</option>
+                    <option value="5000">5,000+</option>
+                    <option value="10000">10,000+</option>
+                    <option value="25000">25,000+</option>
+                    <option value="50000">50,000+</option>
+                  </select>
+                </li>
+              </ul>
+            </div>  
+      </div>
+      <div class="col-md-4">
+          <div class="form-group">
+              <ul class="list-group" id="filters">
+                <li class="filter list-group-item">
+                  <label>Select Medicare Spending per Enrollee</label>
+                  <select id="med_spend" onchange="rebuildMap()">
+                      <option value="0" selected>All</option>
+                      <option value="5000">$5,000+</option>
+                      <option value="7500">$7,500+</option>
+                      <option value="10000">$10,000+</option>
+                      <option value="12500">$12,500+</option>
+                      <option value="15000">$15,000+</option>
+                    </select>
+                </li>
+              </ul>
+            </div>  
+      </div>
+      <div class="col-md-12">
+        <div id="heatmap">{Heatmap}</div>
+        <p>Explainer about the data and visualization will fit right here</p>
+      </div>
+    </div>
+    <hr>
+
+      <!-- bar charts -->
+    <h2 class="whitespace">Social Vulnerability Index & Life Expectancy</h2>
+    <div class="row">
+      <div class="col-md-8">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-4 text-left">
+        <p class="text-left">Social vulnerability is a term that refers to the resilience of individuals and communities when confronted by external stresses 
+          on human health, such as natural disasters, poverty, or disease outbreaks. The CDC's 
+          <a
+            target="#_blank" 
+            href="https://svi.cdc.gov/"
+            class="card-link">Social Vulnerability Index
+          </a> 
+          (SVI) uses 15 different U.S. census variables to compute the scoring.
+          <br><br>
+          What you see in these graphs is that socioeconomic status, household composition and the overall SVI score can be reliable indicators of life expectancy in the United States.
+        </p>
+      </div> 
+    </div>
+    <hr>
+     
+    <!-- radar charts -->
+    <h2 class="whitespace">Mortality Trends by Demographic Comparisons</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="radar1">
+        </canvas>
+        <p>There is not a huge difference in deaths based on the gender of the individual. One of the largest 
+          disparities is that men have a higher percentage of deaths through an accidents (7.4%) as compared 
+          to women (4.3%).</p>
+      </div>
+      <div class="col-md-6">
+        <canvas id="radar2">
+        </canvas>
+        <p>There is a drastic difference in mortality rates based on the population of the area someone lives.</p>
+        <p>Large Central Metro<br>
+            Large Fringe Metro<br>
+            Medium Metro<br>
+            Small Metro<br>
+            Micropolitan (Nonmetro)<br>
+            NonCore (Nonmetro)</p>
+      </div>
+    </div>
+    <div class="row whitespace">
+    </div>
+  </div>
+
+  </div>
+  <div class="footer">Brought to you by Team Morbid Curiosity in the 2019 GW Analytics & Visualization Bootcamp.</div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> <!-- chart.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+  <!-- <script src="static/js/app.js"></script> -->
+  <script src="static/js/scatter.js"></script>
+  <script src="static/js/radar.js"></script> 
+  <script src="static/js/map.js"></script> 
+  <script type="text/javascript" src="static/js/choropleth.js"></script>
+
 </body>
+
+</html>
+
 
 </html>

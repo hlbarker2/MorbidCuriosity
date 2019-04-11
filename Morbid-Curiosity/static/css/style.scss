@@ -1,0 +1,111 @@
+$color-one: rgb(72,209,204);
+$color-two: rgb(235, 45, 31);
+$color-three: rgb(18,94,227);
+$color-four: rgb(105,105,105);
+
+/* ======================================
+https://codepen.io/anon/pen/yrYOJg
+====================================== */
+
+.pretzel-box-1 {
+	margin: 50px auto;
+	padding: 10px;
+	text-align: center;
+}
+.pretzel-box-1 svg {
+	fill: $color-one;
+	transition: 1s;
+}
+.pretzel-box-1 svg:hover {
+	fill: $color-two;
+	transform: rotate(-10deg) scale(2);
+}
+
+
+/* stylin' */
+
+/* ======================================
+Google fonts for reference:
+font-family: 'Roboto', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Bree Serif', serif;
+====================================== */
+
+
+/* ======================================
+ Tag Data
+ ====================================== */
+ h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    color: black;
+}
+
+h2 {
+    font-family: 'Bree Serif', serif;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: $color-two;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(34, 33, 33);
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    color: rgb(34, 33, 33);
+    display: block;
+    margin: 10px
+}
+
+/* ======================================
+ Class Data
+ ====================================== */
+
+.team-name {
+    font-family: 'Bree Serif', serif;
+    font-size: 24px;
+    color: $color-two; !important;
+}
+
+.navbar {
+    background-color:transparent !important; 
+}
+
+.jumbotron {
+    background-color:transparent !important; 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    color: black;
+}
+.divider-background {
+    background-color: rgba(228, 226, 226,.5);
+    margin: 0;
+    padding: 20px;
+}
+
+/* .bottom-border {
+    border-bottom: 1px solid rgb(223, 219, 219);
+    margin-bottom: 10px;
+} */
+
+.footer {
+    margin: 20px
+}
+
+
+/* ======================================
+ ID Data
+ ====================================== */
+
+#sample-metadata
+{
+    font-family: 'Open Sans', sans-serif !important;
+}
