@@ -104,7 +104,7 @@ p {
 /* overlay an opaque dark color so the text will still show up */
 .hero {
     font-family: 'Lato', sans-serif;
-    background-image: url("../images/lindsay-henwood-47743-unsplash.jpg");
+    background-image: url("../images/markus-spiske-518966-unsplash.jpg");
     background-size: cover;
     min-height: 300px;
     font-size: 50px;
@@ -119,7 +119,7 @@ p {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(8, 9, 58, 0.5);
+    background-color: rgba(8, 9, 58, 0.8);
     z-index: 1;
 }
 
@@ -224,11 +224,18 @@ https://codepen.io/anon/pen/yrYOJg
     outline-color: rgba(148, 147, 147,0);
 }
 
-}
-
 #bar .plot-container { 
     border: 2px solid black;
     width: 1145px;
     height: 455px
+}
+
+#heatmapSelector {
+    background-color: rgba(255, 255, 255, .5);
+    padding: 30px;
+    margin:10px;
+    border: .5px solid black;
+    outline-style: solid;
+    outline-color: rgba(148, 147, 147,0);
 }
 
