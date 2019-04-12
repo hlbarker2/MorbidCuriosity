@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <!-- button gif -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Morbid Curiosity</title>
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> <!-- carousel -->
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
 </head>
@@ -153,14 +155,28 @@
       </div>
     </div>
 
+    <div class="row whitespace">
+      <div class="col-md-3">
+        <h3>5. GeoJson</h3> 
+      </div>
+      <div class="col-md-9">
+        <img class="img-responsive center-block" width= 600px src="../static/images/geoJSONcode.JPG">
+      </div>
+    </div>
+
     <!-- AWS -->
     <div class="row whitespace">
       <h2>Database Setup</h2>        
       <div class="col-md-12">
         <h3>Paul had some issues with AWS...</h3>
-        <img class="img-responsive center-block" width= 500px src="../static/images/paulshell.gif">
+        <img class="img-responsive center-block" id="bigpic" src="bigpic" style="display:none;" />
+        <button onclick="picture()">LE SIGH</button>
       </div>
     </div>
+
+
+
+
 
     <!-- Leaflet & GeoJson -->
     <h2 class="row whitespace">Leaflet & GeoJson</h2>
@@ -176,14 +192,41 @@
     
     <!-- bar charts -->
     <div class="row whitespace">
-      <h2>Social Vulnerability Index Visualized</h2>
-      <div class="row">
+      <h2>Statistical Testing</h2>
+      <div class="row whitespace">
+        <div class="col-md-12">
+          <img class="img-responsive center-block" src="../static/images/H-JupyterCode.png">
+        </div>
+      </div>
+      <div class="row whitespace">
         <div class="col-md-6">
-          <img class="img-responsive" src="../static/images/code-screenshot.PNG">
+          <img class="img-responsive center-block" width=400px src="../static/images/H-Chart.png">
+          </p>
         </div> 
         <div class="col-md-6">
-          <p class="text-left">Hannah's info here
+          <h3>Output</h3>
+          <p class="text-left">
+            We initially used SciPy and the Spearman’s rank correlation coefficient to 
+            test for correlation between mortality rate per county and each of the columns in the SVI dataset. 
+            Unfortunately, the results from our statistical test were not exciting – morality is strongly 
+            correlated with being above age 65. We then used SciPy and the Spearman’s coefficient to test for 
+            correlation between life expectancy rate per county and each of the columns in the SVI dataset. 
+            Here, we found that the overall SVI score, socioeconomic status (RPL Themes 1) and household 
+            composition (RPL Themes 2) had strong correlations with life expectancy.
           </p>
+        </div>
+      </div>
+      <div class="row whitespace">
+        <div class="col-md-6">
+          <h3>Plotting in JavaScript</h3>
+          <p class="text-left">
+            We then created a scatter plot using Plotly JS, Flask and the SVI dataset 
+            loaded to AWS. We used the update method and custom buttons function to create an interactive 
+            plot which compares each of the five SVI themes to life expectancy in 500 counties randomly 
+            selected from the table containing the SVI data.
+        </div>
+        <div class="col-md-6">
+            <img class="img-responsive" width=400px src="../static/images/H-VSCode.png">
         </div>
       </div>
     </div>
@@ -192,9 +235,22 @@
     <h2 class="row whitespace">Mortality Trends by Demographic Comparisons</h2>
     <div class="row whitespace">
       <div class="col-md-6">
-          <p class="text-left">Here we aimed to convey the minor differences that demographic factors had on mortality rates in the US.
-            I used charts.js to make a radar and bar chart to convey this. Charts.js has pretty good documentation to set up any kind of interactive JavaScript chart you want.</p>
-        </div>
+          <p class="text-left">Here we aimed to convey the differences that demographic factors had on 
+            mortality rates in the US. We used 
+            <a
+            target="#_blank" 
+            href="https://www.chartjs.org/docs/latest/"
+            class="card-link">Charts.js
+          </a> 
+           to make a radar and bar chart to convey this. Charts.js has pretty good documentation to set 
+          up any kind of interactive JavaScript chart you want. We chose to compare male and female mortality 
+          rates in a radar chart and mortality by city type in a bar chart because there was a dramatic difference in mortality 
+          rates between people who live in rural vs. metro areas. We pulled data from the python flask endpoints into the javascript 
+          file to build the chart. <br><br> If we had more time, we would have explored many 
+          more factors and their impacts on mortality rates. Some other ideas would be: above vs. below the poverty line or
+          healthcare spend.
+        </p>
+      </div>
       <div class="col-md-6">
         <img class="img-responsive right-block" src="../static/images/code-screenshot2.PNG">
       </div>
@@ -210,33 +266,65 @@
         <img class="img-responsive left-block" src="https://media.giphy.com/media/l4FGqDtRMMjOKdFGU/giphy.gif">
       </div>
       <div class="col-md-6">
-        <p class="text-left">The HTML/CSS set-up was a matter of trial and error. </p>
+        <p class="text-left">The HTML/CSS set-up was a matter of trial and error. There are many things that we tried that you do not 
+          see here because they didn't work out! Some areas explored were: sticky navbar, svg animation, H1 text animation. Some new 
+          things we tried and were successful at were: Github linking, opaque color overlayed on jumbotron background image, image 
+          carousel, inputting gifs, optimizing chart styling and having consistent spacing and coloring throughout.
+        </p>
       </div>
     </div>
 
     <!-- Thank you -->
     <div class="row whitespace">
-      <h2>THANK YOU!</h2>
+      <h2>Thank You!</h2>
     </div>
 
-    <div class="row whitespace">
-      <div class="col-md-12">
-        <img class="img-responsive left-block" width= 600px src="../static/images/dart.jpg">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval=false>
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>      
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="../static/images/rod.jpg" alt="Chania" width="400">
+          <div class="carousel-caption">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="../static/images/jisan.jpg" alt="Chania" width="400">
+          <div class="carousel-caption">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
+        <div class="item">
+          <img src="../static/images/dart.jpg" alt="Flower" width="400">
+          <div class="carousel-caption">
+            <h3></h3>
+            <p></p>
+          </div>
+        </div>
       </div>
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-
-    <!-- <div class="row whitespace">
-      <div class="col-md-6">
-        <img class="img-responsive left-block" width= 300px src="../static/images/rod.jpg">
-      </div>
-      <div class="col-md-6">
-        <img class="img-responsive left-block" width= 300px src="../static/images/jisan.jpg">
-      </div>
-    </div> -->
-
+  
     <div class="whitespace">
     </div>
-
+    <marquee behavior="scroll" direction="right" scrollamount="20">
+      <img src="http://media.giphy.com/media/sIIhZliB2McAo/giphy.gif" width="100" alt="NYAN" /></marquee>
   </div>
   
   <div class="footer"> Brought to you by Team Morbid Curiosity in the 2019 GW Analytics & Visualization Bootcamp.</div>
@@ -244,7 +332,18 @@
   <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> <!-- chart.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script type="text/javascript">
+
+    function picture(){ 
+    var pic = "../static/images/paulshell.gif"
+    document.getElementById('bigpic').src = pic.replace('90x90', '225x225');
+    document.getElementById('bigpic').style.display='block';
+    }
+  </script> <!-- gif button -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- carousel -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> <!-- carousel -->
+
   <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
 </body>
 
