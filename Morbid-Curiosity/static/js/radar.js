@@ -19,7 +19,7 @@ function buildRadar() {
         labels:
           [diseaseType[0], diseaseType[1], diseaseType[2], diseaseType[3], diseaseType[4]],
         datasets: [{
-          label: 'Feales',
+          label: 'Females',
           backgroundColor: 'rgba(0,0,0,0)',
           borderColor: 'rgb(18,94,227)',
           borderWidth: 4,
