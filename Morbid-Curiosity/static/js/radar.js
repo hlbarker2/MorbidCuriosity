@@ -1,20 +1,14 @@
-// ###############################
+// ################################
 // BUILD RADAR CHART WITH CHARTS.JS
-// ###############################
+// ################################
 
-// ####################
-// radar numero 1
-// ####################
-function buildRadar1() {
+function buildRadar() {
 
   var url = `/genderData`;
   d3.json(url).then((data) => {
 
     var diseaseType = Object.values(data.Cause_of_Death);
-    // console.log(diseaseType);
-
     var deathRate = Object.values(data.Percent);
-    // console.log(deathRate);
 
     // select id to place chart
     var ctx = document.getElementById('radar').getContext('2d');
@@ -25,7 +19,7 @@ function buildRadar1() {
         labels:
           [diseaseType[0], diseaseType[1], diseaseType[2], diseaseType[3], diseaseType[4]],
         datasets: [{
-          label: 'Males',
+          label: 'Feales',
           backgroundColor: 'rgba(0,0,0,0)',
           borderColor: 'rgb(18,94,227)',
           borderWidth: 4,
@@ -33,7 +27,7 @@ function buildRadar1() {
           pointRadius: 1,
           data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4]]
         }, {
-          label: 'Females',
+          label: 'Males',
           backgroundColor: 'rgba(0,0,0,0)',
           borderColor: 'rgb(72, 209, 204)',
           borderWidth: 4,
@@ -77,22 +71,17 @@ function buildRadar1() {
   });
 };
 
-// ####################
-// radar numero 2 
-// ####################
-function buildRadar2() {
+// ################################
+// BUILD BAR CHART WITH CHARTS.JS
+// ################################
+function buildBar() {
   var url = `/denseData`;
   d3.json(url).then((data) => {
     console.log(data)
 
     var diseaseType = Object.values(data.Cause_of_Death);
-    // console.log(diseaseType)
-
     var deathRate = Object.values(data.Rate_per_100k);
-    // console.log(deathRate)
-
     var densityType = Object.values(data.Density);
-    console.log(densityType)
 
     // build chart
     var ctx = document.getElementById('barGraph').getContext('2d');
@@ -145,7 +134,7 @@ function buildRadar2() {
         },
         title: {
           display: true,
-          text: 'Urban vs. Rural Living',
+          text: 'Mortality Rate in Urban vs. Rural Living',
           fontSize: 22,
           fontColor : "#696969",
         },
@@ -166,5 +155,5 @@ function buildRadar2() {
   });
 };
 
-buildRadar1();
-buildRadar2();
+buildRadar();
+buildBar();
