@@ -178,12 +178,28 @@
     <h2 class="row whitespace">Leaflet & GeoJson</h2>
     <div class="row whitespace">
       <div class="col-md-6">
-        <p>Explainer about the data and visualization and leaflet challenges will fit right here</p>
+        <p>To begin, we searched the web for US county geojson and found a complete set in a <a href="https://github.com/yooper/open-model/tree/master/geodata/geojson/united_states" target="_blank">public repository</a>. 
+        We then injected the death data into the "properties" key for each feature within the geojson using the code shown above. <a href="https://leafletjs.com/" target="_blank">Leaflet</a> was then used to create the base map and add the counties as features.
+        Lastly, we used the <a href="https://github.com/timwis/leaflet-choropleth" target="_blank">choropleth function</a> to render different colors for each county based on the selected values of disease, popluation, and Medicare spending per enrollee.</p>
       </div>
       <div class="col-md-6">
-        <img class="img-responsive center-block" width= 600px src="../static/images/USA-states.PNG"><br>
+        <img class="img-responsive center-block" width= 600px src="../static/images/MapProgression.gif"><br>
       </div>
     </div>
+
+    <div class="row whitespace">
+      <div class="col-md-6">
+            <img class="img-responsive center-block" width= 600px src="../static/images/MapCode.png"><br>
+            </div>
+      <div style="padding-left:50" class="col-md-6">
+        <p> The first step in building the map in javascript included adding each county from the geojson to the base tile layer.
+          To recreate the map after different selections are made, we placed an event listener on each dropdown that called a redraw function any time one of the three selections were changed. 
+          This redraw function clears the existing map, reads the selected values of the dropdowns, and pushes an updated data set to the choropleth function for final rendering.
+        </p>
+      </div>
+    </div>
+
+
     <hr>
     
     <!-- bar charts -->
