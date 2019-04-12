@@ -84,6 +84,17 @@ button{
     color: rgb(235, 45, 31) !important;
 }
 
+.comment {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+    font-style: italic !important;
+    text-align: center !important;
+    color: rgb(65, 63, 63);
+    display: block;
+    margin: 10px;
+    line-height: 2em;
+}
+
 /* overlay an opaque dark color so the text will still show up */
 .jumbotron {
     font-family: 'Lato', sans-serif;
@@ -180,11 +191,9 @@ button{
 
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  width: 50%;
+  width: 60%;
   margin: auto;
 }
-
-
 
 /* ======================================
 https://codepen.io/anon/pen/yrYOJg
@@ -238,33 +247,6 @@ https://codepen.io/anon/pen/yrYOJg
 }
 
 #barGraph {
-    background-color: rgba(255, 255, 255, .5);
-    padding: 30px;
-    margin:10px;
-    border: .5px solid black;
-    outline-style: solid;
-    outline-color: rgba(148, 147, 147,0);
-}
-
-#heatmapSelector1 {
-    background-color: rgba(255, 255, 255, .5);
-    padding: 30px;
-    margin:10px;
-    border: .5px solid black;
-    outline-style: solid;
-    outline-color: rgba(148, 147, 147,0);
-}
-
-#heatmapSelector2 {
-    background-color: rgba(255, 255, 255, .5);
-    padding: 30px;
-    margin:10px;
-    border: .5px solid black;
-    outline-style: solid;
-    outline-color: rgba(148, 147, 147,0);
-}
-
-#heatmapSelector3 {
     background-color: rgba(255, 255, 255, .5);
     padding: 30px;
     margin:10px;

@@ -174,10 +174,6 @@
       </div>
     </div>
 
-
-
-
-
     <!-- Leaflet & GeoJson -->
     <h2 class="row whitespace">Leaflet & GeoJson</h2>
     <div class="row whitespace">
@@ -252,7 +248,7 @@
         </p>
       </div>
       <div class="col-md-6">
-        <img class="img-responsive right-block" src="../static/images/code-screenshot2.PNG">
+        <img class="img-responsive right-block" src="../static/images/S-VSCode.PNG">
       </div>
     </div>
 
@@ -266,10 +262,11 @@
         <img class="img-responsive left-block" src="https://media.giphy.com/media/l4FGqDtRMMjOKdFGU/giphy.gif">
       </div>
       <div class="col-md-6">
-        <p class="text-left">The HTML/CSS set-up was a matter of trial and error. There are many things that we tried that you do not 
-          see here because they didn't work out! Some areas explored were: sticky navbar, svg animation, H1 text animation. Some new 
-          things we tried and were successful at were: Github linking, opaque color overlayed on jumbotron background image, image 
-          carousel, inputting gifs, optimizing chart styling and having consistent spacing and coloring throughout.
+        <p class="text-left">The HTML/CSS set-up was a lot of trial and error. There are many things that we tried that you do not 
+          see here because they didn't work out! Some areas explored were: sticky navbar, SVG animation, H1 text animation. Some new 
+          things we tried and were successful at were: PNG linking to sites (Github and Linkedin Profiles), opaque color overlayed 
+          on jumbotron background image, image carousel, inputting GIFs, a marquee, optimizing chart styling and having consistent 
+          spacing and coloring throughout.
         </p>
       </div>
     </div>
@@ -279,56 +276,64 @@
       <h2>Thank You!</h2>
     </div>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval=false>
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>      
-      </ol>
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="../static/images/rod.jpg" alt="Chania" width="400">
-          <div class="carousel-caption">
-            <h3></h3>
-            <p></p>
+    <!-- carousel -->
+    <div class="row whitespace">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval=false>
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>      
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="../static/images/rod.jpg" alt="Chania" width="400">
+              <div class="carousel-caption">
+                <h3></h3>
+                <p></p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../static/images/jisan.jpg" alt="Chania" width="400">
+              <div class="carousel-caption">
+                <h3></h3>
+                <p></p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="../static/images/dart.jpg" alt="Flower" width="400">
+              <div class="carousel-caption">
+                <h3></h3>
+                <p></p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <img src="../static/images/jisan.jpg" alt="Chania" width="400">
-          <div class="carousel-caption">
-            <h3></h3>
-            <p></p>
-          </div>
-        </div>
-        <div class="item">
-          <img src="../static/images/dart.jpg" alt="Flower" width="400">
-          <div class="carousel-caption">
-            <h3></h3>
-            <p></p>
-          </div>
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <div class="col-md-3"></div>
     </div>
-  
-    <div class="whitespace">
-    </div>
-    <marquee behavior="scroll" direction="right" scrollamount="20">
-      <img src="http://media.giphy.com/media/sIIhZliB2McAo/giphy.gif" width="100" alt="NYAN" /></marquee>
   </div>
+
+  <!-- nyan cat -->
+  <marquee behavior="scroll" direction="right" scrollamount="30">
+    <img src="http://media.giphy.com/media/sIIhZliB2McAo/giphy.gif" width="100" alt="NYAN" />
+  </marquee>
   
   <div class="footer"> Brought to you by Team Morbid Curiosity in the 2019 GW Analytics & Visualization Bootcamp.</div>
 
+  <!-- scripts -->
   <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> <!-- chart.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
