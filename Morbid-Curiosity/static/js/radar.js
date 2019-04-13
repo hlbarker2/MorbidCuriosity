@@ -50,7 +50,7 @@ function buildRadar() {
         },
         title: {
           display: true,
-          text: 'Female vs. Male',
+          text: 'Female vs. Male Mortality Rates by Top 5 Causes of Death',
           fontSize: 22,
           fontColor : "#696969"
         },
