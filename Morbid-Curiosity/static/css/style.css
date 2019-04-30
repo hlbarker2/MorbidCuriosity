@@ -73,6 +73,7 @@ button{
     font-weight: bold;
 }
 
+
 /* ======================================
  Class Data
  ====================================== */
@@ -127,7 +128,7 @@ button{
     font-family: 'Lato', sans-serif;
     background-image: url("../images/markus-spiske-518966-unsplash.jpg");
     background-size: cover;
-    min-height: 300px;
+    min-height: 500px;
     font-size: 50px;
     color: whitesmoke;
     margin: 0px;
@@ -196,23 +197,54 @@ button{
 }
 
 /* ======================================
-https://codepen.io/anon/pen/yrYOJg
+Styling for the navigate section
 ====================================== */
+#services {
+    background-color:  rgb(235, 45, 31);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: whitesmoke;
+}
 
-/* .pill-box-1 {
-	margin: 50px auto;
-	padding: 10px;
-	text-align: center;
+.service-heading {
+  margin: 15px 0;
+  text-transform: none;
+  color: whitesmoke;
 }
-.pill-box-1 svg {
-	fill: rgb(235, 45, 31);
-	transition: 2s;
+
+.fa-stack {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    vertical-align: middle;
+    width: 2.5em; 
 }
-.pill-box-1 svg:hover {
-	fill: rgb(72,209,204);
-    transform: rotate(2190deg);
-    transform-origin: 30 30;
-} */
+  
+.fa-stack-1x,
+.fa-stack-2x {
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%; 
+}
+
+.fa-stack-1x {
+    line-height: inherit; 
+}
+
+.fa-stack-2x {
+    font-size: 2em; 
+}
+
+.fa-inverse {
+    color: #fff; 
+}
+
+.text-muted {
+    color: whitesmoke;
+}
+
 
 /* ======================================
  ID Data
