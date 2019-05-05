@@ -1,6 +1,6 @@
-function buildGauge(outputs) {
+function buildGauge(Life_Expectancy) {
 
-        var level = parseFloat(outputs) * 20;
+        var level = parseFloat(Life_Expectancy) * 20;
 
         // Trig to calc meter point
         var degrees = 180 - level;

@@ -21,7 +21,7 @@ remote_db_endpoint = "morbid.cu97gshsimlg.us-east-1.rds.amazonaws.com"
 remote_db_port = 3306
 remote_morbid_dbname = "morbid"
 remote_morbid_dbuser = "root"
-remote_morbid_dbpwd = "Morbid123"
+remote_morbid_dbpwd = "Curious678"
 
 #remote_db_endpoint = os.environ['remote_db_endpoint']
 #remote_db_port = os.environ['remote_db_port']
@@ -90,7 +90,7 @@ def sviData():
     conn.close()
     return jsonify(df.to_dict(orient="records"))
 
-@app.route("/send", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def send():
     conn = engine.connect()
     if request.method == "POST":
@@ -106,15 +106,17 @@ def userData(zipCode):
     
     results = pd.read_sql(f"SELECT * FROM sviLife l LEFT JOIN Ziptofips f ON l.FIPS = f.FIPS WHERE ZipCodes = {zipCode}", conn)
     #print(results)
-    userData = {}
-    for result in results:
-        userData["Life_Expectancy"] = result[0]
-        userData["RPL_THEMES"] = result[1]
+    #userData = {}
+    #for result in results:
+        #userData["Life_Expectancy"] = result[0]
+        #userData["RPL_THEMES"] = result[1]
 
 
-    print(userData)
-    return jsonify(userData)
+    #print(userData)
+    return jsonify(results.to_dict(orient="records"))
+
 
 if __name__ == "__main__":
     app.run()
+
 
