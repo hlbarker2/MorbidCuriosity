@@ -1,6 +1,7 @@
 function buildGauge(Life_Expectancy) {
 
-        var level = parseFloat(Life_Expectancy) * 20;
+    var level = ((parseFloat(Life_Expectancy) - 60)/(90-60)) * 180
+    console.log(level)
 
         // Trig to calc meter point
         var degrees = 180 - level;
@@ -24,21 +25,17 @@ function buildGauge(Life_Expectancy) {
                 y: [0],
                 marker: { size: 12, color: "850000" },
                 showlegend: false,
-                name: "Freq",
-                text: level,
-                hoverinfo: "text+name"
+                text: Life_Expectancy,
+                hoverinfo: "text"
             },
             {
-                values: [50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50 / 9, 50],
+                values: [50 / 6, 50 / 6, 50 / 6, 50 / 6, 50 / 6, 50 / 6, 50],
                 rotation: 90,
-                text: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
+                text: ["85-90", "80-85", "75-80", "70-75", "65-70", "60-65", ""],
                 textinfo: "text",
                 textposition: "inside",
                 marker: {
                     colors: [
-                        "rgba(0, 105, 11, .5)",
-                        "rgba(10, 120, 22, .5)",
-                        "rgba(14, 127, 0, .5)",
                         "rgba(110, 154, 22, .5)",
                         "rgba(170, 202, 42, .5)",
                         "rgba(202, 209, 95, .5)",
@@ -48,7 +45,7 @@ function buildGauge(Life_Expectancy) {
                         "rgba(255, 255, 255, 0)"
                     ]
                 },
-                labels: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
+                labels: ["85-90", "80-85", "75-80", "70-75", "65-70", "60-65", ""],
                 hoverinfo: "label",
                 hole: 0.5,
                 type: "pie",

@@ -1,4 +1,4 @@
-function buildMetadata(zipCode) {
+/**  function buildMetadata(zipCode) {
     console.log({zipCode})
     d3.json(`/userData/${zipCode}`).then(data => {
         // Use d3 to select the panel with id of `#sample-metadata`
@@ -31,10 +31,10 @@ function init(zipCode) {
 
     // Use the list of sample names to populate the select options
     d3.json(`/userData/${zipCode}`).then((sampleZip) => {
-        sampleZip.forEach((Zip) => {
+        sampleZip.forEach((code) => {
             selector
                 .append("option")
-                .text(sample)
+                .text(code)
                 .property("value", sample);
         });
 
@@ -52,4 +52,24 @@ function optionChanged(newSample) {
 }
 
 // Initialize the dashboard
-init();
+init();*/
+
+function onZipCodeChange(zip) {
+    var isValid = /^[0-9]{5}(?:-[0-9]{4})?$/.test(zip)
+    if (isValid)
+        alert('Valid ZipCode');
+    else {
+        alert('Invalid ZipCode');
+}}
+
+function buildMetadata() {
+    var zipCode = d3.select("#zipcode").node() ? d3.select("#zipcode").node().value : 22201;
+    console.log({ zipCode })
+    d3.json(`/userData/${zipCode}`).then(data => {
+
+        buildGauge(data[0].Life_Expectancy);
+    });
+}
+
+// Initialize the dashboard
+buildMetadata()

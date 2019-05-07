@@ -12,7 +12,7 @@ import pymysql
 
 pymysql.install_as_MySQLdb()
 
-from flask import Flask, jsonify, render_template, url_for, json, request, Markup
+from flask import Flask, jsonify, render_template, url_for, json, request, flash
 from flask_sqlalchemy import SQLAlchemy
 # from config import remote_db_endpoint, remote_db_port
 # from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
@@ -90,29 +90,31 @@ def sviData():
     conn.close()
     return jsonify(df.to_dict(orient="records"))
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/send", methods=["GET", "POST"])
 def send():
     conn = engine.connect()
     if request.method == "POST":
         zipCode = request.form["zipCode"]
-        outputs = pd.read_sql(f"SELECT Life_Expectancy FROM sviLife l LEFT JOIN Ziptofips f ON l.FIPS = f.FIPS WHERE ZipCodes = {zipCode}", conn)
+        outputs = pd.read_sql(f"SELECT * FROM sviLife l LEFT JOIN Ziptofips f ON l.FIPS = f.FIPS WHERE ZipCodes = {zipCode}", conn)
 
         #return redirect("/", code=302)
 
-    return render_template("index.html", outputs=outputs)
+    return render_template("index.html")
 
 @app.route("/userData/<zipCode>")
 def userData(zipCode):
-    
-    results = pd.read_sql(f"SELECT * FROM sviLife l LEFT JOIN Ziptofips f ON l.FIPS = f.FIPS WHERE ZipCodes = {zipCode}", conn)
+    conn = engine.connect()
+    try:
+        results = pd.read_sql(f"SELECT * FROM sviLife l LEFT JOIN Ziptofips f ON l.FIPS = f.FIPS WHERE ZipCodes = {zipCode}", conn)
     #print(results)
     #userData = {}
     #for result in results:
         #userData["Life_Expectancy"] = result[0]
         #userData["RPL_THEMES"] = result[1]
+    except:
+        flash("I HOPE THIS WORKS!")
 
 
-    #print(userData)
     return jsonify(results.to_dict(orient="records"))
 
 
