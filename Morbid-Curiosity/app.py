@@ -85,27 +85,10 @@ def sviData():
     conn.close()
     return jsonify(df.to_dict(orient="records"))
 
-@app.route("/send", methods=["GET", "POST"])
-def send():
-    conn = engine.connect()
-    if request.method == "POST":
-        zipCode = request.form["zipCode"]
-        outputs = pd.read_sql(f"SELECT * FROM sviLife l LEFT JOIN Ziptofips f ON l.FIPS = f.FIPS WHERE ZipCodes = {zipCode}", conn)
-
-        #return redirect("/", code=302)
-
-    return render_template("index.html")
-
 @app.route("/userData/<zipCode>")
 def userData(zipCode):
     conn = engine.connect()
     results = pd.read_sql(f"SELECT * FROM svi14final s LEFT JOIN Ziptofips z ON s.FIPS = z.FIPS WHERE ZipCodes = {zipCode}", conn)
-    #print(results)
-    #userData = {}
-    #for result in results:
-        #userData["Life_Expectancy"] = result[0]
-        #userData["RPL_THEMES"] = result[1]
-
 
     return jsonify(results.to_dict(orient="records"))
 
