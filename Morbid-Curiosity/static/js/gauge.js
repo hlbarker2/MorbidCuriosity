@@ -1,6 +1,6 @@
-function buildGauge(Life_Expectancy) {
+function buildGauge(LifeExpectancy) {
 
-    var level = ((parseFloat(Life_Expectancy) - 60)/(90-60)) * 180
+    var level = (LifeExpectancy - 60)/(90-60) * 180
     console.log(level)
 
         // Trig to calc meter point
@@ -25,7 +25,7 @@ function buildGauge(Life_Expectancy) {
                 y: [0],
                 marker: { size: 12, color: "850000" },
                 showlegend: false,
-                text: Life_Expectancy,
+                text: LifeExpectancy,
                 hoverinfo: "text"
             },
             {

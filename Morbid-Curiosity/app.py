@@ -17,12 +17,6 @@ from flask_sqlalchemy import SQLAlchemy
 # from config import remote_db_endpoint, remote_db_port
 # from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
 
-remote_db_endpoint = "morbid.cu97gshsimlg.us-east-1.rds.amazonaws.com"
-remote_db_port = 3306
-remote_morbid_dbname = "morbid"
-remote_morbid_dbuser = "root"
-remote_morbid_dbpwd = "Curious678"
-
 #remote_db_endpoint = os.environ['remote_db_endpoint']
 #remote_db_port = os.environ['remote_db_port']
 #remote_morbid_dbname = os.environ['remote_morbid_dbname']
@@ -104,15 +98,12 @@ def send():
 @app.route("/userData/<zipCode>")
 def userData(zipCode):
     conn = engine.connect()
-    try:
-        results = pd.read_sql(f"SELECT * FROM sviLife l LEFT JOIN Ziptofips f ON l.FIPS = f.FIPS WHERE ZipCodes = {zipCode}", conn)
+    results = pd.read_sql(f"SELECT * FROM svi14final s LEFT JOIN Ziptofips z ON s.FIPS = z.FIPS WHERE ZipCodes = {zipCode}", conn)
     #print(results)
     #userData = {}
     #for result in results:
         #userData["Life_Expectancy"] = result[0]
         #userData["RPL_THEMES"] = result[1]
-    except:
-        flash("I HOPE THIS WORKS!")
 
 
     return jsonify(results.to_dict(orient="records"))
