@@ -247,7 +247,50 @@
     <div class="row whitespace">
     </div>
   </div>
+  <div class="container">
+    <h2>Add Zip Code</h2>
+    <div class="input-group">
+      <input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
+      <span class="input-group-btn">
+        <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>
+      </span>
+      </div>
+      <!-- input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
+      <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>-->
+  </div>
+          <!--<h5>SELECT Sample:</h5>-->
+          <!--<select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sample MetaData</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div> -->
+     <!--- <p>{{outputs}}</p> -->
+    <!----</form> -->
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="edu_gauge"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="income_gauge"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="poverty_gauge"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="disability_gauge"></div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="row whitespace"></div>
+  </body>
+</html>
 
+    </div>
   </div>
   <div class="footer">Brought to you by Team Morbid Curiosity in the 2019 GW Analytics & Visualization Bootcamp.</div>
   
@@ -260,6 +303,14 @@
   <script src="static/js/scatter.js"></script>
   <script src="static/js/radar.js"></script> 
   <script src="static/js/map.js"></script>
+  <!-- <script src="static/js/test.js"></script>
+  <script src="static/js/gauge.js"></script> -->
+  <script src="{{ url_for('static', filename='js/test.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/gauge.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/edu_gauge.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/income_gauge.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/poverty_gauge.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/disability_gauge.js') }}"></script>
   <script type="text/javascript" src="static/js/choropleth.js"></script>
   <!-- Custom scripts for the 'navigate' section template code -->
   <script src="js/agency.min.js"></script>
