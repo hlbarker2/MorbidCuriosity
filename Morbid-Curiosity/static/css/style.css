@@ -73,6 +73,7 @@ button{
     font-weight: bold;
 }
 
+
 /* ======================================
  Class Data
  ====================================== */
@@ -127,7 +128,7 @@ button{
     font-family: 'Lato', sans-serif;
     background-image: url("../images/markus-spiske-518966-unsplash.jpg");
     background-size: cover;
-    min-height: 300px;
+    min-height: 500px;
     font-size: 50px;
     color: whitesmoke;
     margin: 0px;
@@ -196,23 +197,54 @@ button{
 }
 
 /* ======================================
-https://codepen.io/anon/pen/yrYOJg
+Styling for the navigate section
 ====================================== */
+#services {
+    background-color:  rgb(235, 45, 31);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: whitesmoke;
+}
 
-/* .pill-box-1 {
-	margin: 50px auto;
-	padding: 10px;
-	text-align: center;
+.service-heading {
+  margin: 15px 0;
+  text-transform: none;
+  color: whitesmoke;
 }
-.pill-box-1 svg {
-	fill: rgb(235, 45, 31);
-	transition: 2s;
+
+.fa-stack {
+    display: inline-block;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+    vertical-align: middle;
+    width: 2.5em; 
 }
-.pill-box-1 svg:hover {
-	fill: rgb(72,209,204);
-    transform: rotate(2190deg);
-    transform-origin: 30 30;
-} */
+  
+.fa-stack-1x,
+.fa-stack-2x {
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%; 
+}
+
+.fa-stack-1x {
+    line-height: inherit; 
+}
+
+.fa-stack-2x {
+    font-size: 2em; 
+}
+
+.fa-inverse {
+    color: #fff; 
+}
+
+.text-muted {
+    color: whitesmoke;
+}
+
 
 /* ======================================
  ID Data
@@ -261,4 +293,33 @@ https://codepen.io/anon/pen/yrYOJg
     outline-style: solid;
     outline-color: rgba(148, 147, 147,0);
 }
+
+/* ======================================
+ Tooltips
+ ====================================== */
+
+a.tooltip {outline:none; }
+a.tooltip strong {line-height:30px;}
+a.tooltip:hover {text-decoration:none;} 
+a.tooltip span {
+    z-index:10;display:none; padding:14px 20px;
+    margin-top:60px; margin-left:-160px;
+    width:300px; line-height:16px;
+}
+a.tooltip:hover span{
+    display:inline; position:absolute; 
+    border:2px solid #FFF;  color:#EEE;
+    background:rgb(72, 209, 204) url(http://www.menucool.com/tooltip/cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
+}
+
+.callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
+    
+/*CSS3 extras*/
+a.tooltip span
+{
+    border-radius:2px;        
+    box-shadow: 0px 0px 8px 4px #666;
+    /*opacity: 0.8;*/
+}
+
 

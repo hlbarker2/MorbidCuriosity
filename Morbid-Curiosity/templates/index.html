@@ -6,11 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Morbid Curiosity</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+  <!-- stylin' -->
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/agency.css">
+  <!-- Custom fonts for this template -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
+  <!-- favicon -->
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
 </head>
 
@@ -23,7 +28,7 @@
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item">
-          <a class="nav-link" target="#" href="https://morbid-curiosity.herokuapp.com/process">Project Process</a>
+          <a class="nav-link" target="#" href="https://morbid-curiosity.herokuapp.com/process">About</a>
         </li>
         <li class="menu">
           <a target="#_blank" href="https://github.com/hlbarker2/MorbidCuriosity" style="padding-right:20px">
@@ -34,6 +39,7 @@
     </div>
   </nav>
 
+  <!-- jumbotron & intro -->
   <div class="row">
     <div class="jumbotron text-center">
       <div class="overlay"></div>
@@ -44,48 +50,39 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row whitespace">
-      <!-- INTRO -->
-      <div class="col-sm-9">
-        <blockquote class="blockquote">
-          <h3 class="mb-0 text-left" style="padding-left: 10px">We are Team Morbid Curiosity. Our goal is to analyze United States Mortality and Demographic Data to identify patterns 
-              in deaths in the United States. The hope with this project is that it sheds light on areas of concern in the United States 
-              that can be addressed by public health professionals to help Americans live longer and healthier lives. On this website you'll find mortality data from 2016.
-          </h3>
-        </blockquote>
+  <!-- Navigation -->
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 style="color:whitesmoke" class="section-heading text-uppercase">Navigate</h2>
+          <h3 class="section-subheading text-muted">Click on any of the icons below to navigate to the section containing visualizations and more details.</h3>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <div class="well">
-          <h4>Meet the Team</h4>
-          <div class="row">
-            <div class="col-sm-6">
-              <a role="button" target="#_blank" href="https://www.linkedin.com/in/sarah-fawson-b911b083/" class="btn btn-light">
-              <img width=40px src="../static/images/sarah-emoji.png">
-              </a>
-            </div>
-            <div class="col-sm-6">
-              <a role="button" target="#_blank" href="https://www.linkedin.com/in/connorvergara/" class="btn btn-light">
-              <img width=40px src="../static/images/connor-emoji.png">
-              </a>
-            </div>
-            <div class="col-sm-6">
-              <a role="button" target="#_blank" href="https://www.linkedin.com/in/hannah-barker-915a7129/" class="btn btn-light btn-lg">
-              <img width=40px src="../static/images/hannah-emoji.png">
-              </a>
-            </div>
-            <div class="col-sm-6">
-              <a role="button" target="#_blank" href="https://www.linkedin.com/in/paul-westfall-633a2611/" class="btn btn-light btn-lg">
-              <img width=40px src="../static/images/paul-emoji.png">
-              </a>
-            </div>
-          </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <a href="#USAmortality"><img src="../static/images/USA-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <h4 class="service-heading">USA Mortality</h4>
+          <p class="text-muted">Check out how mortality rates from diseases affect different areas of the United States.</p>
+        </div>
+        <div class="col-md-4">
+          <a href="#bar"><img src="../static/images/bar-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <h4 class="service-heading">SVI and Demographic Data</h4>
+          <p class="text-muted">Social Vulnerability Index, mortality rates between genders, and mortality rates based on the population of where you live.</p>
+        </div>
+        <div class="col-md-4">
+          <a href="#quiz"><img src="../static/images/quiz-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <h4 class="service-heading">Quiz</h4>
+          <p class="text-muted">How old will you live to be? Answer a few demographic questions to get an estimate based on our data.</p>
         </div>
       </div>
     </div>
+  </section>
+  
 
+  <div class="container">
     <!-- USA heat map -->
-    <h2 class="row whitespace">US Mortality</h2>
+    <h2 class="row whitespace" id="USAmortality">United States Mortality Rates</h2>
     <div class="row whitespace">
       <div class="col-md-4" id="heatmapSelector1">
         <div class="form-group">
@@ -155,7 +152,7 @@
         <div id="bar"></div>
       </div>
     </div>
-      <div class="row">
+      <div class="row whitespace">
       <div class="col-md-12 text-left">
         <p class="text-left">Social vulnerability is a term that refers to the resilience of individuals 
           and communities when confronted by external stresses on human health, such as natural disasters, 
@@ -216,6 +213,37 @@
         <canvas id="barGraph" width="300" height="250"></canvas>
       </div>
     </div>
+
+    <div class="row whitespace">
+      <h2>How long will you live?</h2>
+      <div id="quiz"></div>
+    </div>
+    <div class="container">
+      <h3>Your Zip Code:</h3>
+        <div class="input-group">
+          <input type="text" minlength="5" maxlength="5" id="zipcode" value="22201" onkeyup="onZipCodeChange()">
+          <span class="input-group-btn">
+            <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>
+          </span>
+        </div>
+          <!-- input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
+          <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>
+      </div> -->
+              <!--<h5>SELECT Sample:</h5>-->
+              <!--<select id="selDataset" onchange="optionChanged(this.value)"></select>
+            </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Sample MetaData</h3>
+              </div>
+              <div id="sample-metadata" class="panel-body"></div> -->
+         <!--- <p>{{outputs}}</p> -->
+        <!----</form> -->
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+
     <div class="row whitespace">
     </div>
   </div>
@@ -233,10 +261,8 @@
   <script src="static/js/radar.js"></script> 
   <script src="static/js/map.js"></script>
   <script type="text/javascript" src="static/js/choropleth.js"></script>
-
+  <!-- Custom scripts for the 'navigate' section template code -->
+  <script src="js/agency.min.js"></script>
 </body>
-
-</html>
-
 
 </html>

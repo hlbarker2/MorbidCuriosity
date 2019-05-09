@@ -10,20 +10,52 @@ function buildRadar() {
     var diseaseType = Object.values(data.Cause_of_Death);
     var deathRate = Object.values(data.Percent);
 
-    // select id to place chart
+    // var data = [
+    //   {
+    //   type: 'scatterpolar',
+    //   r: [39, 28, 8, 7, 28, 39],
+    //   theta: ['A','B','C', 'D', 'E', 'A'],
+    //   fill: 'toself',
+    //   name: 'Females'
+    //   },
+    //   {
+    //   type: 'scatterpolar',
+    //   r: [1.5, 10, 39, 31, 15, 1.5],
+    //   theta: ['A','B','C', 'D', 'E', 'A'],
+    //   fill: 'toself',
+    //   name: 'Males'
+    //   }
+    // ];
+    
+    // var layout = {
+    //   polar: {
+    //     radialaxis: {
+    //       visible: true,
+    //       range: [0, 50]
+    //     }
+    //   },
+    //   color: "#000000",
+    //   showlegend: false
+    // };
+    // console.log(data);
+    
+    // var radar = document.getElementById('radar');
+
+    // Plotly.plot(radar, data, layout);
+
     var ctx = document.getElementById('radar').getContext('2d');
-    // build chart
     var radarChart1 = new Chart(ctx, {
       type: 'radar',
       data: {
-        labels:
-          [diseaseType[0], diseaseType[1], diseaseType[2], diseaseType[3], diseaseType[4]],
+        labels:[diseaseType[0], diseaseType[1], diseaseType[2], diseaseType[3], diseaseType[4]],
+        fontSize: 16,
         datasets: [{
           label: 'Females',
+          fontSize: 16,
           backgroundColor: 'rgba(0,0,0,0)',
           borderColor: 'rgb(18,94,227)',
           borderWidth: 4,
-          pointBackgroundColor:'rgb(18,94,227)', 
+          pointBackgroundColor:'rgb(18,94,227)',    
           pointRadius: 1,
           data: [deathRate[0], deathRate[1], deathRate[2], deathRate[3], deathRate[4]]
         }, {
@@ -38,31 +70,44 @@ function buildRadar() {
         ]
       },
       options: {
+        pointLabelFontSize: 30,
+        pointLabels: {
+          display: true,
+          pointLabelFontSize: 30,
+          fontSize: 20,
+          fontColor: "#696969",
+        },
         responsive: true,
         maintainAspectRadio: true,
+        pointLabelFontSize: 20,
         legend: {
           display: true,
           position: 'bottom',
-          fontSize: 16,
+          fontSize: 20,
           labels: {
             fontColor: 'rgb(0, 0, 0)'
           }
         },
+        xAxes: [{
+          ticks:{
+            fontColor : "#696969",
+            fontSize : 20
+          }}],
         title: {
           display: true,
-          text: 'Female vs. Male Mortality Rates by Top 5 Causes of Death',
+          text: 'Gender Disparity in Mortality Rates',
           fontSize: 22,
           fontColor : "#696969"
         },
         tooltips: {
           callbacks: {
             label: function(tooltipItem, data) {
-                var label = data.datasets[tooltipItem.datasetIndex].label || '';
-                if (label) {
-                    label += ': ';
-                }
-                label += Math.round(tooltipItem.yLabel * 100) / 100;
-                return label;
+              var label = data.datasets[tooltipItem.datasetIndex].label || '';
+              if (label) {
+                  label += ': ';
+              }
+              label += Math.round(tooltipItem.yLabel * 100) / 100;
+              return label;
             }
           }
         }
@@ -86,7 +131,7 @@ function buildBar() {
     // build chart
     var ctx = document.getElementById('barGraph').getContext('2d');
     var radarChart1 = new Chart(ctx, {
-      type: 'bar',
+      type: 'horizontalBar',
       data: {
         labels: [densityType[0], densityType[6], densityType[12], densityType[18], densityType[24], densityType[30]],
         datasets: [{
@@ -119,6 +164,13 @@ function buildBar() {
               zeroLineColor :"#C0C0C0",
               zeroLineWidth : 1
             },
+            scaleLabel: {
+              display: true,
+              labelString: 'Population',
+              fontColor : "#696969",
+              fontStyle: 'bold',
+              fontSize: 16
+            },
             stacked: true,
           }],
           xAxes: [{
@@ -129,7 +181,14 @@ function buildBar() {
             gridLines:{
               color: "#C0C0C0",
               lineWidth: 0
-            }
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Mortality Rate per 100K People',
+              fontColor : "#696969",
+              fontStyle: 'bold',
+              fontSize: 16
+            },
           }]
         },
         title: {
