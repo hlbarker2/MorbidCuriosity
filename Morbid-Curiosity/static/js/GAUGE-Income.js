@@ -5,13 +5,13 @@ function buildIncomeGauge(income) {
   // income = income.toLocaleString();
     // console.log(level);
 
-    var g = new JustGage({
+    var g1 = new JustGage({
       id: 'income-gauge',
       value: income,
       min: 0,
       max: 70000,
       symbol: '$',
-      pointer: true,
+      pointer: false,
       label: "Per Capita Income",
       pointerOptions: {
         toplength: -15,

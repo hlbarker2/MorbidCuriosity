@@ -58,6 +58,7 @@ h5 {
     text-align: center;
     font-weight: bold;
     color: rgb(72, 209, 204);
+    padding: 25px
 }
 
 p {
@@ -81,7 +82,6 @@ button {
     font-weight: bold;
 }
 
-
 /* ======================================
  Class Data
  ====================================== */
@@ -103,6 +103,31 @@ button {
     margin: 10px;
     line-height: 2em;
 }
+
+.button {
+    background-color: rgb(194, 194, 194); 
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-align: center;
+    /* text-decoration: none; */
+    display: inline-block;
+    font-size: 16px;
+  }
+
+/* .input-group-btn {
+    background-color: rgb(194, 194, 194); 
+    border: none;
+    color: white;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+  } */
 
 /* overlay an opaque dark color so the text will still show up */
 .jumbotron {
@@ -202,6 +227,16 @@ button {
 .carousel-inner > .item > a > img {
   width: 60%;
   margin: auto;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+  }
+  
+a.bg-light:hover, a.bg-light:focus,
+button.bg-light:hover,
+button.bg-light:focus {
+background-color: #dae0e5 !important;
 }
 
 /* ======================================
@@ -372,9 +407,9 @@ width: 100%; /* Width of the outside container */
 -webkit-appearance: none;  /* Override default CSS styles */
 /* appearance: none; */
 width: 100%; 
-height: 10px; 
-border-radius: 5px; /* for round slider */
-background: #ffffff;
+height: 8px; 
+border-radius: 4px; /* for round slider */
+background: #818181;
 outline: none;
 opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
 -webkit-transition: .2s; /* 0.2 seconds transition on hover */

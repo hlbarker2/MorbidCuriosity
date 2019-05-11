@@ -212,128 +212,135 @@
         <canvas id="barGraph" width="300" height="250"></canvas>
       </div>
     </div>
-
-    <div class="row whitespace">
-      <h2>How long will you live?</h2>
-    </div>
-    <div>
+  </div>
+    <!-- quiz section -->
+  <section class="bg-light" id="quiz">
+    <div class="container">
       <div class="row whitespace">
-        <div id="quiz">
+        <h2>How long will you live?</h2>
+      </div>
+      <div>
+        <div class="row whitespace">
           <p>See the stats about where you live, and what your life expectancy is estimated to be based on CDC data. 
-            Then, control the sliders below to see how any sort of intervention would impact the life expectancy in your area.</p>
+              Then, control the sliders below to see how any sort of intervention would impact the life expectancy in your area.</p>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <h3 class="text-left">Enter Your Zip Code:
-          <div class="input-group">
-            <input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
-            <span class="input-group-btn">
-              <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>
-            </span>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h3 class="text-left">Enter Your Zip Code:
+            <div class="input-group">
+              <input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
+              <span class="input-group-btn">
+                <button class="button gray" value="Enter" id="enterZip" onclick="buildMetadata()">Search</button>
+              </span>
             </div>
-        </h3>
+          </h3>
+        </div>
+        <div class="col-md-3"></div>
       </div>
-      <div class="col-md-3"></div>
-    </div>
-    <div class="wrapper">
-      <div class="flexbox">
-        <div class="box">
-          <div id="income-gauge" class="gauge"></div>
-        </div>
-        <div class="box">
-          <div id="disability-gauge" class="gauge"></div>
-        </div>
-        <div class="box">
-          <div id="edu-gauge" class="gauge"></div>
+      <div class="wrapper">
+        <div class="flexbox">
+          <div class="box">
+            <div id="income-gauge" class="gauge"></div>
+          </div>
+          <div class="box">
+            <div id="disability-gauge" class="gauge"></div>
+          </div>
+          <div class="box">
+            <div id="edu-gauge" class="gauge"></div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- <div id="sarahTest" class="200x160px"></div> -->
+      <!-- <script>
+      document.getElementById('g1_refresh').addEventListener('click', function() {
+            g1.refresh(getRandomInt(0, 100));
+        });
+      </script> -->
 
-    <!-- sliders section -->
-    <h2>See What Factors Impact Life Expectancy</h2>
-    <p class ="text-center">Adjust the sliders below to see how they impact life expectancy.</p>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="slidecontainer">
-          <h3>Per Capita Income</h3>
-          <input class="slider" id="PCI" 
-            type="range" min="5000" max="80000" step="1" value="25000" oninput="outputUpdate(this.value)">                        
-          <output for="PCI" id="pciOUT"> 25,000 </output>
+      <!-- sliders section -->
+      <h2>See What Factors Impact Life Expectancy</h2>
+      <p class ="text-center">Adjust the sliders below to see how they impact life expectancy.</p>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <div class="slidecontainer">
+            <h3>Per Capita Income</h3>
+            <input class="slider" id="PCI" 
+              type="range" min="5000" max="80000" step="1" value="25000" oninput="outputUpdate(this.value)">                        
+            <output for="PCI" id="pciOUT"> 25,000 </output>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="slidecontainer">
-          <h3>% of Population in Poverty</h3>
-          <input class="slider" id="Pov" 
-          type="range" min="0.5" max="55" step="0.1" value="17" oninput="outputUpdate2(this.value)">                        
-          <output for="Pov" id="PovOUT"> 17 </output> 
+        <div class="col-md-4">
+          <div class="slidecontainer">
+            <h3>% of Population in Poverty</h3>
+            <input class="slider" id="Pov" 
+            type="range" min="0.5" max="55" step="0.1" value="17" oninput="outputUpdate2(this.value)">                        
+            <output for="Pov" id="PovOUT"> 17 </output> 
+          </div>
         </div>
+        <div class="col-md-2"></div>
       </div>
-      <div class="col-md-2"></div>
-    </div>
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-4">
-        <div class="slidecontainer">
-          <h3>% of Population With a Disability</h3>
-          <input class="slider" id="Disable" 
-          type="range" min="2" max="40" step="0.1" value="15" oninput="outputUpdate3(this.value)">                        
-          <output for="Disable" id="disableOUT"> 15 </output>
-        </div> 
-      </div>
-      <div class="col-md-4">
-        <div class="slidecontainer">
-          <h3>% of Population Without High School Diploma</h3>
-          <input class="slider" id="NoHigh" 
-          type="range" min="0.5" max="55" step="0.1" value="15" oninput="outputUpdate4(this.value)">                        
-          <output for="NoHigh" id="nohighOUT"> 15 </output> 
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <div class="slidecontainer">
+            <h3>% of Population With a Disability</h3>
+            <input class="slider" id="Disable" 
+            type="range" min="2" max="40" step="0.1" value="15" oninput="outputUpdate3(this.value)">                        
+            <output for="Disable" id="disableOUT"> 15 </output>
+          </div> 
         </div>
+        <div class="col-md-4">
+          <div class="slidecontainer">
+            <h3>% of Population Without High School Diploma</h3>
+            <input class="slider" id="NoHigh" 
+            type="range" min="0.5" max="55" step="0.1" value="15" oninput="outputUpdate4(this.value)">                        
+            <output for="NoHigh" id="nohighOUT"> 15 </output> 
+          </div>
+        </div>
+        <div class="col-md-2"></div>
       </div>
-      <div class="col-md-2"></div>
-    </div>
 
-    <h5 id="Total">Life Expectancy = </h5>
-    <script>
-      function outputUpdate(pciOUT) {
-      document.querySelector('#pciOUT').value = pciOUT;
-      CHPS()
-      }
-
-      function outputUpdate2(povOUT) {
-        document.querySelector('#PovOUT').value = povOUT;
+      <h5 id="Total">Life Expectancy = </h5>
+      <script>
+        function outputUpdate(pciOUT) {
+        document.querySelector('#pciOUT').value = pciOUT;
         CHPS()
-      }
+        }
 
-      function outputUpdate3(disableOUT) {
-        document.querySelector('#disableOUT').value = disableOUT;
-        CHPS()
-      }
+        function outputUpdate2(povOUT) {
+          document.querySelector('#PovOUT').value = povOUT;
+          CHPS()
+        }
 
-      function outputUpdate4(nohighOUT) {
-        document.querySelector('#nohighOUT').value = nohighOUT;
-        CHPS()
-      }
+        function outputUpdate3(disableOUT) {
+          document.querySelector('#disableOUT').value = disableOUT;
+          CHPS()
+        }
 
-      function CHPS(){
-        var PCI = document.getElementById('PCI').value;
-        var Pov = document.getElementById('Pov').value;
-        var Disable = document.getElementById('Disable').value;
-        var NoHigh = document.getElementById('NoHigh').value;
-        var pciOUT = document.getElementById('pciOUT').value;
-        var povOUT = document.getElementById('PovOUT').value;
-        var disableOUT = document.getElementById('disableOUT').value;
-        var nohighOUT = document.getElementById('nohighOUT').value;
-        var Total = ((PCI * 7.25585498e-05) + (Pov * -9.40529424e-02) + (Disable * -1.60870035e-01) + (NoHigh * -6.63473095e-02) + 81.07456508385704).toFixed(2);
+        function outputUpdate4(nohighOUT) {
+          document.querySelector('#nohighOUT').value = nohighOUT;
+          CHPS()
+        }
 
-        // Total = Total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById('Total').innerHTML = "Life Expectancy = "+ Total +" years";
-      }
-    </script>
+        function CHPS(){
+          var PCI = document.getElementById('PCI').value;
+          var Pov = document.getElementById('Pov').value;
+          var Disable = document.getElementById('Disable').value;
+          var NoHigh = document.getElementById('NoHigh').value;
+          var pciOUT = document.getElementById('pciOUT').value;
+          var povOUT = document.getElementById('PovOUT').value;
+          var disableOUT = document.getElementById('disableOUT').value;
+          var nohighOUT = document.getElementById('nohighOUT').value;
+          var Total = ((PCI * 7.25585498e-05) + (Pov * -9.40529424e-02) + (Disable * -1.60870035e-01) + (NoHigh * -6.63473095e-02) + 81.07456508385704).toFixed(2);
+
+          // Total = Total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          document.getElementById('Total').innerHTML = "Life Expectancy = "+ Total +" years";
+        }
+      </script>
+    </div>
+  </section>
   <div class="row whitespace"></div>
   </div>
   <div class="footer">Brought to you by Team Morbid Curiosity in the 2019 GW Analytics & Visualization Bootcamp.</div>

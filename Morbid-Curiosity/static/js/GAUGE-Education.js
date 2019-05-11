@@ -3,14 +3,14 @@ function buildEduGauge(NoHighSchoolDiploma) {
   var level = (NoHighSchoolDiploma) / 60 * 180;
   console.log(level);
 
-  var g = new JustGage({
+  var g3 = new JustGage({
     id: 'edu-gauge',
     value: NoHighSchoolDiploma,
     min: 0,
     max: 60,
     symbol: '%',
     pointer: false,
-    label: "% Without High School Diploma",
+    label: "Without High School Diploma",
     pointerOptions: {
       toplength: -15,
       bottomlength: 10,

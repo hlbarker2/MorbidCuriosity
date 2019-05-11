@@ -3,13 +3,13 @@ function buildDisabilityGauge(Disability) {
   var level = ((Disability - 5) / 35) * 180;
     console.log(level);
 
-    var g = new JustGage({
+    var g2 = new JustGage({
       id: 'disability-gauge',
       value: Disability,
       min: 0,
       max: 30,
       symbol: '%',
-      pointer: true,
+      pointer: false,
       label: "Disability Level",
       pointerOptions: {
         toplength: 8,
@@ -21,4 +21,5 @@ function buildDisabilityGauge(Disability) {
       counter: true,
       relativeGaugeSize: true
     });
+
 };
