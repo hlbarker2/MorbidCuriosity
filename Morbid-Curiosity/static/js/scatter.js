@@ -91,15 +91,6 @@ function buildCharts() {
             }
         ];
 
-        console.log(data);
-
-        var frames = [
-            { name: 'SVI', data: [{ x: allLifeExpect, y: allSVI }] },
-            { name: 'Socioeconomic', data: [{ x: allLifeExpect, y: allSES }] },
-            { name: 'Household Comp', data: [{ x: allLifeExpect, y: allHouseholdComp }] },
-            { name: 'Minority Status', data: [{ x: allLifeExpect, y: allMinority }] },
-            { name: 'Housing/Transportation', data: [{ x: allLifeExpect, y: allTransport }] },
-        ];
         var SVI_annotations = [
             {
                 visible: false
@@ -171,7 +162,7 @@ function buildCharts() {
                 bordercolor: "black",
                 bgcolor: "rgb(242, 242, 242)",
                 showarrow: false,
-                x: 1.0,
+                x: 1.02,
                 y: 0.95,
                 xref: "paper"
             }
@@ -267,7 +258,7 @@ function buildCharts() {
                     },
                     xref: "paper"
                 }
-            }
+            },
         };
 
         console.log(data);

@@ -29,7 +29,6 @@ h1 {
 }
 
 h2 {
-    /* font-family: 'Raleway', sans-serif; */
     font-family: 'Roboto Mono', monospace;
     font-size: 30px;
     text-align: center;
@@ -60,48 +59,40 @@ p {
     color: rgb(34, 33, 33);
     display: block;
     margin: 10px;
-    line-height: 1.5em;
+    line-height: 2em;
 }
 
+button{
+    height: 40px; 
+    width: 150px; 
+    display: block; 
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
 
-/* span {
-    position: absolute;
-    white-space: nowrap;
-    animation: floatText 5s infinite alternate ease-in-out;
-    vertical-align: middle;
-    /* animation: anim 1.5s infinite;
-    -webkit-animation-timing-function: linear; /* Chrome, Safari, Opera */
-/* }
-@-webkit-keyframes floatText{
-  from {
-    left: 00%;
-  }
-
-  to {
-    right: 10%;
-  }
-} */
 /* ======================================
  Class Data
  ====================================== */
 
 .team-name {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Mono', monospace !important;
     font-size: 24px;
     font-weight: bold;
     color: rgb(235, 45, 31) !important;
 }
-  
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-    padding-top: 60px;
+.comment {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px;
+    font-style: italic !important;
+    text-align: center !important;
+    color: rgb(65, 63, 63);
+    display: block;
+    margin: 10px;
+    line-height: 2em;
 }
 
 /* overlay an opaque dark color so the text will still show up */
@@ -134,7 +125,7 @@ p {
 /* overlay an opaque dark color so the text will still show up */
 .hero {
     font-family: 'Lato', sans-serif;
-    background-image: url("../images/lindsay-henwood-47743-unsplash.jpg");
+    background-image: url("../images/markus-spiske-518966-unsplash.jpg");
     background-size: cover;
     min-height: 300px;
     font-size: 50px;
@@ -149,7 +140,7 @@ p {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(8, 9, 58, 0.5);
+    background-color: rgba(8, 9, 58, 0.8);
     z-index: 1;
 }
 
@@ -178,7 +169,7 @@ p {
 }
 
 .well {
-    background-color: transparent !important;
+    background-color: rgba(255, 255, 255, .5) !important;
 }
 
 .whiteB {
@@ -186,7 +177,6 @@ p {
 }
 
 .footer {
-    /* margin: 20px; */
     background-color:rgb(8, 9, 58);
     color:whitesmoke;
     font-family: 'Roboto', sans-serif;
@@ -195,11 +185,21 @@ p {
     padding: 20px;
 }
 
+.form-group {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 60%;
+  margin: auto;
+}
+
 /* ======================================
 https://codepen.io/anon/pen/yrYOJg
 ====================================== */
 
-.pill-box-1 {
+/* .pill-box-1 {
 	margin: 50px auto;
 	padding: 10px;
 	text-align: center;
@@ -212,7 +212,7 @@ https://codepen.io/anon/pen/yrYOJg
 	fill: rgb(72,209,204);
     transform: rotate(2190deg);
     transform-origin: 30 30;
-}
+} */
 
 /* ======================================
  ID Data
@@ -220,7 +220,6 @@ https://codepen.io/anon/pen/yrYOJg
 
 /* Style the navbar */
 #navbar {
-  /* overflow: hidden; */
   background-color: white;
   border-bottom: 1px;
   margin-bottom: 0px;
@@ -230,12 +229,96 @@ https://codepen.io/anon/pen/yrYOJg
 #navbar a {
   float: left;
   display: block;
-  color: #f2f2f2;
   text-align: center;
   padding: 14px;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: rgb(34, 33, 33);
 }
 
-#heatmap{
+#radar {
+    background-color: rgba(255, 255, 255, .5);
+    padding: 30px;
+    margin:10px;
+    border: .5px solid black;
+    outline-style: solid;
+    outline-color: rgba(148, 147, 147,0);
+}
+
+#barGraph {
+    background-color: rgba(255, 255, 255, .5);
+    padding: 30px;
+    margin:10px;
+    border: .5px solid black;
+    outline-style: solid;
+    outline-color: rgba(148, 147, 147,0);
+}
+
+#heatmap {
     height: 650px;
+    border: .5px solid black;
+    outline-style: solid;
+    outline-color: rgba(148, 147, 147,0);
+}
+
+.legend {
+    padding: 6px 8px;
+    font: 12px 'Lato', sans-serif;
+    font-weight: bold;
+    color: #555;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
+  
+  .legend ul {
+    padding: 0;
+    margin: 0;
+    clear: both;
+    list-style-type: none;
+  }
+  
+  .legend li {
+    display: inline-block;
+    width: 24px;
+    height: 22px;
+  }
+  
+  .legend .min {
+    float: left;
+    padding-bottom: 5px;
+  }
+  
+  .legend .max {
+    float: right;
+  }
+
+  .legend p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(34, 33, 33);
+    margin: 2px;
+}
+
+#PopSlider .slider-selection {
+    background: #fdba9f;
+}
+
+#PopSlider .slider-ticks {
+    color: #fdba9f;
+}
+
+#PopSlider .slider-handle {
+    background: #eb2d1f;
+}
+
+#SpendSlider .slider-selection {
+    background: #fdba9f;
+}
+
+#SpendSlider .slider-handle {
+    background: #eb2d1f;
+}

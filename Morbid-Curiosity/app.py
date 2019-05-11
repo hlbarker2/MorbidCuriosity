@@ -17,11 +17,11 @@ from flask_sqlalchemy import SQLAlchemy
 from config import remote_db_endpoint, remote_db_port
 from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
 
-#remote_db_endpoint = os.environ['remote_db_endpoint']
-#remote_db_port = os.environ['remote_db_port']
-#remote_morbid_dbname = os.environ['remote_morbid_dbname']
-#remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
-#remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
+# remote_db_endpoint = os.environ['remote_db_endpoint']
+# remote_db_port = os.environ['remote_db_port']
+# remote_morbid_dbname = os.environ['remote_morbid_dbname']
+# remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
+# remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
 
 app = Flask(__name__)
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
@@ -32,7 +32,7 @@ SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 engine = create_engine(f"mysql://{remote_morbid_dbuser}:{remote_morbid_dbpwd}@{remote_db_endpoint}:{remote_db_port}/{remote_morbid_dbname}")
 conn = engine.connect()
-json_url = os.path.join(SITE_ROOT, "data", "us.geo.json")
+json_url = os.path.join(SITE_ROOT, "static", "data", "us.geo.json")
 data = json.load(open(json_url))
 
 @app.route("/")
