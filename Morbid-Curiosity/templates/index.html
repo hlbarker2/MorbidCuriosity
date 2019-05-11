@@ -17,6 +17,8 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
   <!-- favicon -->
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
+  <!-- sliders -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/css/bootstrap-slider.css">
 </head>
 
 <body>
@@ -82,10 +84,10 @@
 
   <div class="container">
     <!-- USA heat map -->
-    <h2 class="row whitespace" id="USAmortality">United States Mortality Rates</h2>
-    <div class="row whitespace">
+    <h2 class="row whitespace">US Mortality</h2>
+    <div class="row whitespace" style="padding-bottom: 0px">
       <div class="col-md-4" id="heatmapSelector1">
-        <div class="form-group">
+        <div align="center" class="form-group">
           <ul class="list-group" id="filters">
             <li class="filter list-group-item">
               <label>Select a Disease:</label><br>
@@ -96,49 +98,36 @@
                 <option value="Stroke_Death_Rate">Stroke Death Rate</option>
                 <option value="LowerResp_Death_Rate">Respiratory Disease Death Rate</option>
                 <option value="Accident_Death_Rate">Accidents Death Rate</option>
+                <option value="Life Expectancy">Life Expectancy</option>
               </select>
             </li>
           </ul>
         </div>  
       </div>
       <div class="col-md-4" id="heatmapSelector2">
-        <div class="form-group">
+        <div align="center" class="form-group">
           <ul class="list-group" id="filters">
             <li class="filter list-group-item">
               <label>Select a Population Size:</label><br>
-              <select id="pop_size" onchange="rebuildMap()">
-                <option value="0" selected>All</option>
-                <option value="5000">5,000+</option>
-                <option value="10000">10,000+</option>
-                <option value="25000">25,000+</option>
-                <option value="50000">50,000+</option>
-              </select>
+              <input id="pop_slide" data-slider-id='PopSlider' data-slider-tooltip='show' data-slider-handle="round" type="text" class="span2" value="" data-slider-min="0" data-slider-max="100000" data-slider-step="5000" data-slider-ticks="[0, 20000, 40000, 60000, 80000, 100000]" data-slider-ticks-labels='["0", "20K", "40K", "60K", "80K", "100K+"]' data-slider-ticks-snap-bounds="2500" data-slider-value="[0,100000]"/>
             </li>
           </ul>
         </div>  
       </div>
       <div class="col-md-4" id="heatmapSelector3">
-        <div class="form-group">
+        <div align="center" class="form-group">
           <ul class="list-group" id="filters">
             <li class="filter list-group-item">
               <label>Select Medicare Spending per Enrollee:</label><br>
-              <select id="med_spend" onchange="rebuildMap()">
-                <option value="0" selected>All</option>
-                <option value="5000">$5,000+</option>
-                <option value="7500">$7,500+</option>
-                <option value="10000">$10,000+</option>
-                <option value="12500">$12,500+</option>
-                <option value="15000">$15,000+</option>
-              </select>
+              <input id="spend_slide" data-slider-id='SpendSlider' data-slider-tooltip='show' data-slider-handle="round"type="text" class="span2" value="" data-slider-min="4000" data-slider-max="15000" data-slider-step="1000" data-slider-ticks="[5000, 7000, 9000, 11000, 13000, 15000]" data-slider-ticks-labels='["$5K", "$7K", "$9K", "$11K", "$13K", "$15K+"]' data-slider-ticks-snap-bounds="250" data-slider-value="[0,15000]"/>
             </li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="row whitespace">
+    <div class="row whitespace" style="padding-top: -150px">
       <div class="col-md-12">
-        <p class="comment text-center">It will take a few seconds for each selection to load on the map.</p>
-        <div id="heatmap" style="height: 650px"></div>
+        <div id="heatmap" style="height: 650px;" ></div>
         <p>Where are the most and least deadly places in the country? Use the filters above to explore the relationship between county population sizes, Medicare spending per enrollee, and the death rates for various diseases.
         <br><i>*Counties with incomplete data were not included on the map</i>
         </p>
@@ -299,6 +288,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> <!-- chart.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/bootstrap-slider.js"></script>
   <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
   <script src="static/js/scatter.js"></script>
   <script src="static/js/radar.js"></script> 
