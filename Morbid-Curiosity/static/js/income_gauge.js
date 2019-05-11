@@ -22,7 +22,7 @@ function buildIncomeGauge(income) {
       type: "scatter",
       x: [0],
       y: [0],
-      marker: { size: 12, color: "850000" },
+      marker: { size: 12, color: "000000" },
       showlegend: false,
       text: income,
       hoverinfo: "text"
@@ -57,15 +57,15 @@ function buildIncomeGauge(income) {
       {
         type: "path",
         path: path,
-        fillcolor: "850000",
+        fillcolor: "000000",
         line: {
-          color: "850000"
+          color: "000000"
         }
       }
     ],
     title: "Per Capita Income (Thousands)",
-    height: 500,
-    width: 500,
+    height: 400,
+    width: 400,
     xaxis: {
       zeroline: false,
       showticklabels: false,

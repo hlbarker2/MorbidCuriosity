@@ -52,6 +52,14 @@ h4 {
     color: rgb(235, 45, 31);
 }
 
+h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 45px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(72, 209, 204);
+}
+
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -62,7 +70,7 @@ p {
     line-height: 2em;
 }
 
-button{
+button {
     height: 40px; 
     width: 150px; 
     display: block; 
@@ -309,7 +317,7 @@ a.tooltip span {
 a.tooltip:hover span{
     display:inline; position:absolute; 
     border:2px solid #FFF;  color:#EEE;
-    background:rgb(72, 209, 204) url(http://www.menucool.com/tooltip/cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
+    background:rgb(83, 248, 243) url(http://www.menucool.com/tooltip/cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
 }
 
 .callout {z-index:20;position:absolute;border:0;top:-14px;left:120px;}
@@ -322,4 +330,81 @@ a.tooltip span
     /*opacity: 0.8;*/
 }
 
+/* 
+######################
+    Fancy gauges 
+###################### 
+*/
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 480px;
+}
 
+.box {
+    width: 100%;
+}
+
+.gauge {
+    width: 100%;
+    height: 240px;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexbox>div {
+    flex: 1 0 300px;
+}
+/* 
+######################
+    `Sliders 
+###################### 
+*/
+.slidecontainer {
+width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+-webkit-appearance: none;  /* Override default CSS styles */
+/* appearance: none; */
+width: 100%; 
+height: 10px; 
+border-radius: 5px; /* for round slider */
+background: #ffffff;
+outline: none;
+opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+-webkit-appearance: none; /* Override default look */
+appearance: none;
+width: 30px; /* Set a specific slider handle width */
+height: 30px; /* Slider handle height */
+/* border: 0; */
+background: url(../images/skull-and-crossbones.png);
+background-size: 30px;
+background-repeat: no-repeat;
+cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+width: 30px; /* slider handle width */
+height: 30px; /* Slider handle height */
+/* border: 0; */
+background: url(../images/skull-and-crossbones.png);
+background-size: 30px;
+background-repeat: no-repeat;
+cursor: pointer; /* Cursor on hover */
+}
