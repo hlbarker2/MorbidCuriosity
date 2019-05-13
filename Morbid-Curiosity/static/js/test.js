@@ -1,10 +1,9 @@
-// build out all the gauge charts
-
+// Build out the gauge charts
 function buildMetadata() {
   var zipCode = d3.select("#zipcode").node()
     ? d3.select("#zipcode").node().value
     : 22201;
-  console.log({ zipCode });
+  //console.log({ zipCode });
 
   d3.json(`/userData/${zipCode}`)
     .then(data => {
@@ -16,7 +15,7 @@ function buildMetadata() {
       compareDisability(data[0].Disability);
     })
     .catch(err => {
-      console.error(err);
+      //console.error(err);
       Swal.fire({
         title: "Try Again!",
         text: "No zip code (or we don't have the data for it)!",
