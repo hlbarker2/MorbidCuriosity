@@ -14,7 +14,10 @@ function buildIncomeGauge(income) {
       value: income,
       min: 0,
       max: 70000,
-      symbol: '$',
+      maxTxt: "$70,000",
+      textRenderer: function(val) {
+        return "$" + val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      },
       pointer: false,
       label: "Per Capita Income",
       // pointerOptions: {
