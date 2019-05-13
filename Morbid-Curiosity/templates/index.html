@@ -61,17 +61,17 @@
       </div>
       <div class="row text-center">
         <div class="col-md-4">
-          <a href="#USAmortality"><img src="../static/images/USA-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <a href="#USAmortality"><img src="../static/images/USA-icon.png" width=180px alt="usa map icon" class="img-fluid"></a>
           <h4 class="service-heading">USA Mortality</h4>
           <p class="text-muted">Check out how mortality rates from diseases affect different areas of the United States.</p>
         </div>
         <div class="col-md-4">
-          <a href="#bar"><img src="../static/images/bar-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <a href="#SVI-data"><img src="../static/images/bar-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
           <h4 class="service-heading">SVI and Demographic Data</h4>
           <p class="text-muted">Social Vulnerability Index, mortality rates between genders, and mortality rates based on the population of where you live.</p>
         </div>
         <div class="col-md-4">
-          <a href="#quiz"><img src="../static/images/quiz-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <a href="#quiz"><img src="../static/images/quiz-icon.png" width=180px alt="quiz icon" class="img-fluid"></a>
           <h4 class="service-heading">Quiz</h4>
           <p class="text-muted">How old will you live to be? Answer a few demographic questions to get an estimate based on our data.</p>
         </div>
@@ -143,34 +143,39 @@
         </p>
       </div>
     </div>
+  </div>
 
-    <!-- bar charts -->
-    <h2 class="whitespace">Social Vulnerability Index & Life Expectancy</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bar"></div>
+  <!-- bar charts -->
+  <section class="bg-light" id="SVI-data">
+    <div class="container">
+      <h2>Social Vulnerability Index & Life Expectancy</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="bar"></div>
+        </div>
+      </div>
+        <div class="row whitespace">
+        <div class="col-md-12 text-left">
+          <p class="text-left">Social vulnerability is a term that refers to the resilience of individuals 
+            and communities when confronted by external stresses on human health, such as natural disasters, 
+            poverty, or disease outbreaks. The CDC's 
+            <a
+              target="#_blank" 
+              href="https://svi.cdc.gov/"
+              class="card-link">Social Vulnerability Index
+            </a> 
+            (SVI) uses 15 different U.S. census variables to compute the scoring.
+            <br><br>
+            What you see in these graphs is that socioeconomic status, household composition and the overall 
+            SVI score can be reliable indicators of life expectancy in the United States.
+          </p>
+        </div> 
       </div>
     </div>
-      <div class="row whitespace">
-      <div class="col-md-12 text-left">
-        <p class="text-left">Social vulnerability is a term that refers to the resilience of individuals 
-          and communities when confronted by external stresses on human health, such as natural disasters, 
-          poverty, or disease outbreaks. The CDC's 
-          <a
-            target="#_blank" 
-            href="https://svi.cdc.gov/"
-            class="card-link">Social Vulnerability Index
-          </a> 
-          (SVI) uses 15 different U.S. census variables to compute the scoring.
-          <br><br>
-          What you see in these graphs is that socioeconomic status, household composition and the overall 
-          SVI score can be reliable indicators of life expectancy in the United States.
-        </p>
-      </div> 
-    </div>
-    <hr>
+  </section>
      
-    <!-- radar charts -->
+  <!-- radar charts -->
+  <div class="container">
     <h2 class="whitespace">Mortality Trends by Demographic Comparisons</h2>
     <div class="row whitespace">
       <div class="col-md-6">
@@ -213,7 +218,8 @@
       </div>
     </div>
   </div>
-    <!-- quiz section -->
+
+  <!-- quiz section -->
   <section class="bg-light" id="quiz">
     <div class="container">
       <div class="row whitespace">
@@ -221,8 +227,9 @@
       </div>
       <div>
         <div class="row whitespace">
-          <p>See the stats about where you live, and what your life expectancy is estimated to be based on CDC data. 
-              Then, control the sliders below to see how any sort of intervention would impact the life expectancy in your area.</p>
+          <p class="text-center">See the stats about where you live, and what your life expectancy is estimated to be based on CDC data. 
+            <br>
+            After you enter a zip code, the county's statistical data for that zip code will be returned.</p>
         </div>
       </div>
       <div class="row">
@@ -232,7 +239,7 @@
             <div class="input-group">
               <input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
               <span class="input-group-btn">
-                <button class="button gray" value="Enter" id="enterZip" onclick="buildMetadata()">Search</button>
+                <button value="Enter" id="enterZip" onclick="buildMetadata()">Search</button>
               </span>
             </div>
           </h3>
@@ -252,15 +259,11 @@
           </div>
         </div>
       </div>
-      <!-- <script>
-      document.getElementById('g1_refresh').addEventListener('click', function() {
-            g1.refresh(getRandomInt(0, 100));
-        });
-      </script> -->
+      <hr>
 
       <!-- sliders section -->
       <h2>See What Factors Impact Life Expectancy</h2>
-      <p class ="text-center">Adjust the sliders below to see how they impact life expectancy.</p>
+      <p class ="text-center">Adjust the sliders below to see how different factors impact life expectancy.</p>
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4">
@@ -339,9 +342,9 @@
           document.getElementById('Total').innerHTML = "Life Expectancy = "+ Total +" years";
         }
       </script>
+      <div class="row whitespace"></div>
     </div>
   </section>
-  <div class="row whitespace"></div>
   </div>
   <div class="footer">Brought to you by Team Morbid Curiosity in the 2019 GW Analytics & Visualization Bootcamp.</div>
   

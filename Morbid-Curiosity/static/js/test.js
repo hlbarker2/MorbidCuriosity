@@ -2,11 +2,6 @@
 
 function buildMetadata() {
 
-  var elements = document.getElementsByClassName("flexbox");
-    while(elements.length > 0){
-      elements[0].parentNode.innherHTML="";
-  }
-
   var zipCode = d3.select("#zipcode").node()
     ? d3.select("#zipcode").node().value
     : 22201;

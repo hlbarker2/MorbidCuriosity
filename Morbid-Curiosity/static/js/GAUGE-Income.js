@@ -1,3 +1,5 @@
+var g1
+
 function buildIncomeGauge(income) {
 
   var level = (((income/1000) - 5)/ (65 - 5)) * 180;
@@ -5,7 +7,9 @@ function buildIncomeGauge(income) {
   // income = income.toLocaleString();
     // console.log(level);
 
-    var g1 = new JustGage({
+  if (!g1) {
+
+    g1 = new JustGage({
       id: 'income-gauge',
       value: income,
       min: 0,
@@ -24,6 +28,13 @@ function buildIncomeGauge(income) {
       },
       gaugeWidthScale: 0.6,
       counter: true,
-      relativeGaugeSize: true
+      relativeGaugeSize: true,
+      levelColors: ["#125ee3"],
+      titleMinFontSize: "8px",
+      titleFontColor: ["#999"],
+      color: ["#125ee3"]
     });
+  } 
+  else g1.refresh(income);
+
 };

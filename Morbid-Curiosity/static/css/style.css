@@ -337,6 +337,11 @@ Styling for the navigate section
     outline-color: rgba(148, 147, 147,0);
 }
 
+#income-gauge {
+    font-size: 0.8em !important;
+    color: black;
+}
+
 /* ======================================
  Tooltips
  ====================================== */
