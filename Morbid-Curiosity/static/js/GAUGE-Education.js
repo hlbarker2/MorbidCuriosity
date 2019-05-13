@@ -15,15 +15,6 @@ function buildEduGauge(NoHighSchoolDiploma) {
       symbol: '%',
       pointer: false,
       label: "No High School Diploma",
-      pointerOptions: {
-        toplength: -15,
-        bottomlength: 10,
-        bottomwidth: 5,
-        color: '#125EE3',
-        stroke: '#125EE3',
-        stroke_width: 1,
-        stroke_linecap: 'round'
-      },
       gaugeWidthScale: 0.6,
       counter: true,
       relativeGaugeSize: true,

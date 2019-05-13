@@ -250,12 +250,15 @@
         <div class="flexbox">
           <div class="box">
             <div id="income-gauge" class="gauge"></div>
+            <div type="textbox" id="income-text" class="info-box"></div>
           </div>
           <div class="box">
             <div id="disability-gauge" class="gauge"></div>
+            <div type="textbox" id="disability-text" class="info-box"></div>
           </div>
           <div class="box">
             <div id="edu-gauge" class="gauge"></div>
+            <div type="textbox" id="edu-text" class="info-box"></div>
           </div>
         </div>
       </div>
@@ -347,24 +350,18 @@
   </section>
   </div>
   <div class="footer">Brought to you by Team Morbid Curiosity in the 2019 GW Analytics & Visualization Bootcamp.</div>
-  
+  <!-- libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> <!-- chart.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+  <!-- main visualizations -->
   <script src="static/js/scatter.js"></script>
   <script src="static/js/radar.js"></script> 
   <script src="static/js/map.js"></script>
-  <!-- <script src="static/js/test.js"></script>
-  <script src="static/js/gauge.js"></script> -->
+  <!-- gauges -->
   <script src="{{ url_for('static', filename='js/test.js') }}"></script>
-  <!-- <script src="{{ url_for('static', filename='js/gauge.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/edu_gauge.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/income_gauge.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/poverty_gauge.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/disability_gauge.js') }}"></script> -->
   <script src="{{ url_for('static', filename='js/GAUGE-Disability.js') }}"></script>
   <script src="{{ url_for('static', filename='js/GAUGE-Income.js') }}"></script>
   <script src="{{ url_for('static', filename='js/GAUGE-Education.js') }}"></script>
@@ -377,6 +374,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.1/raphael.js"></script>
   <!-- Custom scripts for the 'navigate' section template code -->
   <script src="js/agency.min.js"></script>
+  <!-- text showing up underneath gauges -->
+  <script src="{{ url_for('static', filename='js/text.js') }}"></script>
+  <script src="static/js/sweetalert2.all.min.js"></script>
+
 </body>
 
 </html>

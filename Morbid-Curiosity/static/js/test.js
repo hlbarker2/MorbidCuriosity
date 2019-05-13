@@ -1,7 +1,6 @@
 // build out all the gauge charts
 
 function buildMetadata() {
-
   var zipCode = d3.select("#zipcode").node()
     ? d3.select("#zipcode").node().value
     : 22201;
@@ -10,12 +9,25 @@ function buildMetadata() {
   d3.json(`/userData/${zipCode}`)
     .then(data => {
       buildEduGauge(data[0].NoHighSchoolDiploma);
+      compareEducation(data[0].NoHighSchoolDiploma);
       buildIncomeGauge(data[0].Per_Capita_Income);
-      buildDisabilityGauge(data[0].Disability)
+      compareIncome(data[0].Per_Capita_Income);
+      buildDisabilityGauge(data[0].Disability);
+      compareDisability(data[0].Disability);
     })
     .catch(err => {
       console.error(err);
-      alert(`You have entered an invalid zip code. Please try again.`);
+      Swal.fire({
+        title: "Try Again!",
+        text: "No zip code (or we don't have the data for it)!",
+        imageUrl:
+          "https://thumbs.gfycat.com/RemorsefulSharpFowl-size_restricted.gif",
+        imageWidth: 400,
+        imageHeight: 300,
+        imageAlt: "Custom image",
+        animation: false,
+        backdrop: `rgba(0,0,123,0.4)`
+      });
     });
 }
 

@@ -15,12 +15,6 @@ function buildDisabilityGauge(Disability) {
       symbol: '%',
       pointer: false,
       label: "Disability Level",
-      pointerOptions: {
-        toplength: 8,
-        bottomlength: -20,
-        bottomwidth: 6,
-        color: '#8e8e93'
-      },
       gaugeWidthScale: 0.6,
       counter: true,
       relativeGaugeSize: true,

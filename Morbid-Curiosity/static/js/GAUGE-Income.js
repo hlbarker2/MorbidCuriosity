@@ -17,15 +17,15 @@ function buildIncomeGauge(income) {
       symbol: '$',
       pointer: false,
       label: "Per Capita Income",
-      pointerOptions: {
-        toplength: -15,
-        bottomlength: 10,
-        bottomwidth: 5,
-        color: '#EB2D1F',
-        stroke: '#ffffff',
-        stroke_width: 1,
-        stroke_linecap: 'round'
-      },
+      // pointerOptions: {
+      //   toplength: -15,
+      //   bottomlength: 10,
+      //   bottomwidth: 5,
+      //   color: '#EB2D1F',
+      //   stroke: '#ffffff',
+      //   stroke_width: 1,
+      //   stroke_linecap: 'round'
+      // },
       gaugeWidthScale: 0.6,
       counter: true,
       relativeGaugeSize: true,
