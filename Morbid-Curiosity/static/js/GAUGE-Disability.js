@@ -2,7 +2,7 @@ var g2
 
 function buildDisabilityGauge(Disability) {
 
-  var level = ((Disability - 5) / 35) * 180;
+    //var level = ((Disability - 5) / 35) * 180;
     // console.log(level);
 
   if (!g2) {
