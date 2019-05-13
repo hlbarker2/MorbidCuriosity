@@ -12,6 +12,7 @@ function buildEduGauge(NoHighSchoolDiploma) {
       value: NoHighSchoolDiploma,
       min: 0,
       max: 60,
+      maxTxt: "60%",
       symbol: '%',
       pointer: false,
       decimals: 2,
