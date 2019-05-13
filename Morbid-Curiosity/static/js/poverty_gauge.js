@@ -22,7 +22,7 @@ function buildPovertyGauge(poverty) {
       type: "scatter",
       x: [0],
       y: [0],
-      marker: { size: 12, color: "850000" },
+      marker: { size: 12, color: "000000" },
       showlegend: false,
       text: poverty,
       hoverinfo: "text"
@@ -30,21 +30,21 @@ function buildPovertyGauge(poverty) {
     {
       values: [50 / 6, 50 / 6, 50 / 6, 50 / 6, 50 / 6, 50 / 6, 50],
       rotation: 90,
-      text: ["50-60", "40-50", "30-40", "20-30", "10-20", "0-10", ""],
+      text: ["50-60%", "40-50%", "30-40%", "20-30%", "10-20%", "0-10%", ""],
       textinfo: "text",
       textposition: "inside",
       marker: {
         colors: [
-          "rgba(110, 154, 22, .5)",
-          "rgba(170, 202, 42, .5)",
-          "rgba(202, 209, 95, .5)",
-          "rgba(210, 206, 145, .5)",
-          "rgba(232, 226, 202, .5)",
-          "rgba(240, 230, 215, .5)",
+          "rgb(235, 45, 31)",
+          "rgba(235, 45, 31, .9)",
+          "rgba(235, 45, 31, .7)",
+          "rgba(235, 45, 31, .5)",
+          "rgba(235, 45, 31, .3)",
+          "rgba(235, 45, 31, .1)",
           "rgba(255, 255, 255, 0)"
         ]
       },
-      labels: ["50-60", "40-50", "30-40", "20-30", "10-20", "0-10", ""],
+      labels: ["50-60%", "40-50%", "30-40%", "20-30%", "10-20%", "0-10%", ""],
       hoverinfo: "label",
       hole: 0.5,
       type: "pie",
@@ -57,15 +57,15 @@ function buildPovertyGauge(poverty) {
       {
         type: "path",
         path: path,
-        fillcolor: "850000",
+        fillcolor: "000000",
         line: {
-          color: "850000"
+          color: "000000"
         }
       }
     ],
     title: "Percent Below Poverty Level",
-    height: 500,
-    width: 500,
+    height: 400,
+    width: 400,
     xaxis: {
       zeroline: false,
       showticklabels: false,

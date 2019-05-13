@@ -1,24 +1,33 @@
-// Create function to build multiple gauges
+// Build out the gauge charts
 function buildMetadata() {
   var zipCode = d3.select("#zipcode").node()
     ? d3.select("#zipcode").node().value
     : 22201;
-  console.log({ zipCode });
-  // try {
+  //console.log({ zipCode });
+
   d3.json(`/userData/${zipCode}`)
     .then(data => {
-      buildGauge(data[0].LifeExpectancy);
       buildEduGauge(data[0].NoHighSchoolDiploma);
+      compareEducation(data[0].NoHighSchoolDiploma);
       buildIncomeGauge(data[0].Per_Capita_Income);
-      buildPovertyGauge(data[0].Poverty);
-      buildDisabilityGauge(data[0].Disability)
+      compareIncome(data[0].Per_Capita_Income);
+      buildDisabilityGauge(data[0].Disability);
+      compareDisability(data[0].Disability);
     })
     .catch(err => {
-      console.error(err);
-      alert(`You have entered an invalid zip code. Please try again.`);
+      //console.error(err);
+      Swal.fire({
+        title: "Try Again!",
+        text: "No zip code (or we don't have the data for it)!",
+        imageUrl:
+          "https://thumbs.gfycat.com/RemorsefulSharpFowl-size_restricted.gif",
+        imageWidth: 400,
+        imageHeight: 300,
+        imageAlt: "Custom image",
+        animation: false,
+        backdrop: `rgba(0,0,123,0.4)`
+      });
     });
-  // }
-
 }
 
 // Initialize the dashboard

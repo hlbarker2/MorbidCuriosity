@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
   <link rel="stylesheet" type="text/css" href="../static/css/agency.css">
   <!-- Custom fonts for this template -->
-  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway|Roboto|Roboto+Mono|Roboto+Slab" rel="stylesheet">
   <!-- favicon -->
   <link rel="icon" type="image/png" href="../static/images/health-cross.png">
@@ -63,17 +63,17 @@
       </div>
       <div class="row text-center">
         <div class="col-md-4">
-          <a href="#USAmortality"><img src="../static/images/USA-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <a href="#USAmortality"><img src="../static/images/USA-icon.png" width=180px alt="usa map icon" class="img-fluid"></a>
           <h4 class="service-heading">USA Mortality</h4>
           <p class="text-muted">Check out how mortality rates from diseases affect different areas of the United States.</p>
         </div>
         <div class="col-md-4">
-          <a href="#bar"><img src="../static/images/bar-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <a href="#SVI-data"><img src="../static/images/bar-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
           <h4 class="service-heading">SVI and Demographic Data</h4>
           <p class="text-muted">Social Vulnerability Index, mortality rates between genders, and mortality rates based on the population of where you live.</p>
         </div>
         <div class="col-md-4">
-          <a href="#quiz"><img src="../static/images/quiz-icon.png" width=180px alt="bar graph icon" class="img-fluid"></a>
+          <a href="#quiz"><img src="../static/images/quiz-icon.png" width=180px alt="quiz icon" class="img-fluid"></a>
           <h4 class="service-heading">Quiz</h4>
           <p class="text-muted">How old will you live to be? Answer a few demographic questions to get an estimate based on our data.</p>
         </div>
@@ -127,40 +127,47 @@
     </div>
     <div class="row whitespace" style="padding-top: -150px">
       <div class="col-md-12">
+
         <div id="heatmap" style="height: 650px;" ></div>
+
         <p>Where are the most and least deadly places in the country? Use the filters above to explore the relationship between county population sizes, Medicare spending per enrollee, and the death rates for various diseases.
         <br><i>*Counties with incomplete data were not included on the map</i>
         </p>
       </div>
     </div>
+  </div>
 
-    <!-- bar charts -->
-    <h2 class="whitespace">Social Vulnerability Index & Life Expectancy</h2>
-    <div class="row">
-      <div class="col-md-12">
-        <div id="bar"></div>
+  <!-- bar charts -->
+  <section class="bg-light" id="SVI-data">
+    <div class="container">
+      <h2>Social Vulnerability Index & Life Expectancy</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="bar"></div>
+        </div>
+      </div>
+        <div class="row whitespace">
+        <div class="col-md-12 text-left">
+          <p class="text-left">Social vulnerability is a term that refers to the resilience of individuals 
+            and communities when confronted by external stresses on human health, such as natural disasters, 
+            poverty, or disease outbreaks. The CDC's 
+            <a
+              target="#_blank" 
+              href="https://svi.cdc.gov/"
+              class="card-link">Social Vulnerability Index
+            </a> 
+            (SVI) uses 15 different U.S. census variables to compute the scoring.
+            <br><br>
+            What you see in these graphs is that socioeconomic status, household composition and the overall 
+            SVI score can be reliable indicators of life expectancy in the United States.
+          </p>
+        </div> 
       </div>
     </div>
-      <div class="row whitespace">
-      <div class="col-md-12 text-left">
-        <p class="text-left">Social vulnerability is a term that refers to the resilience of individuals 
-          and communities when confronted by external stresses on human health, such as natural disasters, 
-          poverty, or disease outbreaks. The CDC's 
-          <a
-            target="#_blank" 
-            href="https://svi.cdc.gov/"
-            class="card-link">Social Vulnerability Index
-          </a> 
-          (SVI) uses 15 different U.S. census variables to compute the scoring.
-          <br><br>
-          What you see in these graphs is that socioeconomic status, household composition and the overall 
-          SVI score can be reliable indicators of life expectancy in the United States.
-        </p>
-      </div> 
-    </div>
-    <hr>
+  </section>
      
-    <!-- radar charts -->
+  <!-- radar charts -->
+  <div class="container">
     <h2 class="whitespace">Mortality Trends by Demographic Comparisons</h2>
     <div class="row whitespace">
       <div class="col-md-6">
@@ -202,109 +209,173 @@
         <canvas id="barGraph" width="300" height="250"></canvas>
       </div>
     </div>
+  </div>
 
-    <div class="row whitespace">
-      <h2>How long will you live?</h2>
-      <div id="quiz"></div>
-    </div>
+  <!-- quiz section -->
+  <section class="bg-light" id="quiz">
     <div class="container">
-      <h3>Your Zip Code:</h3>
-        <div class="input-group">
-          <input type="text" minlength="5" maxlength="5" id="zipcode" value="22201" onkeyup="onZipCodeChange()">
-          <span class="input-group-btn">
-            <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>
-          </span>
+      <div class="row whitespace">
+        <h2>How long will you live?</h2>
+      </div>
+      <div>
+        <div class="row whitespace">
+          <p class="text-center">See the stats about where you live, and what your life expectancy is estimated to be based on CDC data. 
+            <br>
+            After you enter a zip code, the county's statistical data for that zip code will be returned.</p>
         </div>
-          <!-- input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
-          <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>
-      </div> -->
-              <!--<h5>SELECT Sample:</h5>-->
-              <!--<select id="selDataset" onchange="optionChanged(this.value)"></select>
+      </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h3 class="text-left">Enter Your Zip Code:
+            <div class="input-group">
+              <input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
+              <span class="input-group-btn">
+                <button value="Enter" id="enterZip" onclick="buildMetadata()">Search</button>
+              </span>
             </div>
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">Sample MetaData</h3>
-              </div>
-              <div id="sample-metadata" class="panel-body"></div> -->
-         <!--- <p>{{outputs}}</p> -->
-        <!----</form> -->
-      <div class="col-md-5">
-        <div id="gauge"></div>
-      </div>
-    </div>
-
-    <div class="row whitespace">
-    </div>
-  </div>
-  <div class="container">
-    <h2>Add Zip Code</h2>
-    <div class="input-group">
-      <input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
-      <span class="input-group-btn">
-        <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>
-      </span>
-      </div>
-      <!-- input type="text" minlength="5" maxlength="5" id="zipcode" value="22201">
-      <button value="Enter" id="enterZip" onclick="buildMetadata()">Enter</button>-->
-  </div>
-          <!--<h5>SELECT Sample:</h5>-->
-          <!--<select id="selDataset" onchange="optionChanged(this.value)"></select>
+          </h3>
         </div>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Sample MetaData</h3>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="wrapper">
+        <div class="flexbox">
+          <div class="box">
+            <div id="income-gauge" class="gauge"></div>
+            <div type="textbox" id="income-text" class="info-box"></div>
           </div>
-          <div id="sample-metadata" class="panel-body"></div> -->
-     <!--- <p>{{outputs}}</p> -->
-    <!----</form> -->
-      <div class="col-md-5">
-        <div id="gauge"></div>
+          <div class="box">
+            <div id="disability-gauge" class="gauge"></div>
+            <div type="textbox" id="disability-text" class="info-box"></div>
+          </div>
+          <div class="box">
+            <div id="edu-gauge" class="gauge"></div>
+            <div type="textbox" id="edu-text" class="info-box"></div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-5">
-        <div id="edu_gauge"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="income_gauge"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="poverty_gauge"></div>
-      </div>
-      <div class="col-md-5">
-        <div id="disability_gauge"></div>
-      </div>
-    </div>
-    </div>
-    </div>
-    <div class="row whitespace"></div>
-  </body>
-</html>
+      <hr>
 
+      <!-- sliders section -->
+      <h2>See What Factors Impact Life Expectancy</h2>
+      <p class ="text-center">Adjust the sliders below to see how different factors impact life expectancy.</p>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <div class="slidecontainer">
+            <h3>Per Capita Income</h3>
+            <input class="slider" id="PCI" 
+              type="range" min="5000" max="80000" step="1" value="25000" oninput="outputUpdate(this.value)">                        
+            <output for="PCI" id="pciOUT"> 25,000 </output>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="slidecontainer">
+            <h3>% of Population in Poverty</h3>
+            <input class="slider" id="Pov" 
+            type="range" min="0.5" max="55" step="0.1" value="17" oninput="outputUpdate2(this.value)">                        
+            <output for="Pov" id="PovOUT"> 17 </output> 
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <div class="slidecontainer">
+            <h3>% of Population With a Disability</h3>
+            <input class="slider" id="Disable" 
+            type="range" min="2" max="40" step="0.1" value="15" oninput="outputUpdate3(this.value)">                        
+            <output for="Disable" id="disableOUT"> 15 </output>
+          </div> 
+        </div>
+        <div class="col-md-4">
+          <div class="slidecontainer">
+            <h3>% of Population Without High School Diploma</h3>
+            <input class="slider" id="NoHigh" 
+            type="range" min="0.5" max="55" step="0.1" value="15" oninput="outputUpdate4(this.value)">                        
+            <output for="NoHigh" id="nohighOUT"> 15 </output> 
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+
+      <h5 id="Total">Life Expectancy = </h5>
+      <script>
+        function outputUpdate(pciOUT) {
+        document.querySelector('#pciOUT').value = pciOUT;
+        CHPS()
+        }
+
+        function outputUpdate2(povOUT) {
+          document.querySelector('#PovOUT').value = povOUT;
+          CHPS()
+        }
+
+        function outputUpdate3(disableOUT) {
+          document.querySelector('#disableOUT').value = disableOUT;
+          CHPS()
+        }
+
+        function outputUpdate4(nohighOUT) {
+          document.querySelector('#nohighOUT').value = nohighOUT;
+          CHPS()
+        }
+
+        function CHPS(){
+          var PCI = document.getElementById('PCI').value;
+          var Pov = document.getElementById('Pov').value;
+          var Disable = document.getElementById('Disable').value;
+          var NoHigh = document.getElementById('NoHigh').value;
+          var pciOUT = document.getElementById('pciOUT').value;
+          var povOUT = document.getElementById('PovOUT').value;
+          var disableOUT = document.getElementById('disableOUT').value;
+          var nohighOUT = document.getElementById('nohighOUT').value;
+          var Total = ((PCI * 7.25585498e-05) + (Pov * -9.40529424e-02) + (Disable * -1.60870035e-01) + (NoHigh * -6.63473095e-02) + 81.07456508385704).toFixed(2);
+
+          // Total = Total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          document.getElementById('Total').innerHTML = "Life Expectancy = "+ Total +" years";
+        }
+      </script>
+      <div class="row whitespace"></div>
     </div>
+  </section>
   </div>
   <div class="footer">Brought to you by Team Morbid Curiosity in the 2019 GW Analytics & Visualization Bootcamp.</div>
-  
+  <!-- libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> <!-- chart.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+  <!-- main visualizations -->
+
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.1/bootstrap-slider.js"></script>
   <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+
   <script src="static/js/scatter.js"></script>
   <script src="static/js/radar.js"></script> 
   <script src="static/js/map.js"></script>
-  <!-- <script src="static/js/test.js"></script>
-  <script src="static/js/gauge.js"></script> -->
+  <!-- gauges -->
   <script src="{{ url_for('static', filename='js/test.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/gauge.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/edu_gauge.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/income_gauge.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/poverty_gauge.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/disability_gauge.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/GAUGE-Disability.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/GAUGE-Income.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/GAUGE-Education.js') }}"></script>
   <script type="text/javascript" src="static/js/choropleth.js"></script>
+  <!-- fancy gauge CDNs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.2.9/justgage.min.js.map"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.1/raphael-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.1/raphael.js"></script>
   <!-- Custom scripts for the 'navigate' section template code -->
   <script src="js/agency.min.js"></script>
+  <!-- text showing up underneath gauges -->
+  <script src="{{ url_for('static', filename='js/text.js') }}"></script>
+  <script src="static/js/sweetalert2.all.min.js"></script>
+
 </body>
 
 </html>

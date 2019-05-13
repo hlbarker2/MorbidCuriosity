@@ -23,7 +23,7 @@ function buildGauge(LifeExpectancy) {
                 type: "scatter",
                 x: [0],
                 y: [0],
-                marker: { size: 12, color: "850000" },
+                marker: { size: 12, color: "000000" },
                 showlegend: false,
                 text: LifeExpectancy,
                 hoverinfo: "text"
@@ -36,12 +36,12 @@ function buildGauge(LifeExpectancy) {
                 textposition: "inside",
                 marker: {
                     colors: [
-                        "rgba(110, 154, 22, .5)",
-                        "rgba(170, 202, 42, .5)",
-                        "rgba(202, 209, 95, .5)",
-                        "rgba(210, 206, 145, .5)",
-                        "rgba(232, 226, 202, .5)",
-                        "rgba(240, 230, 215, .5)",
+                        "rgb(72, 209, 204)",
+                        "rgba(72, 209, 204, .85)",
+                        "rgba(72, 209, 204, .7)",
+                        "rgba(72, 209, 204, .5)",
+                        "rgba(72, 209, 204, .3)",
+                        "rgba(72, 209, 204, .15)",
                         "rgba(255, 255, 255, 0)"
                     ]
                 },
@@ -58,15 +58,15 @@ function buildGauge(LifeExpectancy) {
                 {
                     type: "path",
                     path: path,
-                    fillcolor: "850000",
+                    fillcolor: "000000",
                     line: {
-                        color: "850000"
+                        color: "000000"
                     }
                 }
             ],
             title: "Life Expectancy",
-            height: 500,
-            width: 500,
+            height: 400,
+            width: 400,
             xaxis: {
                 zeroline: false,
                 showticklabels: false,
