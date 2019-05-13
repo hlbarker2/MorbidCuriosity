@@ -12,6 +12,7 @@ function buildDisabilityGauge(Disability) {
       value: Disability,
       min: 0,
       max: 30,
+      decimal: 2,
       symbol: '%',
       pointer: false,
       label: "Disability Level",
