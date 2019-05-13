@@ -14,6 +14,7 @@ function buildEduGauge(NoHighSchoolDiploma) {
       max: 60,
       symbol: '%',
       pointer: false,
+      decimal: 2,
       label: "No High School Diploma",
       gaugeWidthScale: 0.6,
       counter: true,
