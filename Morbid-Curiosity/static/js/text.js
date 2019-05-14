@@ -36,7 +36,7 @@ function compareLifeExpectancy(life) {
       value = "below";
     }
     
-  var life_string = `Your area's life expectancy is ${life} which is ${abs} years ${value} the national average of ${avg_life} years.`
+  var life_string = `Your area's life expectancy is ${abs} years ${value} the national average of ${avg_life} years.`
 
   document.getElementById("life-text").innerHTML = life_string;
 }
