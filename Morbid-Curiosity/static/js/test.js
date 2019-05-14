@@ -1,4 +1,5 @@
-// Build out the gauge charts
+// build out all the gauge charts
+
 function buildMetadata() {
   var zipCode = d3.select("#zipcode").node()
     ? d3.select("#zipcode").node().value
@@ -11,8 +12,8 @@ function buildMetadata() {
       compareEducation(data[0].NoHighSchoolDiploma);
       buildIncomeGauge(data[0].Per_Capita_Income);
       compareIncome(data[0].Per_Capita_Income);
-      buildDisabilityGauge(data[0].Disability);
-      compareDisability(data[0].Disability);
+      buildLifeExpectancyGauge(data[0].LifeExpectancy);
+      compareLifeExpectancy(data[0].LifeExpectancy);
     })
     .catch(err => {
       //console.error(err);
@@ -28,6 +29,7 @@ function buildMetadata() {
         backdrop: `rgba(0,0,123,0.4)`
       });
     });
+  // }
 }
 
 // Initialize the dashboard
