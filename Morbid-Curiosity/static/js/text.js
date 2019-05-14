@@ -22,23 +22,23 @@ function compareIncome(income) {
       ;
 }
 
-function compareDisability(disability) {
+function compareLifeExpectancy(life) {
 
-  var avg_disability = 15.54;
+    var avg_life = 77.76;
+    var difference = (life - avg_life).toFixed(2);
+    var abs = Math.abs(difference);
 
-  var difference = (((disability - avg_disability)/avg_disability) * 100).toFixed(2)
-  var abs = Math.abs(difference);
-
-  if (difference > 0) 
-    {value = "above";}
-  if (difference === 0) 
-    {value = "equal to";}
-  if (difference < 0) 
-    {value = "below";}
+    if (difference > 0) {
+      value = "above";
+    } else if (difference === 0) {
+      value = "equal to";
+    } else if (difference <= 0) {
+      value = "below";
+    }
     
-  var disability_string = `Your area's population with disability is ${abs}% ${value} the national average of ${avg_disability}%.`;
+  var life_string = `Your area's life expectancy is ${life} which is ${abs} years ${value} the national average of ${avg_life} years.`
 
-  document.getElementById("disability-text").innerHTML = disability_string;
+  document.getElementById("life-text").innerHTML = life_string;
 }
 
 function compareEducation(education) {
@@ -58,4 +58,5 @@ function compareEducation(education) {
   var edu_string = `Your area's population with no high school diploma is ${abs}% ${value} the national average of ${avg_education}%.`;
 
   document.getElementById("edu-text").innerHTML = edu_string;
+}
 }
