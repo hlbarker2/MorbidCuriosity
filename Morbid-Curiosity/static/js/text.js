@@ -58,5 +58,4 @@ function compareEducation(education) {
   var edu_string = `Your area's population with no high school diploma is ${abs}% ${value} the national average of ${avg_education}%.`;
 
   document.getElementById("edu-text").innerHTML = edu_string;
-}
-}
+};
