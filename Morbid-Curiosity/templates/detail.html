@@ -238,7 +238,11 @@
         <img class="img-responsive center-block" width= 600px src="../static/images/reverse_chloro.gif"><br>
       </div>
     </div>
-    
+    <div class="col-md-12">
+        <h3>Connor had some issues with styling...</h3>
+        <img class="img-responsive center-block" id="bigpic5" src="bigpic5" style="display:none;" />
+        <button onclick="picture5()">Never Underestimate</button>
+      </div>
     <hr>
     
     <!-- bar charts -->
@@ -444,6 +448,12 @@
       var pic = "../static/images/paulangry.jpg"
       document.getElementById('bigpic4').src = pic.replace('90x90', '225x225');
       document.getElementById('bigpic4').style.display='block';      
+    }
+    
+    function picture5(){ 
+      var pic = "../static/images/curlyboi.jpg"
+      document.getElementById('bigpic5').src = pic.replace('90x90', '225x225');
+      document.getElementById('bigpic5').style.display='block';      
     }
   </script> <!-- gif button -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
