@@ -31,4 +31,4 @@ Our team created multiple, dynamic visualizations to illustrate life expectancy 
 * Radar chart that compares the percentage of death from different diseases in men and women
 * Bar chart that compares mortality rate among different population sizes
 * Gauges that display per capita income, life expectancy and percentage of population with no high school diploma based on user input of his/her zip code
-* Interactive sliders that predict life expectancy based on machine learning model
+* Interactive sliders that predict life expectancy based on machine learning model and data from the social vulnerability index
