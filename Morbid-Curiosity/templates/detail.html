@@ -225,6 +225,23 @@
         </p>
       </div>
     </div>
+    <div class="row whitespace">
+      <div class="col-md-6">
+        <p>To improve the responsiveness of the map, we read the local geojson upon the loading of the page and saved the response to a variable in the browser window.
+           This significantly reduces the time to rebuild the map when any of the selections are changed. 
+           Another challenge involved adding a dynamic legend. 
+           As shown to the right, the colors for the “Life Expectancy” selection are reversed both on the map and on the legend. 
+           This was achieved through a conditional if statement on the selected disease that switched the colors on the choropleth function. </p>
+      </div>
+      <div class="col-md-6">
+        <img class="img-responsive center-block" width= 600px src="../static/images/reverse_chloro.gif"><br>
+      </div>
+    </div>
+    <div class="col-md-12">
+        <h3>Connor had some issues with styling...</h3>
+        <img class="img-responsive center-block" id="bigpic5" src="bigpic5" style="display:none;" />
+        <button onclick="picture5()">}</button>
+    </div>
     <hr>
     
     <!-- bar charts -->
@@ -434,6 +451,12 @@
       var pic = "../static/images/paulangry.jpg"
       document.getElementById('bigpic4').src = pic.replace('90x90', '225x225');
       document.getElementById('bigpic4').style.display='block';      
+    }
+    
+    function picture5(){ 
+      var pic = "../static/images/curlyboi.jpg"
+      document.getElementById('bigpic5').src = pic.replace('90x90', '225x225');
+      document.getElementById('bigpic5').style.display='block';      
     }
   </script> <!-- gif button -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
