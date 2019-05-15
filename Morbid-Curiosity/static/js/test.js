@@ -1,5 +1,3 @@
-import swal from 'sweetalert2';
-window.swal = swal;
 
 // build out all the gauge charts
 function buildMetadata() {
