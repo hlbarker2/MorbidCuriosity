@@ -1,3 +1,7 @@
+window.onload = function () {
+  document.getElementById("enterZip").click();
+}
+
 // Creating map object
 var map = L.map("heatmap", {
   center: [38, -96],
