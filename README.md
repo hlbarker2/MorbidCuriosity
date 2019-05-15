@@ -1,6 +1,7 @@
 # The Social Determinants of Health
 Team Morbid Curiosity: Paul, Sarah, Hannah, Connor
 
+https://morbid-curiosity.herokuapp.com/
 - - -
 
 ## Purpose
@@ -17,15 +18,17 @@ The data we are pulling is from the CDC’s social vulnerability index and wonde
 * D3.js
 * Leaflet.js
 * Chart.js
+* JustGage
 
 ## Visualizations
 
 ![Sketch](Images/project3-sketch.jpg)
 
-Our team is planning to visualize mortality data in three different ways. 
+Our team created multiple, dynamic visualizations to illustrate life expectancy and mortality data:
 
-First, we will use a heat map of deaths in the United States by county for a given year. There will be a drop-down option where you can look at different health-related causes of death, like heart disease or cancer, and the map will reflect in a new heat map to show where those causes of death impacted Americans most. We are starting with this to give an overview of all the data we are exploring. 
-
-Then, we will be digging into some indicators related to the counties with the highest percent of deaths and the lowest percent of deaths. The indicators could be average income in the county and population, or perhaps accessibility to a hospital. 
-
-The third visualization we will create is a radar chart that shows the top 6 causes of death in the whole country, and compares two different people and how susceptible they are to each of these. The two comparisons could be Low vs High education level, or male vs female.
+* Heat map of deaths in the United States by county for a given year. There are drop-down menus to explore different health-related causes of death, population size, and Medicare spending in the United States. On selecting from the drop-down menu, the map reflects in a new heat map to show where causes of death impacted Americans most. 
+* Scatter plot to illustrate the relationship between themes in the social vulnerability index and life expectancy
+* Radar chart that compares the percentage of death from different diseases in men and women
+* Bar chart that compares mortality rate among different population sizes
+* Gauges that display per capita income, life expectancy and percentage of population with no high school diploma based on user input of his/her zip code
+* Interactive sliders that predict life expectancy based on machine learning model and data from the social vulnerability index

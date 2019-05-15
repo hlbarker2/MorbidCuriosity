@@ -1,5 +1,5 @@
-// build out all the gauge charts
 
+// build out all the gauge charts
 function buildMetadata() {
   var zipCode = d3.select("#zipcode").node()
     ? d3.select("#zipcode").node().value

@@ -2,9 +2,6 @@ var g3
 
 function buildEduGauge(NoHighSchoolDiploma) {
 
-  var level = (NoHighSchoolDiploma) / 60 * 180;
-  // console.log(level);
-
   if (!g3) {
 
     g3 = new JustGage({

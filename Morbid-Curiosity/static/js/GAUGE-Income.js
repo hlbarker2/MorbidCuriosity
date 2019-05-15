@@ -2,11 +2,6 @@ var g1
 
 function buildIncomeGauge(income) {
 
-  var level = (((income/1000) - 5)/ (65 - 5)) * 180;
-  // level = level.toLocaleString();
-  // income = income.toLocaleString();
-    // console.log(level);
-
   if (!g1) {
 
     g1 = new JustGage({
