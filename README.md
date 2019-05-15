@@ -1,6 +1,7 @@
 # The Social Determinants of Health
 Team Morbid Curiosity: Paul, Sarah, Hannah, Connor
 
+https://morbid-curiosity.herokuapp.com/
 - - -
 
 ## Purpose
@@ -22,7 +23,7 @@ The data we are pulling is from the CDC’s social vulnerability index and wonde
 
 ![Sketch](Images/project3-sketch.jpg)
 
-Our team is planning to visualize mortality data in three different ways. 
+Our team created multiple, dynamic visualizations to illustrate life expectancy and mortality data:
 
 First, we will use a heat map of deaths in the United States by county for a given year. There will be a drop-down option where you can look at different health-related causes of death, like heart disease or cancer, and the map will reflect in a new heat map to show where those causes of death impacted Americans most. We are starting with this to give an overview of all the data we are exploring. 
 
