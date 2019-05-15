@@ -45,7 +45,7 @@ function compareEducation(education) {
 
   var avg_education = 15.01;
 
-  var difference = (((education - avg_education)/avg_education) * 100).toFixed(2)
+  var difference = (education - avg_education).toFixed(2)
   var abs = Math.abs(difference);
 
   if (difference > 0) 
