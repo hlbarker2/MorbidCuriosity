@@ -1,5 +1,7 @@
-// build out all the gauge charts
+import swal from 'sweetalert2';
+window.swal = swal;
 
+// build out all the gauge charts
 function buildMetadata() {
   var zipCode = d3.select("#zipcode").node()
     ? d3.select("#zipcode").node().value
