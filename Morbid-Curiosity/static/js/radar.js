@@ -204,7 +204,7 @@ function buildBar() {
               if (label) {
                   label += ': ';
               }
-              label += Math.round(tooltipItem.yLabel * 100) / 100;
+              label += Math.round(tooltipItem.xLabel * 100) / 100;
               return label;
             }
           }

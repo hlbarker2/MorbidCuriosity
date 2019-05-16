@@ -107,7 +107,7 @@ button {
 .button {
     background-color: rgb(194, 194, 194); 
     border: none;
-    color: white;
+    color: rgb(31, 30, 30) !important;
     font-family: 'Roboto', sans-serif !important;
     font-size: 16px;
     padding: 15px 32px;
