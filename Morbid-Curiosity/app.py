@@ -14,20 +14,15 @@ pymysql.install_as_MySQLdb()
 
 from flask import Flask, jsonify, render_template, url_for, json, request, flash
 from flask_sqlalchemy import SQLAlchemy
-<<<<<<< HEAD
-# from config import remote_db_endpoint, remote_db_port
-# from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
-=======
-#from config import remote_db_endpoint, remote_db_port
-#from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
->>>>>>> 431906c959006e9a6ef5138d6513c250f8d2a9f6
 
-remote_db_endpoint = os.environ['remote_db_endpoint']
-remote_db_port = os.environ['remote_db_port']
-remote_morbid_dbname = os.environ['remote_morbid_dbname']
-remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
-remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
+from config import remote_db_endpoint, remote_db_port
+from config import remote_morbid_dbname, remote_morbid_dbuser, remote_morbid_dbpwd
 
+# remote_db_endpoint = os.environ['remote_db_endpoint']
+# remote_db_port = os.environ['remote_db_port']
+# remote_morbid_dbname = os.environ['remote_morbid_dbname']
+# remote_morbid_dbuser = os.environ['remote_morbid_dbuser']
+# remote_morbid_dbpwd = os.environ['remote_morbid_dbpwd']
 
 app = Flask(__name__)
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
