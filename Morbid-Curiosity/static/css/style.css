@@ -76,6 +76,7 @@ button {
     width: 150px; 
     display: block; 
     margin: 0 auto;
+    color: rgb(31, 30, 30) !important;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     text-align: center;
